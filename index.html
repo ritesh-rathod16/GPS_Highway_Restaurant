@@ -41,7 +41,12 @@
             font-weight: 400;
             letter-spacing: 1px;
         }
-        
+
+        /* Section spacing adjustments */
+        section {
+            padding: 60px 0;
+        }
+
         /* Loader Animation */
         .loader {
             position: fixed;
@@ -280,7 +285,6 @@
         
         /* About Section */
         .about {
-            padding: 60px 0;
             background-color: var(--text-light);
         }
         
@@ -358,9 +362,8 @@
             z-index: -1;
         }
         
-        /* Menu Section with 16:9 ratio cards */
+        /* Menu Section with 4:6 ratio cards */
         .menu {
-            padding: 60px 0;
             background-color: #f5f5f5;
         }
         
@@ -377,9 +380,10 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            aspect-ratio: 16/9;
+            aspect-ratio: 4/6;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
         
         .menu-item:hover {
@@ -392,13 +396,19 @@
             height: 60%;
             object-fit: cover;
             flex-shrink: 0;
+            transition: transform 0.5s ease;
+        }
+        
+        .menu-item:hover img {
+            transform: scale(1.05);
         }
         
         .menu-item-content {
-            padding: 15px;
-            flex-grow: 1;
+            padding: 20px;
+            flex: 1;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
         
         .menu-item-content h3 {
@@ -409,29 +419,28 @@
         }
         
         .menu-item-content p {
-            color: #666;
-            margin-bottom: 10px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
             line-height: 1.6;
-            flex-grow: 1;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            opacity: 0.8;
         }
         
         .price {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--secondary-color);
-            margin-top: auto;
             font-family: 'Bebas Neue', sans-serif;
+            margin-top: auto;
         }
         
         .menu-btn-container {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
         }
         
         /* Video Gallery - Card Style with 1:1 ratio */
         .video-gallery {
-            padding: 60px 0;
             background-color: var(--primary-color);
         }
         
@@ -467,7 +476,7 @@
         }
         
         .video-caption {
-            padding: 15px;
+            padding: 20px;
             text-align: center;
             background: white;
         }
@@ -480,7 +489,6 @@
         
         /* Reservation Section - Enhanced */
         .reservation {
-            padding: 60px 0;
             background-color: var(--text-light);
         }
         
@@ -488,7 +496,7 @@
             max-width: 700px;
             margin: 0 auto;
             background-color: #fff;
-            padding: 40px;
+            padding: 50px;
             border-radius: 15px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
         }
@@ -515,12 +523,12 @@
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 500;
             font-size: 1rem;
             color: var(--primary-color);
@@ -531,7 +539,7 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px 15px;
+            padding: 15px 20px;
             border: 1px solid #ddd;
             border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
@@ -557,13 +565,13 @@
         }
         
         .form-group textarea {
-            min-height: 100px;
+            min-height: 120px;
             resize: vertical;
         }
         
         .form-row {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
         
         .form-row .form-group {
@@ -572,7 +580,7 @@
         
         .submit-btn {
             width: 100%;
-            padding: 15px;
+            padding: 18px;
             background-color: var(--secondary-color);
             color: var(--text-light);
             border: none;
@@ -594,7 +602,6 @@
         
         /* Map Section */
         .map-section {
-            padding: 60px 0;
             background-color: var(--text-light);
         }
         
@@ -607,82 +614,80 @@
         
         .map-container iframe {
             width: 100%;
-            height: 450px;
+            height: 500px;
             border: 0;
         }
         
-        /* Newsletter Section */
-        .newsletter {
-            padding: 60px 0;
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            text-align: center;
+        /* Online Ordering Section */
+        .online-ordering {
+            background-color: #f5f5f5;
         }
-        
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .newsletter h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-        
-        .newsletter p {
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-        }
-        
-        .newsletter-form {
+
+        .ordering-platforms {
             display: flex;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
         }
-        
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1rem;
-        }
-        
-        .newsletter-form button {
-            padding: 12px 25px;
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-            border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
+
+        .platform-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-        
-        .newsletter-form button:hover {
-            background-color: var(--gold-dark);
+
+        .platform-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
+        .platform-card img {
+            height: 60px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .platform-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .platform-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .platform-card .btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            min-width: auto;
+        }
+
         /* Footer with enhanced contact info */
         footer {
             background-color: var(--primary-color);
             color: var(--text-light);
-            padding: 50px 0 20px;
+            padding: 60px 0 20px;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 40px;
+            margin-bottom: 40px;
         }
         
         .footer-column h3 {
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--secondary-color);
             position: relative;
             padding-bottom: 10px;
@@ -700,7 +705,7 @@
         }
         
         .footer-column p {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             line-height: 1.8;
             color: var(--text-secondary);
             font-size: 1rem;
@@ -711,7 +716,7 @@
         }
         
         .footer-column ul li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .footer-column ul li a {
@@ -728,7 +733,7 @@
         .contact-info {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         
         .contact-info i {
@@ -760,7 +765,7 @@
         
         .phone-number {
             background: rgba(255, 255, 255, 0.1);
-            padding: 6px 12px;
+            padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
             color: var(--text-light);
@@ -775,21 +780,21 @@
         
         .social-links {
             display: flex;
-            gap: 12px;
-            margin-top: 15px;
+            gap: 15px;
+            margin-top: 20px;
         }
         
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: var(--text-light);
             transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
         
         .social-links a:hover {
@@ -808,7 +813,51 @@
             font-size: 0.9rem;
         }
 
-        /* Chatbot Styles */
+        /* Features Section */
+        .features {
+            background-color: var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Chatbot Styles - Enhanced */
         .chatbot-container {
             position: fixed;
             bottom: 30px;
@@ -884,18 +933,31 @@
 
         .chatbot-messages {
             flex: 1;
-            padding: 15px;
+            padding: 20px;
             overflow-y: auto;
             background-color: #f9f9f9;
         }
 
         .message {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             max-width: 80%;
             padding: 10px 15px;
             border-radius: 18px;
             font-size: 0.9rem;
             line-height: 1.4;
+            position: relative;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .bot-message {
@@ -914,18 +976,24 @@
 
         .chatbot-input {
             display: flex;
-            padding: 12px;
+            padding: 15px;
             background-color: white;
             border-top: 1px solid #eee;
         }
 
         .chatbot-input input {
             flex: 1;
-            padding: 10px 12px;
+            padding: 12px 15px;
             border: 1px solid #ddd;
             border-radius: 30px;
             outline: none;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-input input:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 2px rgba(193, 154, 107, 0.2);
         }
 
         .chatbot-input button {
@@ -933,11 +1001,14 @@
             color: white;
             border: none;
             border-radius: 50%;
-            width: 38px;
-            height: 38px;
-            margin-left: 8px;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .chatbot-input button:hover {
@@ -947,8 +1018,8 @@
         .quick-replies {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 8px;
+            gap: 8px;
+            margin-top: 10px;
         }
 
         .quick-reply {
@@ -956,7 +1027,7 @@
             color: var(--primary-color);
             border: none;
             border-radius: 15px;
-            padding: 4px 10px;
+            padding: 5px 12px;
             font-size: 0.8rem;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -968,15 +1039,15 @@
         }
 
         .menu-suggestion {
-            margin-top: 8px;
-            padding: 8px;
+            margin-top: 10px;
+            padding: 10px;
             background-color: rgba(193, 154, 107, 0.1);
             border-radius: 8px;
             border-left: 3px solid var(--secondary-color);
         }
 
         .menu-suggestion h4 {
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             color: var(--primary-color);
             font-size: 0.9rem;
             font-family: 'Bebas Neue', sans-serif;
@@ -985,7 +1056,7 @@
         .menu-suggestion p {
             font-size: 0.8rem;
             color: #666;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .nutrition-info {
@@ -996,33 +1067,42 @@
 
         .reservation-form-mini {
             display: none;
-            padding: 12px;
+            padding: 15px;
             background-color: #f9f9f9;
             border-top: 1px solid #eee;
         }
 
         .reservation-form-mini.active {
             display: block;
+            animation: fadeIn 0.3s ease;
         }
 
         .form-group-mini {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .form-group-mini input,
         .form-group-mini select {
             width: 100%;
-            padding: 8px 12px;
+            padding: 10px 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group-mini input:focus,
+        .form-group-mini select:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(193, 154, 107, 0.2);
         }
 
         .submit-btn-mini {
             background-color: var(--secondary-color);
             color: white;
             border: none;
-            padding: 8px 12px;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
             font-size: 0.9rem;
@@ -1035,58 +1115,82 @@
             background-color: var(--gold-dark);
         }
 
-        /* Online Ordering Section */
-        .online-ordering {
-            padding: 60px 0;
-            background-color: #f5f5f5;
-        }
-
-        .ordering-platforms {
+        /* Typing indicator */
+        .typing-indicator {
             display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .platform-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .platform-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .platform-card img {
-            height: 50px;
+            padding: 10px 15px;
+            background-color: #e8e8e8;
+            border-radius: 18px;
+            width: fit-content;
             margin-bottom: 15px;
-            object-fit: contain;
         }
 
-        .platform-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #666;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typingAnimation {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Coupon Card */
+        .coupon-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px dashed var(--secondary-color);
+            text-align: center;
+        }
+
+        .coupon-header {
+            font-size: 1.8rem;
             color: var(--primary-color);
+            margin-bottom: 10px;
             font-family: 'Bebas Neue', sans-serif;
         }
 
-        .platform-card p {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
+        .coupon-code {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 15px 0;
+            letter-spacing: 3px;
         }
 
-        .platform-card .btn {
-            padding: 8px 15px;
+        .coupon-details {
             font-size: 0.9rem;
-            min-width: auto;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .coupon-terms {
+            font-size: 0.8rem;
+            color: #888;
+            font-style: italic;
         }
 
         /* Responsive Styles */
@@ -1110,7 +1214,7 @@
             }
             
             .about-image {
-                margin-top: 30px;
+                margin-top: 40px;
                 max-width: 600px;
                 margin-left: auto;
                 margin-right: auto;
@@ -1166,7 +1270,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                padding-top: 30px;
+                padding-top: 40px;
                 transition: all 0.5s ease;
             }
             
@@ -1175,7 +1279,7 @@
             }
             
             nav ul li {
-                margin: 12px 0;
+                margin: 15px 0;
             }
             
             .mobile-menu-btn {
@@ -1188,7 +1292,7 @@
             }
             
             .reservation-form {
-                padding: 25px;
+                padding: 30px;
             }
             
             .map-container iframe {
@@ -1198,15 +1302,6 @@
             .chatbot-window {
                 width: 300px;
                 height: 450px;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .newsletter-form input,
-            .newsletter-form button {
-                width: 100%;
             }
 
             .platform-card {
@@ -1233,7 +1328,7 @@
             }
             
             .reservation-form {
-                padding: 20px 15px;
+                padding: 25px 20px;
             }
             
             .logo-img {
@@ -1291,10 +1386,11 @@
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="menu.html">Menu</a></li>
+                    <li><a href="index.html#ordering">Order Online</a></li>
                     <li><a href="index.html#gallery">Gallery</a></li>
                     <li><a href="index.html#reservation">Reservations</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="index.html#ordering">Order Online</a></li>
+                    <li><a href="index.html#events">Events</a></li>
                 </ul>
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -1335,7 +1431,7 @@
         </div>
     </section>
 
-    <!-- Menu Section with 16:9 ratio cards -->
+    <!-- Menu Section with 4:6 ratio cards -->
     <section class="menu" id="menu">
         <div class="container">
             <div class="section-title">
@@ -1348,7 +1444,6 @@
                     <div class="menu-item-content">
                         <h3>Paneer Tikka</h3>
                         <p>Marinated cottage cheese grilled to perfection in tandoor with spices</p>
-                        <div class="nutrition-info">Calories: 320 | Protein: 18g | Carbs: 12g | Fat: 22g</div>
                         <div class="price">₹290</div>
                     </div>
                 </div>
@@ -1359,7 +1454,6 @@
                     <div class="menu-item-content">
                         <h3>Butter Chicken</h3>
                         <p>Tender chicken in a rich, creamy tomato gravy with aromatic spices</p>
-                        <div class="nutrition-info">Calories: 450 | Protein: 30g | Carbs: 15g | Fat: 30g</div>
                         <div class="price">₹470</div>
                     </div>
                 </div>
@@ -1370,7 +1464,6 @@
                     <div class="menu-item-content">
                         <h3>Gulab Jamun</h3>
                         <p>Soft, melt-in-your-mouth milk balls soaked in sugar syrup</p>
-                        <div class="nutrition-info">Calories: 150 | Protein: 3g | Carbs: 25g | Fat: 5g</div>
                         <div class="price">₹60</div>
                     </div>
                 </div>
@@ -1381,7 +1474,46 @@
         </div>
     </section>
 
-     <!-- Online Ordering Section -->
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>WHY CHOOSE US</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3>Wallet Parking</h3>
+                    <p>Convenient and secure parking available for all our guests</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>5% Coupon</h3>
+                    <p>Get a 5% discount coupon on your first visit to redeem next time</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Authentic Cuisine</h3>
+                    <p>Traditional recipes prepared with the freshest ingredients</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Event Booking</h3>
+                    <p>Host your private parties and special events with us</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Ordering Section -->
     <section class="online-ordering" id="ordering">
         <div class="container">
             <div class="section-title">
@@ -1401,7 +1533,7 @@
                     <a href="https://www.swiggy.com" target="_blank" class="btn">Order Now</a>
                 </div>
                 <div class="platform-card">
-                    <img src="https://cdn.corenexis.com/view/?img=d/ma16/EzTrwx.png" alt="Restaurant Guru">
+                    <img src="https://ibb.co/5gTMFLhd" alt="Restaurant Guru">
                     <h3>Restaurant Guru</h3>
                     <p>Enjoy our cuisine delivered by Restaurant Guru</p>
                     <a href="https://restaurant-guru.in/GPS-Highway-Restaurant-Nagpur" target="_blank" class="btn">Order Now</a>
@@ -1409,7 +1541,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Video Gallery Section - Card Style with 1:1 ratio -->
     <section class="video-gallery" id="gallery">
@@ -1506,6 +1637,48 @@
         </div>
     </section>
 
+    <!-- Events Section -->
+    <section class="features" id="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>EVENTS & PRIVATE DINING</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Birthday Parties</h3>
+                    <p>Celebrate your special day with us in a private dining area</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Anniversaries</h3>
+                    <p>Romantic settings for your anniversary celebrations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Corporate Events</h3>
+                    <p>Host your business meetings and corporate gatherings</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Catering Services</h3>
+                    <p>Let us bring our authentic flavors to your location</p>
+                </div>
+            </div>
+            <div class="menu-btn-container">
+                <a href="#contact" class="btn">Contact Us for Events</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
@@ -1514,20 +1687,6 @@
             </div>
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52356.72936253133!2d78.9818823486328!3d21.066862200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747341109593!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter" id="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>JOIN OUR NEWSLETTER</h2>
-                <p>Subscribe to receive updates, special offers, and a 10% discount on your first order!</p>
-                <form class="newsletter-form" id="newsletter-form">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
             </div>
         </div>
     </section>
@@ -1542,6 +1701,7 @@
                     <div class="social-links">
                         <a href="https://www.facebook.com/gpshighwayrestaurant/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/gps.highway.restaurant/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@gpsfamilyrestaurant7280" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1571,11 +1731,18 @@
                         <li><a href="index.html#ordering">Order Online</a></li>
                         <li><a href="index.html#gallery">Gallery</a></li>
                         <li><a href="index.html#reservation">Reservations</a></li>
+                        <li><a href="index.html#events">Events</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>OPENING HOURS</h3>
                     <p>Monday - Sunday: 10:00 AM - 10:00 PM</p>
+                    <div class="coupon-card">
+                        <div class="coupon-header">5% OFF</div>
+                        <div class="coupon-code">GPS5OFF</div>
+                        <div class="coupon-details">Present this coupon on your next visit to receive 5% discount</div>
+                        <div class="coupon-terms">Valid for dine-in only. Not valid with other offers.</div>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1608,16 +1775,17 @@
             </div>
             <div class="reservation-form-mini" id="reservation-form-mini">
                 <div class="form-group-mini">
-                    <input type="text" id="res-name" placeholder="Your Name">
+                    <input type="text" id="res-name" placeholder="Your Name" required>
                 </div>
                 <div class="form-group-mini">
-                    <input type="date" id="res-date">
+                    <input type="date" id="res-date" required>
                 </div>
                 <div class="form-group-mini">
-                    <input type="time" id="res-time">
+                    <input type="time" id="res-time" required>
                 </div>
                 <div class="form-group-mini">
-                    <select id="res-guests">
+                    <select id="res-guests" required>
+                        <option value="" disabled selected>Number of Guests</option>
                         <option value="1">1 Person</option>
                         <option value="2">2 People</option>
                         <option value="3">3 People</option>
@@ -1628,7 +1796,7 @@
                 <button class="submit-btn-mini" id="submit-reservation">Submit Reservation</button>
             </div>
             <div class="chatbot-input">
-                <input type="text" id="chatbot-input" placeholder="Type your message...">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off">
                 <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
@@ -1760,52 +1928,6 @@
             }
         });
 
-        // Newsletter form submission
-        const newsletterForm = document.getElementById('newsletter-form');
-        
-        newsletterForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = newsletterForm.querySelector('input[type="email"]').value;
-            
-            try {
-                const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        access_key: '3ad2ac7d-5205-4c7f-b856-de35b9a592f3',
-                        subject: 'New Newsletter Subscription',
-                        email: email,
-                        message: 'Please subscribe me to the newsletter with 10% discount'
-                    })
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    alert('Thank you for subscribing! Check your email for your 10% discount code.');
-                    newsletterForm.reset();
-                } else {
-                    alert('There was an error with your subscription. Please try again later.');
-                }
-            } catch (error) {
-                alert('There was an error with your subscription. Please try again later.');
-                console.error(error);
-            }
-        });
-
-        // Video play/pause on click
-        document.querySelectorAll('.video-item video').forEach(video => {
-            video.addEventListener('click', function() {
-                if (this.paused) {
-                    this.play();
-                } else {
-                    this.pause();
-                }
-            });
-        });
-
         // Lazy load videos when they come into view
         const lazyVideos = document.querySelectorAll('video[preload="none"]');
         
@@ -1829,7 +1951,59 @@
             sessionStorage.removeItem('scrollPosition');
         }
 
-        // Chatbot Functionality
+        // Video play/pause functionality
+        document.querySelectorAll('.video-item').forEach(videoItem => {
+            const video = videoItem.querySelector('video');
+            
+            // Hide controls initially
+            video.removeAttribute('controls');
+            
+            // Single click to play/pause
+            videoItem.addEventListener('click', (e) => {
+                // Check if the click was on the video itself or its container
+                if (e.target === video || e.target === videoItem) {
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                }
+            });
+            
+            // Double click to toggle fullscreen
+            videoItem.addEventListener('dblclick', () => {
+                if (video.requestFullscreen) {
+                    if (!document.fullscreenElement) {
+                        video.requestFullscreen();
+                    } else {
+                        document.exitFullscreen();
+                    }
+                } else if (video.webkitRequestFullscreen) { /* Safari */
+                    if (!document.webkitFullscreenElement) {
+                        video.webkitRequestFullscreen();
+                    } else {
+                        document.webkitExitFullscreen();
+                    }
+                } else if (video.msRequestFullscreen) { /* IE11 */
+                    if (!document.msFullscreenElement) {
+                        video.msRequestFullscreen();
+                    } else {
+                        document.msExitFullscreen();
+                    }
+                }
+            });
+            
+            // Show controls when hovering
+            videoItem.addEventListener('mouseenter', () => {
+                video.setAttribute('controls', 'true');
+            });
+            
+            videoItem.addEventListener('mouseleave', () => {
+                video.removeAttribute('controls');
+            });
+        });
+
+        // Chatbot Functionality - Enhanced
         const chatbotToggle = document.getElementById('chatbot-toggle');
         const chatbotWindow = document.getElementById('chatbot-window');
         const chatbotClose = document.getElementById('chatbot-close');
@@ -1842,6 +2016,9 @@
         // Toggle chatbot window
         chatbotToggle.addEventListener('click', () => {
             chatbotWindow.classList.toggle('active');
+            if (chatbotWindow.classList.contains('active')) {
+                chatbotInput.focus();
+            }
         });
 
         // Close chatbot
@@ -1849,13 +2026,42 @@
             chatbotWindow.classList.remove('active');
         });
 
+        // Show typing indicator
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('typing-indicator');
+            typingDiv.innerHTML = `
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            `;
+            chatbotMessages.appendChild(typingDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            return typingDiv;
+        }
+
+        // Hide typing indicator
+        function hideTypingIndicator(typingDiv) {
+            if (typingDiv && typingDiv.parentNode) {
+                typingDiv.remove();
+            }
+        }
+
         // Send message function
         function sendMessage() {
             const message = chatbotInput.value.trim();
             if (message) {
                 addMessage(message, 'user');
                 chatbotInput.value = '';
-                respondToMessage(message);
+                
+                // Show typing indicator
+                const typingDiv = showTypingIndicator();
+                
+                // Simulate bot thinking time
+                setTimeout(() => {
+                    hideTypingIndicator(typingDiv);
+                    respondToMessage(message);
+                }, 1000 + Math.random() * 1000); // Random delay between 1-2 seconds
             }
         }
 
@@ -1865,11 +2071,11 @@
             messageDiv.classList.add('message');
             messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
             
-            // Create a span for the text to prevent HTML injection
-            const textSpan = document.createElement('span');
-            textSpan.textContent = text;
-            messageDiv.appendChild(textSpan);
+            // Convert URLs to clickable links
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            const linkedText = text.replace(urlRegex, url => `<a href="${url}" target="_blank">${url}</a>`);
             
+            messageDiv.innerHTML = linkedText;
             chatbotMessages.appendChild(messageDiv);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
@@ -1886,7 +2092,14 @@
                 button.dataset.message = reply.text;
                 button.addEventListener('click', () => {
                     addMessage(reply.text, 'user');
-                    respondToMessage(reply.text);
+                    
+                    // Show typing indicator
+                    const typingDiv = showTypingIndicator();
+                    
+                    setTimeout(() => {
+                        hideTypingIndicator(typingDiv);
+                        respondToMessage(reply.text);
+                    }, 1000 + Math.random() * 1000);
                 });
                 quickRepliesDiv.appendChild(button);
             });
@@ -1926,6 +2139,42 @@
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
 
+        // Add full menu category
+        function addMenuCategory(category, items) {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.classList.add('menu-category');
+            
+            const categoryTitle = document.createElement('h4');
+            categoryTitle.textContent = category;
+            categoryTitle.style.fontFamily = "'Bebas Neue', sans-serif";
+            categoryTitle.style.fontSize = "1.2rem";
+            categoryTitle.style.marginBottom = "10px";
+            categoryTitle.style.color = "var(--primary-color)";
+            
+            categoryDiv.appendChild(categoryTitle);
+            
+            const itemsList = document.createElement('div');
+            itemsList.style.display = "grid";
+            itemsList.style.gridTemplateColumns = "1fr 1fr";
+            itemsList.style.gap = "10px";
+            
+            items.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.textContent = item;
+                itemDiv.style.fontSize = "0.9rem";
+                itemsList.appendChild(itemDiv);
+            });
+            
+            categoryDiv.appendChild(itemsList);
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add('bot-message');
+            messageDiv.appendChild(categoryDiv);
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
         // Submit reservation from chatbot
         submitReservationBtn.addEventListener('click', () => {
             const name = document.getElementById('res-name').value;
@@ -1933,7 +2182,7 @@
             const time = document.getElementById('res-time').value;
             const guests = document.getElementById('res-guests').value;
             
-            if (!name || !date || !time) {
+            if (!name || !date || !time || !guests) {
                 addMessage('Please fill in all the required fields to make a reservation.', 'bot');
                 return;
             }
@@ -1945,19 +2194,32 @@
                 day: 'numeric'
             });
             
+            // Show typing indicator
+            const typingDiv = showTypingIndicator();
+            
             // Send reservation to email
             sendReservationEmail(name, formattedDate, time, guests);
             
-            addMessage(`Thank you, ${name}! Your reservation request for ${guests} people on ${formattedDate} at ${time} has been received. We will contact you shortly to confirm.`, 'bot');
-            
-            // Reset form
-            document.getElementById('res-name').value = '';
-            document.getElementById('res-date').value = '';
-            document.getElementById('res-time').value = '';
-            document.getElementById('res-guests').value = '1';
-            
-            // Hide form
-            reservationFormMini.classList.remove('active');
+            setTimeout(() => {
+                hideTypingIndicator(typingDiv);
+                addMessage(`Thank you, ${name}! Your reservation request for ${guests} people on ${formattedDate} at ${time} has been received. We will contact you shortly to confirm.`, 'bot');
+                
+                // Reset form
+                document.getElementById('res-name').value = '';
+                document.getElementById('res-date').value = '';
+                document.getElementById('res-time').value = '';
+                document.getElementById('res-guests').value = '';
+                
+                // Hide form
+                reservationFormMini.classList.remove('active');
+                
+                // Add quick replies
+                addQuickReplies([
+                    { text: 'View menu' },
+                    { text: 'Contact info' },
+                    { text: 'Opening hours' }
+                ]);
+            }, 1500);
         });
 
         // Send reservation email
@@ -1988,98 +2250,307 @@
 
         // Bot responses
         function respondToMessage(message) {
-            // Simulate typing delay
-            setTimeout(() => {
-                const lowerMessage = message.toLowerCase();
+            const lowerMessage = message.toLowerCase();
+            
+            if (lowerMessage.includes('reserve') || lowerMessage.includes('table') || lowerMessage.includes('booking')) {
+                addMessage('To reserve a table, please provide the following details:', 'bot');
+                reservationFormMini.classList.add('active');
+            } 
+            else if (lowerMessage.includes('menu') || lowerMessage.includes('food') || lowerMessage.includes('dish')) {
+                addMessage('We offer a wide variety of authentic Indian dishes. Here are some recommendations:', 'bot');
+                addMenuSuggestion(
+                    'Paneer Tikka',
+                    'Marinated cottage cheese grilled to perfection in tandoor with spices',
+                    '320', '18', '12', '22'
+                );
+                addMenuSuggestion(
+                    'Butter Chicken',
+                    'Tender chicken in rich tomato gravy with butter and cream',
+                    '450', '30', '15', '30'
+                );
+                addMenuSuggestion(
+                    'Gulab Jamun',
+                    'Soft milk balls soaked in sugar syrup',
+                    '150', '3', '25', '5'
+                );
+                addMessage('Would you like to see the full menu or make a reservation?', 'bot');
+                addQuickReplies([
+                    { text: 'Show full menu' },
+                    { text: 'Make a reservation' },
+                    { text: 'Contact info' }
+                ]);
+            }
+            else if (lowerMessage.includes('full menu') || lowerMessage.includes('all items') || lowerMessage.includes('complete menu')) {
+                addMessage('Here is our complete menu:', 'bot');
                 
-                if (lowerMessage.includes('reserve') || lowerMessage.includes('table') || lowerMessage.includes('booking')) {
-                    addMessage('To reserve a table, please provide the following details:', 'bot');
-                    reservationFormMini.classList.add('active');
-                } 
-                else if (lowerMessage.includes('menu') || lowerMessage.includes('food') || lowerMessage.includes('dish')) {
-                    addMessage('We offer a wide variety of authentic Indian dishes. Here are some recommendations:', 'bot');
-                    addMenuSuggestion(
-                        'Paneer Tikka (₹290)',
-                        'Marinated cottage cheese grilled to perfection in tandoor with spices',
-                        '320', '18', '12', '22'
-                    );
-                    addMenuSuggestion(
-                        'Butter Chicken (₹470)',
-                        'Tender chicken in rich tomato gravy with butter and cream',
-                        '450', '30', '15', '30'
-                    );
-                    addMenuSuggestion(
-                        'Gulab Jamun (₹60)',
-                        'Soft milk balls soaked in sugar syrup',
-                        '150', '3', '25', '5'
-                    );
-                    addMessage('Would you like to see more options or make a reservation?', 'bot');
-                    addQuickReplies([
-                        { text: 'More vegetarian options' },
-                        { text: 'More non-vegetarian options' },
-                        { text: 'Make a reservation' }
-                    ]);
-                }
-                else if (lowerMessage.includes('vegetarian') || lowerMessage.includes('veg')) {
-                    addMessage('Our vegetarian specialties include:', 'bot');
-                    addMenuSuggestion(
-                        'Dal Makhani (₹250)',
-                        'Creamy black lentils slow-cooked with butter and spices',
-                        '350', '14', '40', '12'
-                    );
-                    addMenuSuggestion(
-                        'Palak Paneer (₹280)',
-                        'Fresh spinach and cottage cheese in a creamy gravy',
-                        '300', '15', '20', '18'
-                    );
-                    addMenuSuggestion(
-                        'Vegetable Biryani (₹320)',
-                        'Fragrant basmati rice with mixed vegetables and spices',
-                        '400', '8', '70', '12'
-                    );
-                }
-                else if (lowerMessage.includes('non-vegetarian') || lowerMessage.includes('non veg')) {
-                    addMessage('Our non-vegetarian specialties include:', 'bot');
-                    addMenuSuggestion(
-                        'Chicken Tikka Masala (₹450)',
-                        'Grilled chicken chunks in spiced curry sauce',
-                        '480', '35', '20', '28'
-                    );
-                    addMenuSuggestion(
-                        'Lamb Rogan Josh (₹550)',
-                        'Tender lamb in a rich, aromatic gravy',
-                        '520', '40', '15', '35'
-                    );
-                    addMenuSuggestion(
-                        'Fish Curry (₹420)',
-                        'Fresh fish cooked in tangy coconut gravy',
-                        '380', '30', '10', '25'
-                    );
-                }
-                else if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email')) {
-                    addMessage('You can reach us through:', 'bot');
-                    addMessage('Phone: 9021078335 or 9665615666\nEmail: info@gpshighwayrestaurant.com\nAddress: GPS Highway Restaurant, Chichbhawan, Nagpur, Maharashtra 440005', 'bot');
-                }
-                else if (lowerMessage.includes('hours') || lowerMessage.includes('open') || lowerMessage.includes('time')) {
-                    addMessage('We are open every day from 10:00 AM to 10:00 PM.', 'bot');
-                }
-                else if (lowerMessage.includes('discount') || lowerMessage.includes('offer') || lowerMessage.includes('promo')) {
-                    addMessage('Subscribe to our newsletter for 10% off your first order! Just scroll down to the newsletter section at the bottom of the page.', 'bot');
-                }
-                else if (lowerMessage.includes('order') || lowerMessage.includes('delivery') || lowerMessage.includes('online')) {
-                    addMessage('You can order online through our partners:', 'bot');
-                    addMessage('• Zomato\n• Swiggy\n• Restaurant Guru', 'bot');
-                    addMessage('Or click the "Order Online" link in our menu to see all options.', 'bot');
-                }
-                else {
-                    addMessage('I can help you with reservations, menu suggestions, or general inquiries. What would you like to know?', 'bot');
-                    addQuickReplies([
-                        { text: 'Reserve a table' },
-                        { text: 'View menu' },
-                        { text: 'Contact info' }
-                    ]);
-                }
-            }, 1000);
+                // Veg Tandoor Starters
+                addMenuCategory('Veg Tandoor Starters', [
+                    'Paneer Lahori Tikka',
+                    'Paneer Tikka',
+                    'Paneer Malai Tikka',
+                    'Paneer Afgani Tikka',
+                    'Paneer Achari Tikka',
+                    'Paneer Mastana Tikka',
+                    'Paneer Garlic Tikka',
+                    'Paneer Sheekh Kabab',
+                    'Tandoori Mushroom',
+                    'Veg Sheekh Kabab',
+                    'Veg Rimzim Kabab',
+                    'Veg Kangada Kabab',
+                    'Paneer Lajawab',
+                    'Paneer Pahadi Kabab'
+                ]);
+                
+                // Main Course - Veg
+                addMenuCategory('Main Course - Veg', [
+                    'Malai Kofta',
+                    'Veg Kofta Curry',
+                    'Veg Egg Curry',
+                    'Methi Mutter Masala',
+                    'Paneer Ki Bahar',
+                    'Paneer Takatak',
+                    'Palak Paneer',
+                    'Paneer Butter Masala',
+                    'Paneer Tikka Masala',
+                    'Paneer Mysoori',
+                    'Paneer Masala',
+                    'Paneer Saoji',
+                    'Paneer Lacchedar',
+                    'Paneer Kadai',
+                    'Paneer Patiyala',
+                    'Paneer Kolhapuri'
+                ]);
+                
+                // Dal
+                addMenuCategory('Dal', [
+                    'Dal Fry',
+                    'Butter Dal Fry',
+                    'Dal Tadka',
+                    'Dal Kolhapuri',
+                    'Jeera Dal',
+                    'Dal Snaks'
+                ]);
+                
+                // Non-Veg Main Course
+                addMenuCategory('Non-Veg Main Course', [
+                    'Chicken Tikka Masala (Full)',
+                    'Chicken Rara Masala (Full)',
+                    'Chicken Masala (Full)',
+                    'Chicken Curry (Full)',
+                    'Butter Chicken (Full)',
+                    'Dhaba Chicken (Full)',
+                    'Mysoori Chicken (Full)',
+                    'Kadai Chicken (Full)',
+                    'Chicken Patiyala (Full)',
+                    'GPS Style Chicken Saoji (Full)',
+                    'Mutton Shahi Korma (Full)',
+                    'Mutton Curry (Full)',
+                    'Mutton Rogan Josh (Full)',
+                    'GPS Style Mutton Saoji (Full)',
+                    'Bhuna Chicken (Full)',
+                    'Bhuna Mutton (Full)',
+                    'Mutton Rara Masala (Full)'
+                ]);
+                
+                // Chinese Veg Starter
+                addMenuCategory('Chinese Veg Starter', [
+                    'Paneer 65',
+                    'Chilli Paneer',
+                    'Crunchy Paneer',
+                    'Corn Cheese Ball',
+                    'Veg Crispy',
+                    'Veg Manchurian Ball'
+                ]);
+                
+                // Beverages
+                addMenuCategory('Beverages', [
+                    'Mineral Water',
+                    'Soft Drink (250ml)',
+                    'Soda',
+                    'Fresh Lime Soda',
+                    'Virgin Mojito'
+                ]);
+                
+                // Soup
+                addMenuCategory('Soup', [
+                    'Veg Sweet Corn Soup',
+                    'Non-Veg Sweet Corn Soup',
+                    'Veg Manchow Soup',
+                    'Non-Veg Manchow Soup',
+                    'Veg Hot and Sour Soup',
+                    'Non-Veg Hot and Sour Soup',
+                    'Veg Clear Soup',
+                    'Non-Veg Clear Soup'
+                ]);
+                
+                // Salad and Papad
+                addMenuCategory('Salad and Papad', [
+                    'Roasted Papad',
+                    'Fry Papad',
+                    'Masala Papad',
+                    'Green Salad',
+                    'Curd Salad',
+                    'French Fries',
+                    'Paneer Pakoda',
+                    'Veg Raita'
+                ]);
+                
+                // Breads Basket
+                addMenuCategory('Breads Basket', [
+                    'Tandoori Roti',
+                    'Butter Tandoori Roti',
+                    'Plain Naan',
+                    'Butter Naan',
+                    'Garlic Naan',
+                    'Laccha Paratha',
+                    'Plain Kulcha',
+                    'Stuff Kulcha',
+                    'Masala Garlic Roti',
+                    'Cheese Roti',
+                    'Cheese Garlic Naan'
+                ]);
+                
+                // Rice
+                addMenuCategory('Rice', [
+                    'Steam Rice',
+                    'Jeera Rice',
+                    'Garlic Jeera Rice',
+                    'Veg Pulao',
+                    'Veg Biryani',
+                    'Chicken Biryani',
+                    'Mutton Biryani',
+                    'Egg Biryani',
+                    'PNR Biryani',
+                    'Butter Dal Khichdi'
+                ]);
+                
+                // Dessert/Ice Cream
+                addMenuCategory('Dessert/Ice Cream', [
+                    'Vanilla Ice Cream',
+                    'Butter Scotch Ice Cream',
+                    'Chocolate Sauce',
+                    'Gulab Jamun'
+                ]);
+                
+                addQuickReplies([
+                    { text: 'Make a reservation' },
+                    { text: 'Contact info' }
+                ]);
+            }
+            else if (lowerMessage.includes('vegetarian') || lowerMessage.includes('veg')) {
+                addMessage('Our vegetarian specialties include:', 'bot');
+                addMenuSuggestion(
+                    'Dal Makhani',
+                    'Creamy black lentils slow-cooked with butter and spices',
+                    '350', '14', '40', '12'
+                );
+                addMenuSuggestion(
+                    'Palak Paneer',
+                    'Fresh spinach and cottage cheese in a creamy gravy',
+                    '300', '15', '20', '18'
+                );
+                addMenuSuggestion(
+                    'Vegetable Biryani',
+                    'Fragrant basmati rice with mixed vegetables and spices',
+                    '400', '8', '70', '12'
+                );
+                addQuickReplies([
+                    { text: 'Make a reservation' },
+                    { text: 'Contact info' }
+                ]);
+            }
+            else if (lowerMessage.includes('non-vegetarian') || lowerMessage.includes('non veg') || lowerMessage.includes('nonveg')) {
+                addMessage('Our non-vegetarian specialties include:', 'bot');
+                addMenuSuggestion(
+                    'Chicken Tikka Masala',
+                    'Grilled chicken chunks in spiced curry sauce',
+                    '480', '35', '20', '28'
+                );
+                addMenuSuggestion(
+                    'Lamb Rogan Josh',
+                    'Tender lamb in a rich, aromatic gravy',
+                    '520', '40', '15', '35'
+                );
+                addMenuSuggestion(
+                    'Fish Curry',
+                    'Fresh fish cooked in tangy coconut gravy',
+                    '380', '30', '10', '25'
+                );
+                addQuickReplies([
+                    { text: 'Make a reservation' },
+                    { text: 'Contact info' }
+                ]);
+            }
+            else if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email') || lowerMessage.includes('address')) {
+                addMessage('You can reach us through:', 'bot');
+                addMessage('📞 Phone: <a href="tel:9021078335">9021078335</a> or <a href="tel:9665615666">9665615666</a>\n✉️ Email: <a href="mailto:info@gpshighwayrestaurant.com">info@gpshighwayrestaurant.com</a>\n📍 Address: GPS Highway Restaurant, Chichbhawan, Nagpur, Maharashtra 440005', 'bot');
+                addQuickReplies([
+                    { text: 'Make a reservation' },
+                    { text: 'View menu' },
+                    { text: 'Opening hours' }
+                ]);
+            }
+            else if (lowerMessage.includes('hours') || lowerMessage.includes('open') || lowerMessage.includes('time')) {
+                addMessage('We are open every day from 10:00 AM to 10:00 PM.', 'bot');
+                addQuickReplies([
+                    { text: 'Make a reservation' },
+                    { text: 'View menu' }
+                ]);
+            }
+            else if (lowerMessage.includes('discount') || lowerMessage.includes('offer') || lowerMessage.includes('promo') || lowerMessage.includes('coupon')) {
+                addMessage('Here\'s your 5% discount coupon for your next visit:', 'bot');
+                addMessage('<div class="coupon-card">' +
+                    '<div class="coupon-header">5% OFF</div>' +
+                    '<div class="coupon-code">GPS5OFF</div>' +
+                    '<div class="coupon-details">Present this coupon on your next visit to receive 5% discount</div>' +
+                    '<div class="coupon-terms">Valid for dine-in only. Not valid with other offers.</div>' +
+                    '</div>', 'bot');
+                addQuickReplies([
+                    { text: 'Make a reservation' },
+                    { text: 'View menu' }
+                ]);
+            }
+            else if (lowerMessage.includes('parking') || lowerMessage.includes('car') || lowerMessage.includes('vehicle')) {
+                addMessage('We offer convenient wallet parking for all our guests. Your vehicle will be safe and secure while you enjoy your meal.', 'bot');
+                addQuickReplies([
+                    { text: 'Make a reservation' },
+                    { text: 'View menu' }
+                ]);
+            }
+            else if (lowerMessage.includes('order') || lowerMessage.includes('delivery') || lowerMessage.includes('online')) {
+                addMessage('You can order online through our partners:', 'bot');
+                addMessage('• <a href="https://www.zomato.com/nagpur/gps-wardha-road" target="_blank">Zomato</a>\n• <a href="https://www.swiggy.com" target="_blank">Swiggy</a>\n• <a href="https://restaurant-guru.in/GPS-Highway-Restaurant-Nagpur" target="_blank">Restaurant Guru</a>', 'bot');
+                addMessage('Or click the "Order Online" link in our menu to see all options.', 'bot');
+                addQuickReplies([
+                    { text: 'Make a reservation' },
+                    { text: 'View menu' }
+                ]);
+            }
+            else if (lowerMessage.includes('event') || lowerMessage.includes('party') || lowerMessage.includes('private') || lowerMessage.includes('catering')) {
+                addMessage('We offer event booking and private dining services:', 'bot');
+                addMessage('• Birthday Parties\n• Anniversaries\n• Corporate Events\n• Catering Services', 'bot');
+                addMessage('Contact us for more details and customized menus for your event.', 'bot');
+                addQuickReplies([
+                    { text: 'Contact info' },
+                    { text: 'View menu' }
+                ]);
+            }
+            else if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+                addMessage('Hello! Welcome to GPS Highway Restaurant. How can I assist you today?', 'bot');
+                addQuickReplies([
+                    { text: 'Reserve a table' },
+                    { text: 'View menu' },
+                    { text: 'Contact info' }
+                ]);
+            }
+            else {
+                addMessage("I'm sorry, I didn't understand that. I can help you with reservations, menu suggestions, or general inquiries. What would you like to know?", 'bot');
+                addQuickReplies([
+                    { text: 'Reserve a table' },
+                    { text: 'View menu' },
+                    { text: 'Contact info' }
+                ]);
+            }
         }
 
         // Send message on button click
@@ -2097,9 +2568,24 @@
             if (e.target.classList.contains('quick-reply')) {
                 const message = e.target.dataset.message;
                 addMessage(message, 'user');
-                respondToMessage(message);
+                
+                // Show typing indicator
+                const typingDiv = showTypingIndicator();
+                
+                setTimeout(() => {
+                    hideTypingIndicator(typingDiv);
+                    respondToMessage(message);
+                }, 1000 + Math.random() * 1000);
             }
         });
+
+        // Initialize chatbot with welcome message if first visit
+        if (!sessionStorage.getItem('chatbotInitialized')) {
+            setTimeout(() => {
+                chatbotWindow.classList.add('active');
+                sessionStorage.setItem('chatbotInitialized', 'true');
+            }, 10000); // Show after 10 seconds
+        }
     </script>
 </body>
 </html>
