@@ -158,8 +158,6 @@
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
         }
         
         .menu-card:hover {
@@ -168,7 +166,8 @@
         
         .menu-img-container {
             width: 100%;
-            padding-top: 125%; /* 4:5 aspect ratio (4/5 = 0.8 => 80% width:100% height) */
+            height: 0;
+            padding-top: 125%; /* 4:5 aspect ratio */
             position: relative;
             overflow: hidden;
         }
@@ -189,9 +188,6 @@
         
         .menu-content {
             padding: 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
         }
         
         .menu-card h4 {
@@ -204,7 +200,6 @@
             font-size: 18px;
             color: var(--secondary-color);
             font-weight: 600;
-            margin-top: auto;
         }
         
         .back-btn {
@@ -303,7 +298,7 @@
                 <div class="menu-items-grid">
                     <div class="menu-card">
                         <div class="menu-img-container">
-                            <img src="https://source.unsplash.com/random/300x375/?paneer-lahori-tikka" alt="Paneer Lahori Tikka" class="menu-img">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka" alt="Paneer Lahori Tikka" class="menu-img">
                         </div>
                         <div class="menu-content">
                             <h4>Paneer Lahori Tikka</h4>
@@ -321,7 +316,7 @@
                     </div>
                     <div class="menu-card">
                         <div class="menu-img-container">
-                            <img src="https://source.unsplash.com/random/300x375/?paneer-malai-tikka" alt="Paneer Malai Tikka" class="menu-img">
+                            <img src="https://source.unsplash.com/random/300x375/?malai-paneer-tikka" alt="Paneer Malai Tikka" class="menu-img">
                         </div>
                         <div class="menu-content">
                             <h4>Paneer Malai Tikka</h4>
@@ -330,14 +325,103 @@
                     </div>
                     <div class="menu-card">
                         <div class="menu-img-container">
-                            <img src="https://source.unsplash.com/random/300x375/?paneer-afgani-tikka" alt="Paneer Afgani Tikka" class="menu-img">
+                            <img src="https://source.unsplash.com/random/300x375/?afghani-paneer" alt="Paneer Afgani Tikka" class="menu-img">
                         </div>
                         <div class="menu-content">
                             <h4>Paneer Afgani Tikka</h4>
                             <div class="price">₹320</div>
                         </div>
                     </div>
-                    <!-- More menu items would follow the same pattern -->
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?achari-paneer" alt="Paneer Achari Tikka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Achari Tikka</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka" alt="Paneer Mastana Tikka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Mastana Tikka</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?garlic-paneer" alt="Paneer Garlic Tikka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Garlic Tikka</h4>
+                            <div class="price">₹300</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-sheekh-kebab" alt="Paneer Sheekh Kabab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Sheekh Kabab</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?tandoori-mushroom" alt="Tandoori Mushroom" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Tandoori Mushroom</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-sheekh-kebab" alt="Veg Sheekh Kabab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Sheekh Kabab</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-kebab" alt="Veg Rimzim Kabab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Rimzim Kabab</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-kebab" alt="Veg Kangada Kabab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Kangada Kabab</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka" alt="Paneer Lajawab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Lajawab</h4>
+                            <div class="price">₹420</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka" alt="Paneer Pahadi Kabab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Pahadi Kabab</h4>
+                            <div class="price">₹400</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -356,7 +440,7 @@
                     </div>
                     <div class="menu-card">
                         <div class="menu-img-container">
-                            <img src="https://source.unsplash.com/random/300x375/?veg-kofta-curry" alt="Veg Kofta Curry" class="menu-img">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-kofta" alt="Veg Kofta Curry" class="menu-img">
                         </div>
                         <div class="menu-content">
                             <h4>Veg Kofta Curry</h4>
@@ -365,7 +449,7 @@
                     </div>
                     <div class="menu-card">
                         <div class="menu-img-container">
-                            <img src="https://source.unsplash.com/random/300x375/?veg-egg-curry" alt="Veg Egg Curry" class="menu-img">
+                            <img src="https://source.unsplash.com/random/300x375/?egg-curry" alt="Veg Egg Curry" class="menu-img">
                         </div>
                         <div class="menu-content">
                             <h4>Veg Egg Curry</h4>
@@ -374,19 +458,2210 @@
                     </div>
                     <div class="menu-card">
                         <div class="menu-img-container">
-                            <img src="https://source.unsplash.com/random/300x375/?methi-mutter-masala" alt="Methi Mutter Masala" class="menu-img">
+                            <img src="https://source.unsplash.com/random/300x375/?methi-mutter" alt="Methi Mutter Masala" class="menu-img">
                         </div>
                         <div class="menu-content">
                             <h4>Methi Mutter Masala</h4>
                             <div class="price">₹280</div>
                         </div>
                     </div>
-                    <!-- More menu items would follow the same pattern -->
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-bahar" alt="Paneer Ki Bahar" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Ki Bahar</h4>
+                            <div class="price">₹330</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-takatak" alt="Paneer Takatak" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Takatak</h4>
+                            <div class="price">₹330</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?palak-paneer" alt="Palak Paneer" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Palak Paneer</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-butter-masala" alt="Paneer Butter Masala" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Butter Masala</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka-masala" alt="Paneer Tikka Masala" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Tikka Masala</h4>
+                            <div class="price">₹330</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mysore-paneer" alt="Paneer Mysoori" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Mysoori</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-masala" alt="Paneer Masala" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Masala</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?saoji-paneer" alt="Paneer Saoji" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Saoji</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-lacchedar" alt="Paneer Lacchedar" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Lacchedar</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?kadai-paneer" alt="Paneer Kadai" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Kadai</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?patiyala-paneer" alt="Paneer Patiyala" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Patiyala</h4>
+                            <div class="price">₹330</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?kolhapuri-paneer" alt="Paneer Kolhapuri" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Kolhapuri</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Continue with other categories following the same pattern -->
+            <!-- Dal -->
+            <div class="menu-category">
+                <h3>Dal</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?dal-fry" alt="Dal Fry" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Dal Fry</h4>
+                            <div class="price">₹190</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?butter-dal" alt="Butter Dal Fry" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Dal Fry</h4>
+                            <div class="price">₹200</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?dal-tadka" alt="Dal Tadka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Dal Tadka</h4>
+                            <div class="price">₹190</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?kolhapuri-dal" alt="Dal Kolhapuri" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Dal Kolhapuri</h4>
+                            <div class="price">₹200</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?jeera-dal" alt="Jeera Dal" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Jeera Dal</h4>
+                            <div class="price">₹170</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?dal-snacks" alt="Dal Snaks" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Dal Snaks</h4>
+                            <div class="price">₹220</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Non-Veg Main Course -->
+            <div class="menu-category">
+                <h3>Non-Veg Main Course</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chicken-tikka-masala" alt="Chicken Tikka Masala (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Tikka Masala (Full)</h4>
+                            <div class="price">₹900</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chicken-rara" alt="Chicken Rara Masala (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Rara Masala (Full)</h4>
+                            <div class="price">₹900</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chicken-masala" alt="Chicken Masala (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Masala (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chicken-curry" alt="Chicken Curry (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Curry (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?butter-chicken" alt="Butter Chicken (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Chicken (Full)</h4>
+                            <div class="price">₹890</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?dhaba-chicken" alt="Dhaba Chicken (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Dhaba Chicken (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mysore-chicken" alt="Mysoori Chicken (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mysoori Chicken (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?kadai-chicken" alt="Kadai Chicken (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Kadai Chicken (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?patiyala-chicken" alt="Chicken Patiyala (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Patiyala (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?saoji-chicken" alt="GPS Style Chicken Saoji (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>GPS Style Chicken Saoji (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mutton-korma" alt="Mutton Shahi Korma (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mutton Shahi Korma (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mutton-curry" alt="Mutton Curry (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mutton Curry (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?rogan-josh" alt="Mutton Rogan Josh (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mutton Rogan Josh (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?saoji-mutton" alt="GPS Style Mutton Saoji (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>GPS Style Mutton Saoji (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?bhuna-chicken" alt="Bhuna Chicken (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Bhuna Chicken (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?bhuna-mutton" alt="Bhuna Mutton (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Bhuna Mutton (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mutton-rara" alt="Mutton Rara Masala (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mutton Rara Masala (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chinese Veg Starter -->
+            <div class="menu-category">
+                <h3>Chinese Veg Starter</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-65" alt="Paneer 65" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer 65</h4>
+                            <div class="price">₹340</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chilli-paneer" alt="Chilli Paneer" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chilli Paneer</h4>
+                            <div class="price">₹340</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?crunchy-paneer" alt="Crunchy Paneer" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Crunchy Paneer</h4>
+                            <div class="price">₹350</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?corn-cheese-ball" alt="Corn Cheese Ball" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Corn Cheese Ball</h4>
+                            <div class="price">₹370</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-crispy" alt="Veg Crispy" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Crispy</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?manchurian-ball" alt="Veg Manchurian Ball" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Manchurian Ball</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="menu-category">
+                <h3>Beverages</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mineral-water" alt="Mineral Water" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mineral Water</h4>
+                            <div class="price">₹30</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?soft-drink" alt="Soft Drink (250ml)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Soft Drink (250ml)</h4>
+                            <div class="price">₹40</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?soda" alt="Soda" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Soda</h4>
+                            <div class="price">₹40</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?lime-soda" alt="Fresh Lime Soda" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Fresh Lime Soda</h4>
+                            <div class="price">₹80</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?virgin-mojito" alt="Virgin Mojito" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Virgin Mojito</h4>
+                            <div class="price">₹90</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soup -->
+            <div class="menu-category">
+                <h3>Soup</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?sweet-corn-soup" alt="Veg Sweet Corn Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Sweet Corn Soup</h4>
+                            <div class="price">₹140</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?non-veg-soup" alt="Non-Veg Sweet Corn Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Non-Veg Sweet Corn Soup</h4>
+                            <div class="price">₹170</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?manchow-soup" alt="Veg Manchow Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Manchow Soup</h4>
+                            <div class="price">₹140</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?non-veg-manchow" alt="Non-Veg Manchow Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Non-Veg Manchow Soup</h4>
+                            <div class="price">₹170</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?hot-sour-soup" alt="Veg Hot and Sour Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Hot and Sour Soup</h4>
+                            <div class="price">₹140</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?non-veg-hot-sour" alt="Non-Veg Hot and Sour Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Non-Veg Hot and Sour Soup</h4>
+                            <div class="price">₹170</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?clear-soup" alt="Veg Clear Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Clear Soup</h4>
+                            <div class="price">₹140</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?non-veg-clear-soup" alt="Non-Veg Clear Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Non-Veg Clear Soup</h4>
+                            <div class="price">₹170</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salad and Papad -->
+            <div class="menu-category">
+                <h3>Salad and Papad</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?roasted-papad" alt="Roasted Papad" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Roasted Papad</h4>
+                            <div class="price">₹25</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?fried-papad" alt="Fry Papad" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Fry Papad</h4>
+                            <div class="price">₹30</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?masala-papad" alt="Masala Papad" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Masala Papad</h4>
+                            <div class="price">₹50</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?green-salad" alt="Green Salad" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Green Salad</h4>
+                            <div class="price">₹90</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?curd-salad" alt="Curd Salad" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Curd Salad</h4>
+                            <div class="price">₹150</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?french-fries" alt="French Fries" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>French Fries</h4>
+                            <div class="price">₹230</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-pakoda" alt="Paneer Pakoda" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Pakoda</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?raita" alt="Veg Raita" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Raita</h4>
+                            <div class="price">₹130</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breads Basket -->
+            <div class="menu-category">
+                <h3>Breads Basket</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?tandoori-roti" alt="Tandoori Roti" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Tandoori Roti</h4>
+                            <div class="price">₹20</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?butter-roti" alt="Butter Tandoori Roti" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Tandoori Roti</h4>
+                            <div class="price">₹25</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?naan" alt="Plain Naan" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Plain Naan</h4>
+                            <div class="price">₹50</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?butter-naan" alt="Butter Naan" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Naan</h4>
+                            <div class="price">₹60</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?garlic-naan" alt="Garlic Naan" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Garlic Naan</h4>
+                            <div class="price">₹70</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?lachha-paratha" alt="Laccha Paratha" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Laccha Paratha</h4>
+                            <div class="price">₹50</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?kulcha" alt="Plain Kulcha" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Plain Kulcha</h4>
+                            <div class="price">₹60</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?stuffed-kulcha" alt="Stuff Kulcha" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Stuff Kulcha</h4>
+                            <div class="price">₹90</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?masala-roti" alt="Masala Garlic Roti" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Masala Garlic Roti</h4>
+                            <div class="price">₹60</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?cheese-roti" alt="Cheese Roti" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Cheese Roti</h4>
+                            <div class="price">₹70</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?cheese-garlic-naan" alt="Cheese Garlic Naan" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Cheese Garlic Naan</h4>
+                            <div class="price">₹80</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rice -->
+            <div class="menu-category">
+                <h3>Rice</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?steamed-rice" alt="Steam Rice" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Steam Rice</h4>
+                            <div class="price">₹140</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?jeera-rice" alt="Jeera Rice" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Jeera Rice</h4>
+                            <div class="price">₹150</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?garlic-rice" alt="Garlic Jeera Rice" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Garlic Jeera Rice</h4>
+                            <div class="price">₹180</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-pulao" alt="Veg Pulao" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Pulao</h4>
+                            <div class="price">₹250</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-biryani" alt="Veg Biryani" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Biryani</h4>
+                            <div class="price">₹260</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chicken-biryani" alt="Chicken Biryani" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Biryani</h4>
+                            <div class="price">₹300</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mutton-biryani" alt="Mutton Biryani" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mutton Biryani</h4>
+                            <div class="price">₹350</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?egg-biryani" alt="Egg Biryani" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Egg Biryani</h4>
+                            <div class="price">₹240</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?pnr-biryani" alt="PNR Biryani" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>PNR Biryani</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?dal-khichdi" alt="Butter Dal Khichdi" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Dal Khichdi</h4>
+                            <div class="price">₹260</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dessert/Ice Cream -->
+            <div class="menu-category">
+                <h3>Dessert/Ice Cream</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?vanilla-ice-cream" alt="Vanilla Ice Cream" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Vanilla Ice Cream</h4>
+                            <div class="price">₹90</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?butterscotch-ice-cream" alt="Butter Scotch Ice Cream" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Scotch Ice Cream</h4>
+                            <div class="price">₹110</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chocolate-sauce" alt="Chocolate Sauce" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chocolate Sauce</h4>
+                            <div class="price">₹90</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?gulab-jamun" alt="Gulab Jamun" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Gulab Jamun</h4>
+                            <div class="price">₹60</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Menu | GPS Highway Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #c19a6b;
+            --accent-color: #e8e8e8;
+            --text-light: #f8f8f8;
+            --text-dark: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(26, 26, 26, 0.95);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Menu Section */
+        .full-menu {
+            padding: 150px 0 50px;
+            background-color: #f5f5f5;
+        }
+        
+        .menu-category {
+            margin-bottom: 50px;
+        }
+        
+        .menu-category h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .menu-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .menu-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-img-container {
+            width: 100%;
+            height: 0;
+            padding-top: 125%; /* 4:5 aspect ratio */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-card:hover .menu-img {
+            transform: scale(1.05);
+        }
+        
+        .menu-content {
+            padding: 20px;
+        }
+        
+        .menu-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .menu-card .price {
+            font-size: 18px;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        
+        .back-btn i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+            }
             
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .menu-items-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-img {
+                height: 40px;
+                margin-right: 10px;
+            }
+            
+            .logo {
+                font-size: 22px;
+            }
+            
+            .menu-items-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="https://media-hosting.imagekit.io/55598457fb264896/403923188_655152343462104_4618773726312330113_n.jpg?Expires=1841954441&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dxts~jCXOor4vu3SLzcluPfBN9SJBbSiwL4qVWGIQLTP2fBQ3dl0dsAmPGsdx71h-RN0FybaTNwvBRkd4n3JFRR3XMRJkAXW0tERkLkQfuLfLm2B-TD7wVTJnSdiH4T6OvTfokGhcAzaKFPdiWMHug9L10jE4iHwgr930RzFIYzsFiQ9z9jNxCYxdMBx8Xix9xjG7uKwyACCBvQgxfIAhiGXXvttc3CRHrbFt9Jk-J9or4CEtxnKVVYQ1yd19aOs4WbN0T7e76N-~V7jjQ7NtXTKwQnl92peercTUr7tUhvIpixysgKrgT-kVzbRBTNrZsid-bNPcG2vLBqGeE8mhw__" alt="GPS Highway Restaurant Logo" class="logo-img">
+                <a href="index.html" class="logo">GPS Highway Restaurant</a>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#reservation">Reservations</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Full Menu Section -->
+    <section class="full-menu">
+        <div class="container">
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            
+            <!-- Veg Tandoor Starters -->
+            <div class="menu-category">
+                <h3>Veg Tandoor Starters</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka" alt="Paneer Lahori Tikka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Lahori Tikka</h4>
+                            <div class="price">₹390</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka" alt="Paneer Tikka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Tikka</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?malai-paneer-tikka" alt="Paneer Malai Tikka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Malai Tikka</h4>
+                            <div class="price">₹390</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?afghani-paneer" alt="Paneer Afgani Tikka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Afgani Tikka</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?achari-paneer" alt="Paneer Achari Tikka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Achari Tikka</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka" alt="Paneer Mastana Tikka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Mastana Tikka</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?garlic-paneer" alt="Paneer Garlic Tikka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Garlic Tikka</h4>
+                            <div class="price">₹300</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-sheekh-kebab" alt="Paneer Sheekh Kabab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Sheekh Kabab</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?tandoori-mushroom" alt="Tandoori Mushroom" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Tandoori Mushroom</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-sheekh-kebab" alt="Veg Sheekh Kabab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Sheekh Kabab</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-kebab" alt="Veg Rimzim Kabab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Rimzim Kabab</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-kebab" alt="Veg Kangada Kabab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Kangada Kabab</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka" alt="Paneer Lajawab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Lajawab</h4>
+                            <div class="price">₹420</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka" alt="Paneer Pahadi Kabab" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Pahadi Kabab</h4>
+                            <div class="price">₹400</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Course - Veg -->
+            <div class="menu-category">
+                <h3>Main Course - Veg</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?malai-kofta" alt="Malai Kofta" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Malai Kofta</h4>
+                            <div class="price">₹300</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-kofta" alt="Veg Kofta Curry" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Kofta Curry</h4>
+                            <div class="price">₹280</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?egg-curry" alt="Veg Egg Curry" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Egg Curry</h4>
+                            <div class="price">₹280</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?methi-mutter" alt="Methi Mutter Masala" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Methi Mutter Masala</h4>
+                            <div class="price">₹280</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-bahar" alt="Paneer Ki Bahar" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Ki Bahar</h4>
+                            <div class="price">₹330</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-takatak" alt="Paneer Takatak" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Takatak</h4>
+                            <div class="price">₹330</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?palak-paneer" alt="Palak Paneer" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Palak Paneer</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-butter-masala" alt="Paneer Butter Masala" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Butter Masala</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-tikka-masala" alt="Paneer Tikka Masala" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Tikka Masala</h4>
+                            <div class="price">₹330</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mysore-paneer" alt="Paneer Mysoori" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Mysoori</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-masala" alt="Paneer Masala" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Masala</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?saoji-paneer" alt="Paneer Saoji" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Saoji</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-lacchedar" alt="Paneer Lacchedar" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Lacchedar</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?kadai-paneer" alt="Paneer Kadai" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Kadai</h4>
+                            <div class="price">₹320</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?patiyala-paneer" alt="Paneer Patiyala" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Patiyala</h4>
+                            <div class="price">₹330</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?kolhapuri-paneer" alt="Paneer Kolhapuri" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Kolhapuri</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dal -->
+            <div class="menu-category">
+                <h3>Dal</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?dal-fry" alt="Dal Fry" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Dal Fry</h4>
+                            <div class="price">₹190</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?butter-dal" alt="Butter Dal Fry" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Dal Fry</h4>
+                            <div class="price">₹200</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?dal-tadka" alt="Dal Tadka" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Dal Tadka</h4>
+                            <div class="price">₹190</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?kolhapuri-dal" alt="Dal Kolhapuri" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Dal Kolhapuri</h4>
+                            <div class="price">₹200</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?jeera-dal" alt="Jeera Dal" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Jeera Dal</h4>
+                            <div class="price">₹170</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?dal-snacks" alt="Dal Snaks" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Dal Snaks</h4>
+                            <div class="price">₹220</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Non-Veg Main Course -->
+            <div class="menu-category">
+                <h3>Non-Veg Main Course</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chicken-tikka-masala" alt="Chicken Tikka Masala (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Tikka Masala (Full)</h4>
+                            <div class="price">₹900</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chicken-rara" alt="Chicken Rara Masala (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Rara Masala (Full)</h4>
+                            <div class="price">₹900</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chicken-masala" alt="Chicken Masala (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Masala (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chicken-curry" alt="Chicken Curry (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Curry (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?butter-chicken" alt="Butter Chicken (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Chicken (Full)</h4>
+                            <div class="price">₹890</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?dhaba-chicken" alt="Dhaba Chicken (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Dhaba Chicken (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mysore-chicken" alt="Mysoori Chicken (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mysoori Chicken (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?kadai-chicken" alt="Kadai Chicken (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Kadai Chicken (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?patiyala-chicken" alt="Chicken Patiyala (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Patiyala (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?saoji-chicken" alt="GPS Style Chicken Saoji (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>GPS Style Chicken Saoji (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mutton-korma" alt="Mutton Shahi Korma (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mutton Shahi Korma (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mutton-curry" alt="Mutton Curry (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mutton Curry (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?rogan-josh" alt="Mutton Rogan Josh (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mutton Rogan Josh (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?saoji-mutton" alt="GPS Style Mutton Saoji (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>GPS Style Mutton Saoji (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?bhuna-chicken" alt="Bhuna Chicken (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Bhuna Chicken (Full)</h4>
+                            <div class="price">₹850</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?bhuna-mutton" alt="Bhuna Mutton (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Bhuna Mutton (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mutton-rara" alt="Mutton Rara Masala (Full)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mutton Rara Masala (Full)</h4>
+                            <div class="price">₹990</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chinese Veg Starter -->
+            <div class="menu-category">
+                <h3>Chinese Veg Starter</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-65" alt="Paneer 65" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer 65</h4>
+                            <div class="price">₹340</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chilli-paneer" alt="Chilli Paneer" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chilli Paneer</h4>
+                            <div class="price">₹340</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?crunchy-paneer" alt="Crunchy Paneer" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Crunchy Paneer</h4>
+                            <div class="price">₹350</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?corn-cheese-ball" alt="Corn Cheese Ball" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Corn Cheese Ball</h4>
+                            <div class="price">₹370</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-crispy" alt="Veg Crispy" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Crispy</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?manchurian-ball" alt="Veg Manchurian Ball" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Manchurian Ball</h4>
+                            <div class="price">₹310</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="menu-category">
+                <h3>Beverages</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mineral-water" alt="Mineral Water" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mineral Water</h4>
+                            <div class="price">₹30</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?soft-drink" alt="Soft Drink (250ml)" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Soft Drink (250ml)</h4>
+                            <div class="price">₹40</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?soda" alt="Soda" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Soda</h4>
+                            <div class="price">₹40</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?lime-soda" alt="Fresh Lime Soda" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Fresh Lime Soda</h4>
+                            <div class="price">₹80</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?virgin-mojito" alt="Virgin Mojito" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Virgin Mojito</h4>
+                            <div class="price">₹90</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soup -->
+            <div class="menu-category">
+                <h3>Soup</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?sweet-corn-soup" alt="Veg Sweet Corn Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Sweet Corn Soup</h4>
+                            <div class="price">₹140</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?non-veg-soup" alt="Non-Veg Sweet Corn Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Non-Veg Sweet Corn Soup</h4>
+                            <div class="price">₹170</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?manchow-soup" alt="Veg Manchow Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Manchow Soup</h4>
+                            <div class="price">₹140</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?non-veg-manchow" alt="Non-Veg Manchow Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Non-Veg Manchow Soup</h4>
+                            <div class="price">₹170</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?hot-sour-soup" alt="Veg Hot and Sour Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Hot and Sour Soup</h4>
+                            <div class="price">₹140</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?non-veg-hot-sour" alt="Non-Veg Hot and Sour Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Non-Veg Hot and Sour Soup</h4>
+                            <div class="price">₹170</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?clear-soup" alt="Veg Clear Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Clear Soup</h4>
+                            <div class="price">₹140</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?non-veg-clear-soup" alt="Non-Veg Clear Soup" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Non-Veg Clear Soup</h4>
+                            <div class="price">₹170</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salad and Papad -->
+            <div class="menu-category">
+                <h3>Salad and Papad</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?roasted-papad" alt="Roasted Papad" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Roasted Papad</h4>
+                            <div class="price">₹25</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?fried-papad" alt="Fry Papad" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Fry Papad</h4>
+                            <div class="price">₹30</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?masala-papad" alt="Masala Papad" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Masala Papad</h4>
+                            <div class="price">₹50</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?green-salad" alt="Green Salad" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Green Salad</h4>
+                            <div class="price">₹90</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?curd-salad" alt="Curd Salad" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Curd Salad</h4>
+                            <div class="price">₹150</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?french-fries" alt="French Fries" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>French Fries</h4>
+                            <div class="price">₹230</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?paneer-pakoda" alt="Paneer Pakoda" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Paneer Pakoda</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?raita" alt="Veg Raita" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Raita</h4>
+                            <div class="price">₹130</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breads Basket -->
+            <div class="menu-category">
+                <h3>Breads Basket</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?tandoori-roti" alt="Tandoori Roti" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Tandoori Roti</h4>
+                            <div class="price">₹20</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?butter-roti" alt="Butter Tandoori Roti" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Tandoori Roti</h4>
+                            <div class="price">₹25</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?naan" alt="Plain Naan" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Plain Naan</h4>
+                            <div class="price">₹50</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?butter-naan" alt="Butter Naan" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Naan</h4>
+                            <div class="price">₹60</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?garlic-naan" alt="Garlic Naan" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Garlic Naan</h4>
+                            <div class="price">₹70</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?lachha-paratha" alt="Laccha Paratha" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Laccha Paratha</h4>
+                            <div class="price">₹50</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?kulcha" alt="Plain Kulcha" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Plain Kulcha</h4>
+                            <div class="price">₹60</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?stuffed-kulcha" alt="Stuff Kulcha" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Stuff Kulcha</h4>
+                            <div class="price">₹90</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?masala-roti" alt="Masala Garlic Roti" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Masala Garlic Roti</h4>
+                            <div class="price">₹60</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?cheese-roti" alt="Cheese Roti" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Cheese Roti</h4>
+                            <div class="price">₹70</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?cheese-garlic-naan" alt="Cheese Garlic Naan" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Cheese Garlic Naan</h4>
+                            <div class="price">₹80</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rice -->
+            <div class="menu-category">
+                <h3>Rice</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?steamed-rice" alt="Steam Rice" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Steam Rice</h4>
+                            <div class="price">₹140</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?jeera-rice" alt="Jeera Rice" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Jeera Rice</h4>
+                            <div class="price">₹150</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?garlic-rice" alt="Garlic Jeera Rice" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Garlic Jeera Rice</h4>
+                            <div class="price">₹180</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-pulao" alt="Veg Pulao" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Pulao</h4>
+                            <div class="price">₹250</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?veg-biryani" alt="Veg Biryani" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Veg Biryani</h4>
+                            <div class="price">₹260</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chicken-biryani" alt="Chicken Biryani" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chicken Biryani</h4>
+                            <div class="price">₹300</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?mutton-biryani" alt="Mutton Biryani" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mutton Biryani</h4>
+                            <div class="price">₹350</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?egg-biryani" alt="Egg Biryani" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Egg Biryani</h4>
+                            <div class="price">₹240</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?pnr-biryani" alt="PNR Biryani" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>PNR Biryani</h4>
+                            <div class="price">₹290</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?dal-khichdi" alt="Butter Dal Khichdi" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Dal Khichdi</h4>
+                            <div class="price">₹260</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dessert/Ice Cream -->
+            <div class="menu-category">
+                <h3>Dessert/Ice Cream</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?vanilla-ice-cream" alt="Vanilla Ice Cream" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Vanilla Ice Cream</h4>
+                            <div class="price">₹90</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?butterscotch-ice-cream" alt="Butter Scotch Ice Cream" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Butter Scotch Ice Cream</h4>
+                            <div class="price">₹110</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?chocolate-sauce" alt="Chocolate Sauce" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Chocolate Sauce</h4>
+                            <div class="price">₹90</div>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-img-container">
+                            <img src="https://source.unsplash.com/random/300x375/?gulab-jamun" alt="Gulab Jamun" class="menu-img">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Gulab Jamun</h4>
+                            <div class="price">₹60</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
