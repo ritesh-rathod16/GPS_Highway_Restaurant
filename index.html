@@ -33,6 +33,7 @@
             background-color: #f9f9f9;
             overflow-x: hidden;
             line-height: 1.7;
+            cursor: url('https://i.pinimg.com/736x/bc/8c/19/bc8c19eb0da68587d909cf5b6e3aa04a.jpg'), auto;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -43,40 +44,7 @@
 
         /* Section spacing adjustments */
         section {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        /* Animated Background Elements */
-        .bg-element {
-            position: absolute;
-            opacity: 0.05;
-            z-index: -1;
-        }
-
-        .bg-spice-1 {
-            top: 10%;
-            left: 5%;
-            font-size: 8rem;
-            color: var(--secondary-color);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .bg-spice-2 {
-            bottom: 15%;
-            right: 8%;
-            font-size: 10rem;
-            color: var(--secondary-color);
-            animation: float 8s ease-in-out infinite 2s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
+            padding: 60px 0;
         }
 
         /* Loader Animation */
@@ -99,7 +67,7 @@
             width: 150px;
             height: 150px;
             margin-bottom: 15px;
-            animation: pulse 1.5s ease-in-out infinite;
+            animation: pulse 1s ease-in-out;
         }
         
         .loader-text {
@@ -107,15 +75,15 @@
             font-size: 2.5rem;
             font-weight: 400;
             margin-top: 15px;
-            animation: fadeIn 2s ease-in-out;
+            animation: fadeIn 0.5s ease-in-out;
             font-family: 'Bebas Neue', sans-serif;
             letter-spacing: 3px;
         }
         
         @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
+            0% { transform: scale(0.95); opacity: 0; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0; }
         }
         
         @keyframes fadeIn {
@@ -143,7 +111,6 @@
             width: 100%;
             z-index: 1000;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
         header.scrolled {
@@ -169,11 +136,6 @@
             margin-right: 12px;
             border-radius: 50%;
             object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container:hover .logo-img {
-            transform: rotate(15deg);
         }
         
         .logo {
@@ -183,22 +145,6 @@
             text-decoration: none;
             font-family: 'Bebas Neue', sans-serif;
             letter-spacing: 2px;
-            position: relative;
-        }
-
-        .logo::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease;
-        }
-
-        .logo:hover::after {
-            width: 100%;
         }
         
         nav ul {
@@ -208,7 +154,6 @@
         
         nav ul li {
             margin-left: 25px;
-            position: relative;
         }
         
         nav ul li a {
@@ -247,11 +192,6 @@
             color: var(--text-light);
             font-size: 22px;
             cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .mobile-menu-btn:hover {
-            transform: scale(1.1);
         }
         
         /* Hero Section - Enhanced with new design */
@@ -261,7 +201,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
         }
 
         .hero-content {
@@ -279,7 +219,7 @@
             line-height: 1;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             color: var(--text-light);
-            animation: fadeIn 1s ease-in-out, slideUp 1s ease-in-out;
+            animation: fadeIn 1s ease-in-out;
             font-family: 'Bebas Neue', sans-serif;
             font-weight: 400;
             letter-spacing: 3px;
@@ -294,21 +234,10 @@
             margin-left: auto;
             margin-right: auto;
             line-height: 1.6;
-            animation: fadeIn 1.2s ease-in-out, slideUp 1.2s ease-in-out;
+            animation: fadeIn 1.2s ease-in-out;
             font-family: 'Montserrat', sans-serif;
             font-weight: 400;
             letter-spacing: 0.5px;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
 
         .hero-btns {
@@ -316,7 +245,7 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            animation: fadeIn 1.5s ease-in-out, slideUp 1.5s ease-in-out;
+            animation: fadeIn 1.5s ease-in-out;
         }
         
         .btn {
@@ -335,8 +264,6 @@
             letter-spacing: 1px;
             font-family: 'Montserrat', sans-serif;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
         
         .btn:hover {
@@ -344,21 +271,6 @@
             color: var(--secondary-color);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
         }
         
         .btn-outline {
@@ -370,36 +282,7 @@
             background-color: var(--secondary-color);
             color: var(--text-light);
         }
-
-        /* Floating elements */
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .floating-element {
-            position: absolute;
-            background-color: var(--secondary-color);
-            opacity: 0.1;
-            border-radius: 50%;
-            animation: floatElement 15s infinite linear;
-        }
-
-        @keyframes floatElement {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-100px) rotate(180deg);
-            }
-            100% {
-                transform: translateY(0) rotate(360deg);
-            }
-        }
-
+        
         /* About Section */
         .about {
             background-color: var(--text-light);
@@ -427,16 +310,6 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            animation: expandLine 1.5s ease-out;
-        }
-
-        @keyframes expandLine {
-            from {
-                width: 0;
-            }
-            to {
-                width: 70px;
-            }
         }
         
         .about-content {
@@ -453,31 +326,17 @@
             font-size: 2.2rem;
             margin-bottom: 20px;
             color: var(--primary-color);
-            animation: fadeIn 1s ease-in-out;
         }
         
         .about-text p {
             margin-bottom: 20px;
             line-height: 1.8;
             font-size: 1.1rem;
-            animation: fadeIn 1.2s ease-in-out;
         }
         
         .about-image {
             flex: 1;
             position: relative;
-            animation: fadeInRight 1s ease-in-out;
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
         
         .about-image img {
@@ -501,7 +360,6 @@
             top: -20px;
             left: -20px;
             z-index: -1;
-            animation: fadeIn 1.5s ease-in-out;
         }
         
         /* Menu Section with 4:6 ratio cards */
@@ -526,29 +384,6 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .menu-item:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-        .menu-item:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        .menu-item:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-        .menu-item:nth-child(4) {
-            animation-delay: 0.4s;
         }
         
         .menu-item:hover {
@@ -625,16 +460,6 @@
             transition: all 0.3s ease;
             aspect-ratio: 1/1;
             cursor: pointer;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-
-        .video-item:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-        .video-item:nth-child(2) {
-            animation-delay: 0.2s;
         }
         
         .video-item:hover {
@@ -674,13 +499,6 @@
             padding: 50px;
             border-radius: 15px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            transform: perspective(1000px) rotateX(0deg);
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-        }
-
-        .reservation-form:hover {
-            transform: perspective(1000px) rotateX(5deg);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
         
         .reservation-form h3 {
@@ -792,12 +610,6 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .map-container:hover {
-            transform: translateY(-5px);
         }
         
         .map-container iframe {
@@ -827,7 +639,6 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            transform: translateY(0);
         }
 
         .platform-card:hover {
@@ -839,11 +650,6 @@
             height: 60px;
             margin-bottom: 20px;
             object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .platform-card:hover img {
-            transform: scale(1.1);
         }
 
         .platform-card h3 {
@@ -870,7 +676,6 @@
             background-color: var(--primary-color);
             color: var(--text-light);
             padding: 60px 0 20px;
-            position: relative;
         }
         
         .footer-content {
@@ -1027,22 +832,6 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-
-        .feature-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-        .feature-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        .feature-card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-        .feature-card:nth-child(4) {
-            animation-delay: 0.4s;
         }
 
         .feature-card:hover {
@@ -1054,11 +843,6 @@
             font-size: 2.5rem;
             color: var(--secondary-color);
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.2);
         }
 
         .feature-card h3 {
@@ -1096,37 +880,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             border: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .chatbot-toggle::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            border-radius: 100%;
-            transform: scale(1, 1) translate(-50%, -50%);
-            transform-origin: 50% 50%;
-        }
-
-        .chatbot-toggle:focus:not(:active)::after {
-            animation: ripple 1s ease-out;
-        }
-
-        @keyframes ripple {
-            0% {
-                transform: scale(0, 0);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(20, 20);
-                opacity: 0;
-            }
         }
 
         .chatbot-toggle:hover {
@@ -1176,11 +929,6 @@
             color: white;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .chatbot-close:hover {
-            transform: rotate(90deg);
         }
 
         .chatbot-messages {
@@ -1188,7 +936,6 @@
             padding: 20px;
             overflow-y: auto;
             background-color: #f9f9f9;
-            scroll-behavior: smooth;
         }
 
         .message {
@@ -1200,7 +947,17 @@
             line-height: 1.4;
             position: relative;
             animation: fadeInUp 0.3s ease;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .bot-message {
@@ -1287,11 +1044,6 @@
             background-color: rgba(193, 154, 107, 0.1);
             border-radius: 8px;
             border-left: 3px solid var(--secondary-color);
-            transition: transform 0.3s ease;
-        }
-
-        .menu-suggestion:hover {
-            transform: translateX(5px);
         }
 
         .menu-suggestion h4 {
@@ -1318,11 +1070,11 @@
             padding: 15px;
             background-color: #f9f9f9;
             border-top: 1px solid #eee;
-            animation: fadeIn 0.5s ease;
         }
 
         .reservation-form-mini.active {
             display: block;
+            animation: fadeIn 0.3s ease;
         }
 
         .form-group-mini {
@@ -1412,11 +1164,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border: 2px dashed var(--secondary-color);
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .coupon-card:hover {
-            transform: scale(1.02);
         }
 
         .coupon-header {
@@ -1444,48 +1191,6 @@
             font-size: 0.8rem;
             color: #888;
             font-style: italic;
-        }
-
-        /* Menu category in chatbot */
-        .menu-category {
-            margin-bottom: 15px;
-        }
-
-        .menu-category h4 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-        }
-
-        .menu-items-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            font-size: 0.8rem;
-        }
-
-        /* Confetti effect */
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #f00;
-            border-radius: 50%;
-            animation: confettiFall 5s linear forwards;
-        }
-
-        @keyframes confettiFall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(500px) rotate(360deg);
-                opacity: 0;
-            }
         }
 
         /* Responsive Styles */
@@ -1704,14 +1409,6 @@
                 <a href="#reservation" class="btn btn-outline">Reserve a Table</a>
             </div>
         </div>
-
-        <!-- Floating elements for decoration -->
-        <div class="floating-elements">
-            <div class="floating-element" style="width: 20px; height: 20px; top: 20%; left: 15%; animation-delay: 0s;"></div>
-            <div class="floating-element" style="width: 15px; height: 15px; top: 70%; left: 80%; animation-delay: 2s;"></div>
-            <div class="floating-element" style="width: 25px; height: 25px; top: 40%; left: 75%; animation-delay: 4s;"></div>
-            <div class="floating-element" style="width: 10px; height: 10px; top: 80%; left: 10%; animation-delay: 6s;"></div>
-        </div>
     </section>
 
     <!-- About Section -->
@@ -1732,10 +1429,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Background decorative elements -->
-        <i class="fas fa-pepper-hot bg-element bg-spice-1"></i>
-        <i class="fas fa-utensils bg-element bg-spice-2"></i>
     </section>
 
     <!-- Menu Section with 4:6 ratio cards -->
@@ -1840,25 +1533,7 @@
                     <a href="https://www.swiggy.com" target="_blank" class="btn">Order Now</a>
                 </div>
                 <div class="platform-card">
-                    <img src="https://restaurant-guru.in/images/logo/logo-restaurant-guru.svg" alt="Restaurant Guru">
-                    <h3>Restaurant Guru</h3>
-                    <p>Find us on Restaurant Guru for reviews and more</p>
-                    <a href="https://restaurant-guru.in/GPS-Highway-Restaurant-Nagpur" target="_blank" class="btn">Visit Page</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Gallery Section -->
-    <section class="video-gallery" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="color: white;">OUR GALLERY</h2>
-            </div>
-            <div class="video-container">
-                <div class="video-item">
-                    <video controls preload="none">
-                        <source src="https://media-hosting.imagekit.io/7c2145ad8da34a28/h1.mp4?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__" type="video/mp4">
+                    <img src="" type="video/mp4">
                     </video>
                     <div class="video-caption">
                         <h3>Food Preparation</h3>
@@ -1875,7 +1550,6 @@
             </div>
         </div>
     </section>
-
     <!-- Reservation Section - Enhanced -->
     <section class="reservation" id="reservation">
         <div class="container">
@@ -2110,7 +1784,7 @@
                 
                 // Enable scrolling after loader disappears
                 document.body.style.overflow = 'auto';
-            }, 1500); // 1.5 second delay
+            }, 1000); // 1 second delay
         });
 
         // Check if coming back from menu.html to skip animation
@@ -2212,10 +1886,6 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    // Create confetti effect
-                    createConfetti();
-                    
-                    // Show success message
                     alert('Thank you for your reservation! We will contact you shortly to confirm your booking.');
                     bookingForm.reset();
                 } else {
@@ -2230,27 +1900,6 @@
                 submitBtn.textContent = originalBtnText;
             }
         });
-
-        // Create confetti effect
-        function createConfetti() {
-            const colors = ['#c19a6b', '#1a1a1a', '#e6c88e', '#b3895e', '#f8f8f8'];
-            
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.width = Math.random() * 10 + 5 + 'px';
-                confetti.style.height = Math.random() * 10 + 5 + 'px';
-                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
-                document.body.appendChild(confetti);
-                
-                // Remove confetti after animation
-                setTimeout(() => {
-                    confetti.remove();
-                }, 5000);
-            }
-        }
 
         // Lazy load videos when they come into view
         const lazyVideos = document.querySelectorAll('video[preload="none"]');
@@ -2472,20 +2121,20 @@
             categoryTitle.textContent = category;
             categoryTitle.style.fontFamily = "'Bebas Neue', sans-serif";
             categoryTitle.style.fontSize = "1.2rem";
-            categoryTitle.style.marginBottom = "8px";
+            categoryTitle.style.marginBottom = "10px";
             categoryTitle.style.color = "var(--primary-color)";
-            categoryTitle.style.borderBottom = "1px solid #ddd";
-            categoryTitle.style.paddingBottom = "5px";
             
             categoryDiv.appendChild(categoryTitle);
             
             const itemsList = document.createElement('div');
-            itemsList.classList.add('menu-items-grid');
+            itemsList.style.display = "grid";
+            itemsList.style.gridTemplateColumns = "1fr 1fr";
+            itemsList.style.gap = "10px";
             
             items.forEach(item => {
                 const itemDiv = document.createElement('div');
                 itemDiv.textContent = item;
-                itemDiv.style.fontSize = "0.8rem";
+                itemDiv.style.fontSize = "0.9rem";
                 itemsList.appendChild(itemDiv);
             });
             
@@ -2867,17 +2516,6 @@
                     { text: 'Contact info' }
                 ]);
             }
-            else if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
-                addMessage('You\'re welcome! Is there anything else I can help you with?', 'bot');
-                addQuickReplies([
-                    { text: 'Reserve a table' },
-                    { text: 'View menu' },
-                    { text: 'Contact info' }
-                ]);
-            }
-            else if (lowerMessage.includes('bye') || lowerMessage.includes('goodbye')) {
-                addMessage('Thank you for visiting GPS Highway Restaurant! We hope to see you soon. Have a great day! 😊', 'bot');
-            }
             else {
                 addMessage("I'm sorry, I didn't understand that. I can help you with reservations, menu suggestions, or general inquiries. What would you like to know?", 'bot');
                 addQuickReplies([
@@ -2921,23 +2559,8 @@
                 sessionStorage.setItem('chatbotInitialized', 'true');
             }, 10000); // Show after 10 seconds
         }
-
-        // Animate elements when they come into view
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.menu-item, .feature-card, .video-item');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.animation = 'fadeInUp 0.5s ease-out forwards';
-                }
-            });
-        };
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
+
+fix the bot + ehnance it and make according to you as a restraunt website add good animations
