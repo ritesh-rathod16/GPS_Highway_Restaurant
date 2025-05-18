@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Your Special Coupon | GPS Highway Restaurant</title>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #c19a6b;
+            --accent-color: #e8e8e8;
+            --text-light: #f8f8f8;
+            --text-dark: #333333;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --gold-light: #e6c88e;
+            --gold-dark: #b3895e;
+            --matte-black: #28282B;
+            --matte-gold: #D4AF37;
+            --velvet-red: #800020;
+            --parchment: #F5F5DC;
+            --hogwarts-blue: #0E1A40;
+            --hogwarts-red: #740001;
+            --hogwarts-yellow: #ECB939;
+            --hogwarts-green: #2A623D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--parchment);
+            background-color: var(--hogwarts-blue);
+            overflow-x: hidden;
+            line-height: 1.7;
+            background-image: url('https://www.transparenttextures.com/patterns/black-paper.png');
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--matte-gold);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .coupon-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .coupon-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .coupon-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--parchment);
+        }
+
+        .magic-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 100%;
+            margin-bottom: 60px;
+        }
+
+        .magic-card {
+            position: relative;
+            height: 350px;
+            perspective: 1000px;
+            cursor: pointer;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .magic-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .magic-card:hover .magic-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .magic-card-front, 
+        .magic-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--matte-gold);
+        }
+
+        .magic-card-front {
+            background: linear-gradient(135deg, var(--hogwarts-red), var(--primary-color));
+        }
+
+        .magic-card-front h2 {
+            font-size: 2rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .magic-card-back {
+            background: linear-gradient(135deg, var(--hogwarts-green), var(--primary-color));
+            transform: rotateY(180deg);
+            padding: 20px;
+            display: none;
+        }
+
+        .magic-card-back.active {
+            display: flex;
+        }
+
+        .coupon-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 5px;
+            transition: all 0.5s ease;
+        }
+
+        .coupon-image.zoomed {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            color: var(--matte-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .instructions {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2rem;
+            color: var(--parchment);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 40px;
+            background-color: var(--matte-gold);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--matte-gold);
+            font-size: 1.1rem;
+            text-align: center;
+            letter-spacing: 1px;
+            font-family: 'Cormorant Garamond', serif;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-btn:hover {
+            background-color: transparent;
+            color: var(--matte-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* House Crests */
+        .gryffindor {
+            background: linear-gradient(135deg, var(--hogwarts-red), #5c0000);
+        }
+
+        .slytherin {
+            background: linear-gradient(135deg, var(--hogwarts-green), #1a3a1a);
+        }
+
+        .hufflepuff {
+            background: linear-gradient(135deg, var(--hogwarts-yellow), #b88d00);
+        }
+
+        .ravenclaw {
+            background: linear-gradient(135deg, #0E1A40, #222a5c);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .coupon-header h1 {
+                font-size: 3rem;
+            }
+            
+            .coupon-header p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .magic-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .coupon-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .magic-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .coupon-header h1 {
+                font-size: 2rem;
+            }
+            
+            .coupon-header p {
+                font-size: 1rem;
+            }
+            
+            .magic-card {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="coupon-header">
+            <h1>Choose Your Magical Coupon</h1>
+            <p>Select one of the magical cards below to reveal your special discount. Each card holds a unique offer - may the odds be ever in your favor!</p>
+        </div>
+
+        <div class="magic-cards" id="magic-cards">
+            <!-- Card 1 -->
+            <div class="magic-card gryffindor" data-coupon="Coupon1.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>Gryffindor's<br>Bravery Offer</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon1.png" alt="Coupon 1" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="magic-card slytherin" data-coupon="Coupon2.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>Slytherin's<br>Exclusive Deal</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon2.png" alt="Coupon 2" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="magic-card hufflepuff" data-coupon="Coupon3.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>Hufflepuff's<br>Loyalty Discount</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon3.png" alt="Coupon 3" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="magic-card ravenclaw" data-coupon="Coupon4.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>Ravenclaw's<br>Wisdom Special</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon4.png" alt="Coupon 4" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions" id="instructions">
+            <p>Please take a screenshot of your coupon to redeem it during your visit. Show the screenshot to your server when paying your bill.</p>
+            <a href="index.html" class="home-btn">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const magicCards = document.querySelectorAll('.magic-card');
+            const instructions = document.getElementById('instructions');
+            let selectedCard = null;
+            
+            // Hide instructions initially
+            instructions.style.display = 'none';
+            
+            magicCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // If a card is already selected, ignore clicks
+                    if (selectedCard) return;
+                    
+                    // Mark this card as selected
+                    selectedCard = this;
+                    
+                    // Show the back of this card
+                    const back = this.querySelector('.magic-card-back');
+                    back.classList.add('active');
+                    
+                    // Zoom in the coupon image after a delay
+                    setTimeout(() => {
+                        const couponImage = back.querySelector('.coupon-image');
+                        couponImage.classList.add('zoomed');
+                        
+                        // Show instructions after coupon is revealed
+                        setTimeout(() => {
+                            instructions.style.display = 'block';
+                            window.scrollTo({
+                                top: document.body.scrollHeight,
+                                behavior: 'smooth'
+                            });
+                        }, 1000);
+                    }, 500);
+                });
+            });
+            
+            // Back button functionality
+            document.querySelectorAll('.back-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    const cardInner = this.closest('.magic-card-inner');
+                    cardInner.style.transform = 'rotateY(0deg)';
+                    
+                    const couponImage = this.parentElement.querySelector('.coupon-image');
+                    couponImage.classList.remove('zoomed');
+                    
+                    setTimeout(() => {
+                        this.parentElement.classList.remove('active');
+                        selectedCard = null;
+                        instructions.style.display = 'none';
+                    }, 800);
+                });
+            });
+            
+            // Prevent multiple selections
+            document.addEventListener('click', function(e) {
+                if (selectedCard && !e.target.closest('.magic-card')) {
+                    return;
+                }
+            }, true);
+        });
+    </script>
+</body>
+</html>
