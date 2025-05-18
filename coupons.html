@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Coupons | GPS Highway Restaurant</title>
+    <title>Claim Your Magical Coupon | GPS Highway Restaurant</title>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=MedievalSharp&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a1a1a;
-            --secondary-color: #c19a6b;
-            --accent-color: #e8e8e8;
-            --text-light: #f8f8f8;
-            --text-dark: #333333;
-            --text-secondary: rgba(255, 255, 255, 0.8);
-            --gold-light: #e6c88e;
-            --gold-dark: #b3895e;
+            --primary-color: #0a0a0a;
+            --secondary-color: #946b2d;
+            --accent-color: #1a1a1a;
+            --text-light: #f0f0f0;
+            --text-dark: #d4af37;
+            --gold-light: #d4af37;
+            --gold-dark: #946b2d;
         }
         
         * {
@@ -28,229 +25,69 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'MedievalSharp', cursive;
             color: var(--text-dark);
-            background-color: #f9f9f9;
+            background-color: var(--primary-color);
             overflow-x: hidden;
             line-height: 1.7;
+            background-image: url('https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-weight: 400;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
             letter-spacing: 1px;
+            color: var(--gold-light);
         }
 
-        /* Section spacing adjustments */
-        section {
-            padding: 60px 0;
-        }
-
-        /* Loader Animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-        
-        .loader-logo {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 15px;
-            animation: pulse 1s ease-in-out;
-        }
-        
-        .loader-text {
-            color: var(--secondary-color);
-            font-size: 2.5rem;
-            font-weight: 400;
-            margin-top: 15px;
-            animation: fadeIn 0.5s ease-in-out;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 3px;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0; }
-            50% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0; }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .loader-hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        header.scrolled {
-            padding: 8px 0;
-            background-color: rgba(26, 26, 26, 0.98);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-img {
-            height: 45px;
-            width: 45px;
-            margin-right: 12px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 400;
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 2px;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        nav ul li a:hover {
-            color: var(--secondary-color);
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 22px;
-            cursor: pointer;
-        }
-        
-        /* Hero Section - Enhanced with new design */
-        .coupon-hero {
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-        }
-
-        .hero-content {
             position: relative;
             z-index: 2;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
         }
 
-        .hero-title {
-            font-size: 5rem;
-            margin-bottom: 1rem;
-            line-height: 1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            color: var(--text-light);
-            animation: fadeIn 1s ease-in-out;
-            font-family: 'Bebas Neue', sans-serif;
-            font-weight: 400;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
+        .back-btn {
+            position: absolute;
+            top: 30px;
+            left: 30px;
             color: var(--gold-light);
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-            animation: fadeIn 1.2s ease-in-out;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            letter-spacing: 0.5px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            z-index: 10;
         }
 
-        /* Section Title */
+        .back-btn:hover {
+            color: var(--text-light);
+            transform: translateX(-5px);
+        }
+
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
+            position: relative;
         }
         
         .section-title h2 {
             font-size: 3rem;
-            color: var(--primary-color);
+            color: var(--gold-light);
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
         
         .section-title h2::after {
@@ -258,677 +95,328 @@
             position: absolute;
             width: 70px;
             height: 3px;
-            background-color: var(--secondary-color);
+            background-color: var(--gold-light);
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
-        /* Magic Cards for Coupons */
-        .magic-cards-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+        .instructions {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 800px;
+        }
+
+        .magic-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 40px;
         }
 
         .magic-card {
-            width: 250px;
+            background-color: rgba(10, 10, 10, 0.8);
+            border-radius: 10px;
             height: 350px;
-            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
             position: relative;
+            overflow: hidden;
+            border: 2px solid var(--gold-dark);
+            box-shadow: 0 0 20px rgba(148, 107, 45, 0.3);
+            transition: all 0.5s ease;
         }
 
-        .magic-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-
-        .magic-card.flipped .magic-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .magic-card-front, .magic-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .magic-card-front {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #333 100%);
-            color: white;
-        }
-
-        .magic-card-back {
-            background: white;
-            transform: rotateY(180deg);
-            color: var(--primary-color);
-        }
-
-        .magic-card-front h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 2px;
-        }
-
-        .magic-card-front p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 30px;
-        }
-
-        .magic-card-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-
-        .magic-card-back img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .magic-card-back h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            font-family: 'Bebas Neue', sans-serif;
-        }
-
-        .magic-card-back p {
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-
-        /* Footer with enhanced contact info */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 60px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            color: var(--secondary-color);
-            position: relative;
-            padding-bottom: 10px;
-            font-family: 'Bebas Neue', sans-serif;
-        }
-        
-        .footer-column h3::after {
+        .magic-card::before {
             content: '';
             position: absolute;
-            width: 50px;
-            height: 2px;
-            background-color: var(--secondary-color);
-            bottom: 0;
-            left: 0;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent 45%,
+                rgba(212, 175, 55, 0.1) 50%,
+                transparent 55%
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
         }
-        
-        .footer-column p {
-            margin-bottom: 15px;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            font-size: 1rem;
+
+        .magic-card:hover::before {
+            left: 100%;
         }
-        
-        .footer-column ul {
-            list-style: none;
+
+        .magic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+            border-color: var(--gold-light);
         }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
+
+        .magic-card img {
+            max-width: 90%;
+            max-height: 90%;
+            opacity: 0.7;
+            transition: all 0.3s ease;
         }
-        
-        .footer-column ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 1rem;
+
+        .magic-card:hover img {
+            opacity: 1;
+            transform: scale(1.05);
         }
-        
-        .footer-column ul li a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .contact-info {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--secondary-color);
-            width: 18px;
+
+        .coupon-display {
+            display: none;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
             text-align: center;
-            margin-top: 3px;
-            font-size: 1.1rem;
         }
-        
-        .contact-info a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 1rem;
+
+        .coupon-display.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
         }
-        
-        .contact-info a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .phone-numbers {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 5px;
-        }
-        
-        .phone-number {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            text-decoration: none;
-            display: inline-block;
+
+        .coupon-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+            border: 2px solid var(--gold-light);
             transition: all 0.3s ease;
         }
-        
-        .phone-number:hover {
-            background: rgba(193, 154, 107, 0.2);
+
+        .coupon-img.zoomed {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.7);
         }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--text-light);
-            transition: all 0.3s ease;
+
+        .screenshot-btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: var(--gold-light);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 30px;
             font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
-        
-        .social-links a:hover {
-            background-color: var(--secondary-color);
+
+        .screenshot-btn:hover {
+            background-color: var(--gold-dark);
             transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
         }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--gold-light);
+            opacity: 0;
+            z-index: 999;
+            animation: confettiFall 5s linear forwards;
         }
-        
-        .footer-bottom p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
         }
 
         /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .hero-title {
-                font-size: 4rem;
-            }
-        }
-        
         @media (max-width: 992px) {
-            .hero-title {
-                font-size: 3.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .magic-cards-container {
-                gap: 20px;
-            }
-
-            .magic-card {
-                width: 220px;
-                height: 330px;
+            .magic-cards {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.8rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
             .section-title h2 {
                 font-size: 2.5rem;
             }
-            
-            nav ul {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--primary-color);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
-                transition: all 0.5s ease;
+
+            .instructions {
+                font-size: 1rem;
             }
-            
-            nav ul.active {
-                left: 0;
-            }
-            
-            nav ul li {
-                margin: 15px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
+
+            .magic-cards {
+                grid-template-columns: 1fr;
+                max-width: 500px;
             }
 
             .magic-card {
-                width: 250px;
-                height: 350px;
+                height: 300px;
             }
         }
-        
+
         @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2.4rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 0.9rem;
-            }
-            
             .section-title h2 {
                 font-size: 2rem;
             }
-            
-            .logo-img {
-                height: 40px;
-                width: 40px;
-                margin-right: 10px;
-            }
-            
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
 
-            .magic-card {
-                width: 100%;
-                max-width: 300px;
-                height: 400px;
+            .back-btn {
+                top: 20px;
+                left: 20px;
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Loader Animation -->
-    <div class="loader" id="loader">
-        <img src="https://media-hosting.imagekit.io/55598457fb264896/403923188_655152343462104_4618773726312330113_n.jpg?Expires=1841954441&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dxts~jCXOor4vu3SLzcluPfBN9SJBbSiwL4qVWGIQLTP2fBQ3dl0dsAmPGsdx71h-RN0FybaTNwvBRkd4n3JFRR3XMRJkAXW0tERkLkQfuLfLm2B-TD7wVTJnSdiH4T6OvTfokGhcAzaKFPdiWMHug9L10jE4iHwgr930RzFIYzsFiQ9z9jNxCYxdMBx8Xix9xjG7uKwyACCBvQgxfIAhiGXXvttc3CRHrbFt9Jk-J9or4CEtxnKVVYQ1yd19aOs4WbN0T7e76N-~V7jjQ7NtXTKwQnl92peercTUr7tUhvIpixysgKrgT-kVzbRBTNrZsid-bNPcG2vLBqGeE8mhw__" alt="GPS Highway Restaurant Logo" class="loader-logo">
-        <div class="loader-text">Welcomes You</div>
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        Back to Restaurant
+    </a>
+
+    <div class="container">
+        <div class="section-title">
+            <h2>Choose Your Magical Coupon</h2>
+        </div>
+
+        <div class="instructions">
+            <p>Select one of the magical cards below to reveal your exclusive coupon. Remember to take a screenshot of your coupon to redeem it on your next visit!</p>
+        </div>
+
+        <div class="magic-cards" id="magic-cards">
+            <div class="magic-card" data-coupon="Coupon1.png">
+                <img src="https://media-hosting.imagekit.io/55598457fb264896/magic-card-back.png?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__" alt="Magical Card">
+            </div>
+            <div class="magic-card" data-coupon="Coupon2.png">
+                <img src="https://media-hosting.imagekit.io/55598457fb264896/magic-card-back.png?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__" alt="Magical Card">
+            </div>
+            <div class="magic-card" data-coupon="Coupon3.png">
+                <img src="https://media-hosting.imagekit.io/55598457fb264896/magic-card-back.png?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__" alt="Magical Card">
+            </div>
+            <div class="magic-card" data-coupon="Coupon4.png">
+                <img src="https://media-hosting.imagekit.io/55598457fb264896/magic-card-back.png?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__" alt="Magical Card">
+            </div>
+        </div>
+
+        <div class="coupon-display" id="coupon-display">
+            <img src="" alt="Your Coupon" class="coupon-img" id="coupon-img">
+            <button class="screenshot-btn" id="screenshot-btn">
+                <i class="fas fa-camera"></i> Take Screenshot
+            </button>
+        </div>
     </div>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <div class="logo-container">
-                <img src="https://media-hosting.imagekit.io/55598457fb264896/403923188_655152343462104_4618773726312330113_n.jpg?Expires=1841954441&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dxts~jCXOor4vu3SLzcluPfBN9SJBbSiwL4qVWGIQLTP2fBQ3dl0dsAmPGsdx71h-RN0FybaTNwvBRkd4n3JFRR3XMRJkAXW0tERkLkQfuLfLm2B-TD7wVTJnSdiH4T6OvTfokGhcAzaKFPdiWMHug9L10jE4iHwgr930RzFIYzsFiQ9z9jNxCYxdMBx8Xix9xjG7uKwyACCBvQgxfIAhiGXXvttc3CRHrbFt9Jk-J9or4CEtxnKVVYQ1yd19aOs4WbN0T7e76N-~V7jjQ7NtXTKwQnl92peercTUr7tUhvIpixysgKrgT-kVzbRBTNrZsid-bNPcG2vLBqGeE8mhw__" alt="GPS Highway Restaurant Logo" class="logo-img">
-                <a href="index.html" class="logo">GPS Highway Restaurant</a>
-            </div>
-            <nav>
-                <ul id="nav-menu">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="index.html#ordering">Order Online</a></li>
-                    <li><a href="coupons.html">Get Coupon</a></li>
-                    <li><a href="index.html#gallery">Gallery</a></li>
-                    <li><a href="index.html#reservation">Reservations</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="index.html#events">Events</a></li>
-                </ul>
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section - Enhanced -->
-    <section class="coupon-hero">
-        <div class="hero-content">
-            <h1 class="hero-title">EXCLUSIVE COUPONS</h1>
-            <p class="hero-subtitle">Choose your mystery coupon card to reveal a special discount for your next visit</p>
-        </div>
-    </section>
-
-    <!-- Coupon Cards Section -->
-    <section class="coupons-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>PICK YOUR LUCKY CARD</h2>
-                <p>Click on any card below to reveal your special discount. Each customer can choose only one coupon.</p>
-            </div>
-            <div class="magic-cards-container" id="magic-cards-container">
-                <!-- Card 1 -->
-                <div class="magic-card" id="card1">
-                    <div class="magic-card-inner">
-                        <div class="magic-card-front">
-                            <div class="magic-card-icon">
-                                <i class="fas fa-gem"></i>
-                            </div>
-                            <h3>Mystery Card</h3>
-                            <p>Click to reveal your special discount</p>
-                        </div>
-                        <div class="magic-card-back">
-                            <img src="Coupon1.png" alt="Coupon 1">
-                            <h3>5% OFF</h3>
-                            <p>Use code: GPS5OFF</p>
-                            <p>Valid for dine-in only</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="magic-card" id="card2">
-                    <div class="magic-card-inner">
-                        <div class="magic-card-front">
-                            <div class="magic-card-icon">
-                                <i class="fas fa-crown"></i>
-                            </div>
-                            <h3>Mystery Card</h3>
-                            <p>Click to reveal your special discount</p>
-                        </div>
-                        <div class="magic-card-back">
-                            <img src="Coupon2.png" alt="Coupon 2">
-                            <h3>10% OFF</h3>
-                            <p>Use code: GPS10SPECIAL</p>
-                            <p>Valid on orders above ₹1000</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="magic-card" id="card3">
-                    <div class="magic-card-inner">
-                        <div class="magic-card-front">
-                            <div class="magic-card-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h3>Mystery Card</h3>
-                            <p>Click to reveal your special discount</p>
-                        </div>
-                        <div class="magic-card-back">
-                            <img src="Coupon3.png" alt="Coupon 3">
-                            <h3>FREE DELIVERY</h3>
-                            <p>Use code: FREEDEL25</p>
-                            <p>Valid for online orders only</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Card 4 -->
-                <div class="magic-card" id="card4">
-                    <div class="magic-card-inner">
-                        <div class="magic-card-front">
-                            <div class="magic-card-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <h3>Mystery Card</h3>
-                            <p>Click to reveal your special discount</p>
-                        </div>
-                        <div class="magic-card-back">
-                            <img src="Coupon4.png" alt="Coupon 4">
-                            <h3>15% OFF COMBO</h3>
-                            <p>Use code: COMBO15</p>
-                            <p>Valid on selected combos</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>GPS HIGHWAY RESTAURANT</h3>
-                    <p>Experience authentic Indian cuisine at our restaurant located conveniently on the highway. We offer an unforgettable culinary journey through India's diverse regional flavors.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/gpshighwayrestaurant/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/gps.highway.restaurant/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@gpsfamilyrestaurant7280" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>CONTACT US</h3>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <a href="https://maps.google.com/?q=GPS+Highway+Restaurant,+Chichbhawan,+Nagpur,+Maharashtra+440005" target="_blank">GPS Highway Restaurant, Chichbhawan, Nagpur, Maharashtra 440005</a>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <div class="phone-numbers">
-                            <a href="tel:9021078335" class="phone-number">9021078335</a>
-                            <a href="tel:9665615666" class="phone-number">9665615666</a>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@gpshighwayrestaurant.com">info@gpshighwayrestaurant.com</a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>QUICK LINKS</h3>
-                    <ul>
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="index.html#ordering">Order Online</a></li>
-                        <li><a href="coupons.html">Get Coupon</a></li>
-                        <li><a href="index.html#gallery">Gallery</a></li>
-                        <li><a href="index.html#reservation">Reservations</a></li>
-                        <li><a href="index.html#events">Events</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>OPENING HOURS</h3>
-                    <p>Monday - Sunday: 10:00 AM - 10:00 PM</p>
-                    <p>Special Events: Extended hours available</p>
-                    <p>Kitchen closes at 9:30 PM</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 GPS Highway Restaurant. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Loader Animation
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const loader = document.getElementById('loader');
-                loader.classList.add('loader-hidden');
-                
-                // Enable scrolling after loader disappears
-                document.body.style.overflow = 'auto';
-            }, 1000); // 1 second delay
-        });
-
-        // Check if coming back from menu.html to skip animation
-        if (sessionStorage.getItem('visitedMenu')) {
-            document.getElementById('loader').style.display = 'none';
-            document.body.style.overflow = 'auto';
-            sessionStorage.removeItem('visitedMenu');
-            
-            // Scroll to the section if hash exists
-            if (window.location.hash) {
-                const targetElement = document.querySelector(window.location.hash);
-                if (targetElement) {
-                    setTimeout(() => {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }, 100);
-                }
-            }
-        }
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navMenu = document.getElementById('nav-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                
-                // Set flag when navigating to menu.html
-                if (link.getAttribute('href') === 'menu.html') {
-                    sessionStorage.setItem('visitedMenu', 'true');
-                    sessionStorage.setItem('scrollPosition', window.scrollY);
-                }
-            });
-        });
-        
-        // Header scroll effect
-        const header = document.getElementById('header');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Update URL without reload
-                        history.pushState(null, null, targetId);
-                    }
-                }
-            });
-        });
-
-        // Restore scroll position if coming back from menu
-        if (sessionStorage.getItem('scrollPosition')) {
-            window.scrollTo(0, parseInt(sessionStorage.getItem('scrollPosition')));
-            sessionStorage.removeItem('scrollPosition');
-        }
-
-        // Magic Cards Functionality
+        // Magic Card Selection
         const magicCards = document.querySelectorAll('.magic-card');
-        let cardSelected = false;
+        const couponDisplay = document.getElementById('coupon-display');
+        const couponImg = document.getElementById('coupon-img');
+        const magicCardsContainer = document.getElementById('magic-cards');
+        const screenshotBtn = document.getElementById('screenshot-btn');
+
+        let selectedCoupon = null;
+
+        // Check if a coupon was already selected in this session
+        if (sessionStorage.getItem('selectedCoupon')) {
+            showCoupon(sessionStorage.getItem('selectedCoupon'));
+        }
 
         magicCards.forEach(card => {
             card.addEventListener('click', () => {
-                if (!cardSelected) {
-                    card.classList.add('flipped');
-                    cardSelected = true;
+                if (!selectedCoupon) {
+                    const coupon = card.dataset.coupon;
+                    selectedCoupon = coupon;
+                    sessionStorage.setItem('selectedCoupon', coupon);
                     
-                    // Disable other cards
-                    magicCards.forEach(otherCard => {
-                        if (otherCard !== card) {
-                            otherCard.style.pointerEvents = 'none';
-                            otherCard.style.opacity = '0.6';
-                        }
-                    });
+                    // Hide all cards
+                    magicCardsContainer.style.display = 'none';
                     
-                    // Save selected coupon in localStorage
-                    const couponCode = card.querySelector('.magic-card-back h3').textContent;
-                    localStorage.setItem('selectedCoupon', couponCode);
+                    // Show the selected coupon
+                    showCoupon(coupon);
+                    
+                    // Create confetti effect
+                    createConfetti();
+                    
+                    // Zoom in effect
+                    setTimeout(() => {
+                        couponImg.classList.add('zoomed');
+                    }, 500);
+                    
+                    // Pulse glow effect
+                    setTimeout(() => {
+                        couponImg.style.animation = 'pulseGlow 2s infinite';
+                    }, 1000);
                 }
             });
         });
 
-        // Check if user already selected a coupon
-        if (localStorage.getItem('selectedCoupon')) {
-            magicCards.forEach(card => {
-                card.style.pointerEvents = 'none';
-                card.style.opacity = '0.6';
-            });
-            
-            // Show the previously selected card
-            const couponCode = localStorage.getItem('selectedCoupon');
-            let selectedCardId = '';
-            
-            if (couponCode.includes('5%')) selectedCardId = 'card1';
-            else if (couponCode.includes('10%')) selectedCardId = 'card2';
-            else if (couponCode.includes('FREE')) selectedCardId = 'card3';
-            else if (couponCode.includes('15%')) selectedCardId = 'card4';
-            
-            if (selectedCardId) {
-                document.getElementById(selectedCardId).classList.add('flipped');
+        function showCoupon(coupon) {
+            // In a real implementation, you would fetch the actual coupon image
+            // For this example, we'll use a placeholder
+            couponImg.src = `https://media-hosting.imagekit.io/55598457fb264896/${coupon}?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__`;
+            couponDisplay.classList.add('active');
+        }
+
+        function createConfetti() {
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                
+                // Random position
+                confetti.style.left = Math.random() * 100 + 'vw';
+                
+                // Random size
+                const size = Math.random() * 10 + 5;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                
+                // Random color
+                const colors = ['#d4af37', '#946b2d', '#f0f0f0', '#1a1a1a'];
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Random animation duration
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                
+                document.body.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
             }
         }
+
+        screenshotBtn.addEventListener('click', () => {
+            alert('Please use your device\'s screenshot function to save this coupon. On Windows/Linux: Press PrtScn or Alt+PrtScn. On Mac: Press Command+Shift+4. On Mobile: Use your device\'s screenshot shortcut.');
+        });
+
+        // Reset coupon selection when page is refreshed
+        window.addEventListener('beforeunload', () => {
+            sessionStorage.removeItem('selectedCoupon');
+        });
     </script>
 </body>
 </html>
