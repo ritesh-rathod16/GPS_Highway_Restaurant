@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPS Highway Restaurant | Authentic Indian Cuisine</title>
+    <title>Claim Your Special Coupon | GPS Highway Restaurant</title>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #1a1a1a;
@@ -19,6 +19,14 @@
             --text-secondary: rgba(255, 255, 255, 0.8);
             --gold-light: #e6c88e;
             --gold-dark: #b3895e;
+            --matte-black: #28282B;
+            --matte-gold: #D4AF37;
+            --velvet-red: #800020;
+            --parchment: #F5F5DC;
+            --hogwarts-blue: #0E1A40;
+            --hogwarts-red: #740001;
+            --hogwarts-yellow: #ECB939;
+            --hogwarts-green: #2A623D;
         }
         
         * {
@@ -28,1381 +36,363 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-dark);
-            background-color: #f9f9f9;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--parchment);
+            background-color: var(--hogwarts-blue);
             overflow-x: hidden;
             line-height: 1.7;
+            background-image: url('https://www.transparenttextures.com/patterns/black-paper.png');
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-weight: 400;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
             letter-spacing: 1px;
+            color: var(--matte-gold);
         }
 
-        /* Section spacing adjustments */
-        section {
-            padding: 60px 0;
-        }
-
-        /* Loader Animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-        
-        .loader-logo {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 15px;
-            animation: pulse 1s ease-in-out;
-        }
-        
-        .loader-text {
-            color: var(--secondary-color);
-            font-size: 2.5rem;
-            font-weight: 400;
-            margin-top: 15px;
-            animation: fadeIn 0.5s ease-in-out;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 3px;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0; }
-            50% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0; }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .loader-hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        header.scrolled {
-            padding: 8px 0;
-            background-color: rgba(26, 26, 26, 0.98);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
+            padding: 0 30px;
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-img {
-            height: 45px;
-            width: 45px;
-            margin-right: 12px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 400;
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 2px;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        nav ul li a:hover {
-            color: var(--secondary-color);
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 22px;
-            cursor: pointer;
-        }
-        
-        /* Hero Section - Enhanced with new design */
-        #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 5rem;
-            margin-bottom: 1rem;
-            line-height: 1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            color: var(--text-light);
-            animation: fadeIn 1s ease-in-out;
-            font-family: 'Bebas Neue', sans-serif;
-            font-weight: 400;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            color: var(--gold-light);
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-            animation: fadeIn 1.2s ease-in-out;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-btns {
-            display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 2px solid var(--secondary-color);
-            font-size: 1.1rem;
-            min-width: 200px;
-            text-align: center;
-            letter-spacing: 1px;
-            font-family: 'Montserrat', sans-serif;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: transparent;
-            color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            color: var(--secondary-color);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-        }
-        
-        /* About Section */
-        .about {
-            background-color: var(--text-light);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .section-title h2 {
-            font-size: 3rem;
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .about-content {
-            display: flex;
             align-items: center;
-            gap: 50px;
         }
-        
-        .about-text {
-            flex: 1;
+
+        .coupon-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
-        
-        .about-text h3 {
-            font-size: 2.2rem;
+
+        .coupon-header h1 {
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .about-image {
-            flex: 1;
-            position: relative;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.02);
-        }
-        
-        .about-image::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 10px solid var(--secondary-color);
-            border-radius: 10px;
-            top: -20px;
-            left: -20px;
-            z-index: -1;
-        }
-        
-        /* Menu Section with 4:6 ratio cards */
-        .menu {
-            background-color: #f5f5f5;
-        }
-        
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .menu-item {
-            background-color: var(--text-light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            aspect-ratio: 4/6;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-        
-        .menu-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .menu-item img {
-            width: 100%;
-            height: 60%;
-            object-fit: cover;
-            flex-shrink: 0;
-            transition: transform 0.5s ease;
-        }
-        
-        .menu-item:hover img {
-            transform: scale(1.05);
-        }
-        
-        .menu-item-content {
-            padding: 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        .menu-item-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-            font-family: 'Bebas Neue', sans-serif;
-        }
-        
-        .menu-item-content p {
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            line-height: 1.6;
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-        
-        .price {
+
+        .coupon-header p {
             font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            font-family: 'Bebas Neue', sans-serif;
-            margin-top: auto;
-        }
-        
-        .menu-btn-container {
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        /* Video Gallery - Card Style with 1:1 ratio */
-        .video-gallery {
-            background-color: var(--primary-color);
-        }
-        
-        .video-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .video-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            background: white;
-            transition: all 0.3s ease;
-            aspect-ratio: 1/1;
-            cursor: pointer;
-        }
-        
-        .video-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .video-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-bottom: 3px solid var(--secondary-color);
-        }
-        
-        .video-caption {
-            padding: 20px;
-            text-align: center;
-            background: white;
-        }
-        
-        .video-caption h3 {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            font-family: 'Bebas Neue', sans-serif;
-        }
-        
-        /* Reservation Section - Enhanced */
-        .reservation {
-            background-color: var(--text-light);
-        }
-        
-        .reservation-form {
             max-width: 700px;
             margin: 0 auto;
-            background-color: #fff;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-        }
-        
-        .reservation-form h3 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 15px;
-            font-family: 'Bebas Neue', sans-serif;
-        }
-        
-        .reservation-form h3::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 500;
-            font-size: 1rem;
-            color: var(--primary-color);
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background-color: #f9f9f9;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--secondary-color);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(193, 154, 107, 0.2);
-        }
-        
-        .form-group select {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 15px;
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        .form-row {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .form-row .form-group {
-            flex: 1;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-            letter-spacing: 1px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .submit-btn:hover {
-            background-color: var(--gold-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Map Section */
-        .map-section {
-            background-color: var(--text-light);
-        }
-        
-        .map-container {
-            margin-top: 30px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 500px;
-            border: 0;
-        }
-        
-        /* Features Section */
-        .features {
-            background-color: var(--text-light);
+            color: var(--parchment);
         }
 
-        .features-grid {
+        .magic-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            width: 100%;
+            margin-bottom: 60px;
         }
 
-        .feature-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            font-family: 'Bebas Neue', sans-serif;
-        }
-
-        .feature-card p {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        /* Footer with enhanced contact info */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 60px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            color: var(--secondary-color);
+        .magic-card {
             position: relative;
-            padding-bottom: 10px;
-            font-family: 'Bebas Neue', sans-serif;
+            height: 350px;
+            perspective: 1000px;
+            cursor: pointer;
+            border-radius: 5px;
+            overflow: hidden;
         }
-        
-        .footer-column h3::after {
-            content: '';
+
+        .magic-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .magic-card:hover .magic-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .magic-card-front, 
+        .magic-card-back {
             position: absolute;
-            width: 50px;
-            height: 2px;
-            background-color: var(--secondary-color);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .footer-column p {
-            margin-bottom: 15px;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 1rem;
-        }
-        
-        .footer-column ul li a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .contact-info {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--secondary-color);
-            width: 18px;
-            text-align: center;
-            margin-top: 3px;
-            font-size: 1.1rem;
-        }
-        
-        .contact-info a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 1rem;
-        }
-        
-        .contact-info a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .phone-numbers {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 5px;
-        }
-        
-        .phone-number {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        
-        .phone-number:hover {
-            background: rgba(193, 154, 107, 0.2);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--text-light);
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--matte-gold);
         }
-        
-        .social-links a:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
+
+        .magic-card-front {
+            background: linear-gradient(135deg, var(--hogwarts-red), var(--primary-color));
         }
-        
-        .footer-bottom {
+
+        .magic-card-front h2 {
+            font-size: 2rem;
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
         }
-        
-        .footer-bottom p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+
+        .magic-card-back {
+            background: linear-gradient(135deg, var(--hogwarts-green), var(--primary-color));
+            transform: rotateY(180deg);
+            padding: 20px;
+            display: none;
+        }
+
+        .magic-card-back.active {
+            display: flex;
+        }
+
+        .coupon-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 5px;
+            transition: all 0.5s ease;
+        }
+
+        .coupon-image.zoomed {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            color: var(--matte-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .instructions {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2rem;
+            color: var(--parchment);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 40px;
+            background-color: var(--matte-gold);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--matte-gold);
+            font-size: 1.1rem;
+            text-align: center;
+            letter-spacing: 1px;
+            font-family: 'Cormorant Garamond', serif;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-btn:hover {
+            background-color: transparent;
+            color: var(--matte-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* House Crests */
+        .gryffindor {
+            background: linear-gradient(135deg, var(--hogwarts-red), #5c0000);
+        }
+
+        .slytherin {
+            background: linear-gradient(135deg, var(--hogwarts-green), #1a3a1a);
+        }
+
+        .hufflepuff {
+            background: linear-gradient(135deg, var(--hogwarts-yellow), #b88d00);
+        }
+
+        .ravenclaw {
+            background: linear-gradient(135deg, #0E1A40, #222a5c);
         }
 
         /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .hero-title {
-                font-size: 4rem;
-            }
-        }
-        
         @media (max-width: 992px) {
-            .hero-title {
-                font-size: 3.5rem;
+            .coupon-header h1 {
+                font-size: 3rem;
             }
             
-            .hero-subtitle {
+            .coupon-header p {
                 font-size: 1.1rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                margin-top: 40px;
-                max-width: 600px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .about-image::before {
-                display: none;
-            }
-            
-            .map-container iframe {
-                height: 400px;
             }
         }
         
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.8rem;
+            .magic-cards {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .section-title h2 {
+            .coupon-header h1 {
                 font-size: 2.5rem;
-            }
-            
-            .btn {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
-            
-            .hero-btns {
-                gap: 15px;
-            }
-            
-            nav ul {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--primary-color);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
-                transition: all 0.5s ease;
-            }
-            
-            nav ul.active {
-                left: 0;
-            }
-            
-            nav ul li {
-                margin: 15px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-            
-            .reservation-form {
-                padding: 30px;
-            }
-            
-            .map-container iframe {
-                height: 350px;
             }
         }
         
         @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2.4rem;
+            .magic-cards {
+                grid-template-columns: 1fr;
             }
             
-            .hero-subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .section-title h2 {
+            .coupon-header h1 {
                 font-size: 2rem;
             }
             
-            .menu-grid {
-                grid-template-columns: 1fr;
+            .coupon-header p {
+                font-size: 1rem;
             }
             
-            .reservation-form {
-                padding: 25px 20px;
-            }
-            
-            .logo-img {
-                height: 40px;
-                width: 40px;
-                margin-right: 10px;
-            }
-            
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .map-container iframe {
+            .magic-card {
                 height: 300px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Loader Animation -->
-    <div class="loader" id="loader">
-        <img src="https://media-hosting.imagekit.io/55598457fb264896/403923188_655152343462104_4618773726312330113_n.jpg?Expires=1841954441&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dxts~jCXOor4vu3SLzcluPfBN9SJBbSiwL4qVWGIQLTP2fBQ3dl0dsAmPGsdx71h-RN0FybaTNwvBRkd4n3JFRR3XMRJkAXW0tERkLkQfuLfLm2B-TD7wVTJnSdiH4T6OvTfokGhcAzaKFPdiWMHug9L10jE4iHwgr930RzFIYzsFiQ9z9jNxCYxdMBx8Xix9xjG7uKwyACCBvQgxfIAhiGXXvttc3CRHrbFt9Jk-J9or4CEtxnKVVYQ1yd19aOs4WbN0T7e76N-~V7jjQ7NtXTKwQnl92peercTUr7tUhvIpixysgKrgT-kVzbRBTNrZsid-bNPcG2vLBqGeE8mhw__" alt="GPS Highway Restaurant Logo" class="loader-logo">
-        <div class="loader-text">Welcomes You</div>
+    <div class="container">
+        <div class="coupon-header">
+            <h1>Choose Your Magical Coupon</h1>
+            <p>Select one of the magical cards below to reveal your special discount. Each card holds a unique offer - may the odds be ever in your favor!</p>
+        </div>
+
+        <div class="magic-cards" id="magic-cards">
+            <!-- Card 1 -->
+            <div class="magic-card gryffindor" data-coupon="Coupon1.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>Gryffindor's<br>Bravery Offer</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon1.png" alt="Coupon 1" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="magic-card slytherin" data-coupon="Coupon2.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>Slytherin's<br>Exclusive Deal</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon2.png" alt="Coupon 2" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="magic-card hufflepuff" data-coupon="Coupon3.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>Hufflepuff's<br>Loyalty Discount</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon3.png" alt="Coupon 3" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="magic-card ravenclaw" data-coupon="Coupon4.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>Ravenclaw's<br>Wisdom Special</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon4.png" alt="Coupon 4" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions" id="instructions">
+            <p>Please take a screenshot of your coupon to redeem it during your visit. Show the screenshot to your server when paying your bill.</p>
+            <a href="index.html" class="home-btn">Back to Home</a>
+        </div>
     </div>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <div class="logo-container">
-                <img src="https://media-hosting.imagekit.io/55598457fb264896/403923188_655152343462104_4618773726312330113_n.jpg?Expires=1841954441&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dxts~jCXOor4vu3SLzcluPfBN9SJBbSiwL4qVWGIQLTP2fBQ3dl0dsAmPGsdx71h-RN0FybaTNwvBRkd4n3JFRR3XMRJkAXW0tERkLkQfuLfLm2B-TD7wVTJnSdiH4T6OvTfokGhcAzaKFPdiWMHug9L10jE4iHwgr930RzFIYzsFiQ9z9jNxCYxdMBx8Xix9xjG7uKwyACCBvQgxfIAhiGXXvttc3CRHrbFt9Jk-J9or4CEtxnKVVYQ1yd19aOs4WbN0T7e76N-~V7jjQ7NtXTKwQnl92peercTUr7tUhvIpixysgKrgT-kVzbRBTNrZsid-bNPcG2vLBqGeE8mhw__" alt="GPS Highway Restaurant Logo" class="logo-img">
-                <a href="index.html" class="logo">GPS Highway Restaurant</a>
-            </div>
-            <nav>
-                <ul id="nav-menu">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="index.html#reservation">Reservations</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section - Enhanced -->
-    <section id="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">AUTHENTIC INDIAN CUISINE</h1>
-            <p class="hero-subtitle">Experience the rich flavors of India with our carefully crafted menu featuring traditional recipes and the freshest ingredients.</p>
-            <div class="hero-btns">
-                <a href="menu.html" class="btn">View Menu</a>
-                <a href="#reservation" class="btn btn-outline">Reserve a Table</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>OUR STORY</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Serving Authentic Flavors Since 2010</h3>
-                    <p>GPS Highway Restaurant has been a culinary landmark, serving authentic Indian cuisine to travelers and locals alike. Our restaurant is a celebration of India's diverse culinary traditions, where every dish tells a story of regional flavors and time-honored recipes.</p>
-                    <p>We source only the finest ingredients from local farmers and producers who share our commitment to quality and authenticity. Each dish is prepared with care to bring you the true taste of India.</p>
-                    <p>Our welcoming dining space provides the perfect setting for an unforgettable dining experience, whether you're stopping by during your travels or enjoying a meal with family and friends.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Restaurant Interior" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menu Section with 4:6 ratio cards -->
-    <section class="menu" id="menu">
-        <div class="container">
-            <div class="section-title">
-                <h2>OUR MENU</h2>
-            </div>
-            <div class="menu-grid">
-                <!-- Appetizers -->
-                <div class="menu-item">
-                    <img src="https://i.pinimg.com/736x/77/1e/b4/771eb4b06b966c164be868685bfd5c85.jpg" alt="Paneer Tikka" loading="lazy">
-                    <div class="menu-item-content">
-                        <h3>Paneer Tikka</h3>
-                        <p>Marinated cottage cheese grilled to perfection in tandoor with spices</p>
-                        <div class="price">₹290</div>
-                    </div>
-                </div>
-                
-                <!-- Main Courses -->
-                <div class="menu-item">
-                    <img src="https://i.pinimg.com/736x/a8/9a/9f/a89a9f222ff5f325895f8053e8bbc5b0.jpg" alt="Butter Chicken" loading="lazy">
-                    <div class="menu-item-content">
-                        <h3>Butter Chicken</h3>
-                        <p>Tender chicken in a rich, creamy tomato gravy with aromatic spices</p>
-                        <div class="price">₹470</div>
-                    </div>
-                </div>
-                
-                <!-- Desserts -->
-                <div class="menu-item">
-                    <img src="https://i.pinimg.com/736x/9c/64/1f/9c641f34a51c3d39c254f34acfb25011.jpg" alt="Gulab Jamun" loading="lazy">
-                    <div class="menu-item-content">
-                        <h3>Gulab Jamun</h3>
-                        <p>Soft, melt-in-your-mouth milk balls soaked in sugar syrup</p>
-                        <div class="price">₹60</div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-btn-container">
-                <a href="menu.html" class="btn">View Full Menu</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>WHY CHOOSE US</h2>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-parking"></i>
-                    </div>
-                    <h3>Wallet Parking</h3>
-                    <p>Convenient and secure parking available for all our guests</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-percentage"></i>
-                    </div>
-                    <h3>5% Coupon</h3>
-                    <p>Get a 5% discount coupon on your first visit to redeem next time</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Authentic Cuisine</h3>
-                    <p>Traditional recipes prepared with the freshest ingredients</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3>Special Occasions</h3>
-                    <p>Perfect place for your family gatherings and celebrations</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Gallery Section -->
-    <section class="video-gallery" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="color: var(--text-light);">OUR RESTAURANT</h2>
-            </div>
-            <div class="video-container">
-                <div class="video-item">
-                    <video controls preload="none">
-                        <source src="https://media-hosting.imagekit.io/7c2145ad8da34a28/h1.mp4?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__" type="video/mp4">
-                    </video>
-                    <div class="video-caption">
-                        <h3>Food Preparation</h3>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <video controls preload="none">
-                        <source src="https://media-hosting.imagekit.io/7c2145ad8da34a28/h2.mp4?Expires=1841954846&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Or2A~xzoM3I-TSAIaW7lvIZsROx-CEpg8nJY3x59IsAdsDXPU3LcNRIAekU2dOVY7iwHWYv4J3d2GH45cUQ8kVkqpS2tC7Ypi1-6VvM1RpNeq4DmiCEcSvzGb-xm8mGksi4rvaHpfTzf1x93UdVgYID4sxg1gFxoW9i2KpIYuZT35BpzzJFtcSmSTbbXzYnMcEWiUz7V0mYe5x02NkcommfzCptDQ7LB5HjEu~og0EN-1gVzh4OWOa1xKOSkkPBQ8xfeXAl6MwaFP8mP0tKPPadK~ooU~hrzYhrXgM3C0OXTZWpzc4Bq2vqCBh9g8dPNSggpnEOYZSRS3GkNb8sdRA__" type="video/mp4">
-                    </video>
-                    <div class="video-caption">
-                        <h3>Customer Experience</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reservation Section - Enhanced -->
-    <section class="reservation" id="reservation">
-        <div class="container">
-            <div class="section-title">
-                <h2>MAKE A RESERVATION</h2>
-            </div>
-            <div class="reservation-form">
-                <form action="https://api.web3forms.com/submit" method="POST" id="booking-form">
-                    <input type="hidden" name="access_key" value="3ad2ac7d-5205-4c7f-b856-de35b9a592f3">
-                    <input type="hidden" name="subject" value="New Reservation Request">
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="guests">Number of Guests</label>
-                            <select id="guests" name="guests" required>
-                                <option value="" disabled selected>Select guests</option>
-                                <option value="1">1 Person</option>
-                                <option value="2">2 People</option>
-                                <option value="3">3 People</option>
-                                <option value="4">4 People</option>
-                                <option value="5">5 People</option>
-                                <option value="6+">6+ People</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="date">Date</label>
-                            <input type="date" id="date" name="date" placeholder="dd-mm-yyyy" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="time">Time</label>
-                            <input type="time" id="time" name="time" placeholder="--:--" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="special-requests">Special Requests</label>
-                        <textarea id="special-requests" name="special-requests" rows="4" placeholder="Any special requests or dietary restrictions..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Book Table</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="map-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>OUR LOCATION</h2>
-            </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52356.72936253133!2d78.9818823486328!3d21.066862200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747341109593!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>GPS HIGHWAY RESTAURANT</h3>
-                    <p>Experience authentic Indian cuisine at our restaurant located conveniently on the highway. We offer an unforgettable culinary journey through India's diverse regional flavors.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/gpshighwayrestaurant/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/gps.highway.restaurant/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@gpsfamilyrestaurant7280" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>CONTACT US</h3>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <a href="https://maps.google.com/?q=GPS+Highway+Restaurant,+Chichbhawan,+Nagpur,+Maharashtra+440005" target="_blank">GPS Highway Restaurant, Chichbhawan, Nagpur, Maharashtra 440005</a>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <div class="phone-numbers">
-                            <a href="tel:9021078335" class="phone-number">9021078335</a>
-                            <a href="tel:9665615666" class="phone-number">9665615666</a>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@gpshighwayrestaurant.com">info@gpshighwayrestaurant.com</a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>QUICK LINKS</h3>
-                    <ul>
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="index.html#reservation">Reservations</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>OPENING HOURS</h3>
-                    <p>Monday - Sunday: 10:00 AM - 10:00 PM</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 GPS Highway Restaurant. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Loader Animation
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const loader = document.getElementById('loader');
-                loader.classList.add('loader-hidden');
-                
-                // Enable scrolling after loader disappears
-                document.body.style.overflow = 'auto';
-            }, 1000); // 1 second delay
-        });
-
-        // Check if coming back from menu.html to skip animation
-        if (sessionStorage.getItem('visitedMenu')) {
-            document.getElementById('loader').style.display = 'none';
-            document.body.style.overflow = 'auto';
-            sessionStorage.removeItem('visitedMenu');
+        document.addEventListener('DOMContentLoaded', function() {
+            const magicCards = document.querySelectorAll('.magic-card');
+            const instructions = document.getElementById('instructions');
+            let selectedCard = null;
             
-            // Scroll to the section if hash exists
-            if (window.location.hash) {
-                const targetElement = document.querySelector(window.location.hash);
-                if (targetElement) {
+            // Hide instructions initially
+            instructions.style.display = 'none';
+            
+            magicCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // If a card is already selected, ignore clicks
+                    if (selectedCard) return;
+                    
+                    // Mark this card as selected
+                    selectedCard = this;
+                    
+                    // Show the back of this card
+                    const back = this.querySelector('.magic-card-back');
+                    back.classList.add('active');
+                    
+                    // Zoom in the coupon image after a delay
                     setTimeout(() => {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }, 100);
-                }
-            }
-        }
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navMenu = document.getElementById('nav-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                
-                // Set flag when navigating to menu.html
-                if (link.getAttribute('href') === 'menu.html') {
-                    sessionStorage.setItem('visitedMenu', 'true');
-                    sessionStorage.setItem('scrollPosition', window.scrollY);
-                }
-            });
-        });
-        
-        // Header scroll effect
-        const header = document.getElementById('header');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+                        const couponImage = back.querySelector('.coupon-image');
+                        couponImage.classList.add('zoomed');
                         
-                        // Update URL without reload
-                        history.pushState(null, null, targetId);
-                    }
-                }
-            });
-        });
-        
-        // Form submission with Web3Forms
-        const bookingForm = document.getElementById('booking-form');
-        
-        bookingForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(bookingForm);
-            const submitBtn = bookingForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.textContent;
-            
-            try {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Processing...';
-                
-                const response = await fetch(bookingForm.action, {
-                    method: 'POST',
-                    body: formData
+                        // Show instructions after coupon is revealed
+                        setTimeout(() => {
+                            instructions.style.display = 'block';
+                            window.scrollTo({
+                                top: document.body.scrollHeight,
+                                behavior: 'smooth'
+                            });
+                        }, 1000);
+                    }, 500);
                 });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    alert('Thank you for your reservation! We will contact you shortly to confirm your booking.');
-                    bookingForm.reset();
-                } else {
-                    alert('There was an error submitting your reservation. Please try again later.');
-                    console.error(result);
-                }
-            } catch (error) {
-                alert('There was an error submitting your reservation. Please try again later.');
-                console.error(error);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-            }
-        });
-
-        // Lazy load videos when they come into view
-        const lazyVideos = document.querySelectorAll('video[preload="none"]');
-        
-        const lazyVideoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const video = entry.target;
-                    video.preload = 'auto';
-                    lazyVideoObserver.unobserve(video);
-                }
             });
-        }, { rootMargin: '200px' });
-        
-        lazyVideos.forEach(video => {
-            lazyVideoObserver.observe(video);
-        });
-
-        // Restore scroll position if coming back from menu
-        if (sessionStorage.getItem('scrollPosition')) {
-            window.scrollTo(0, parseInt(sessionStorage.getItem('scrollPosition')));
-            sessionStorage.removeItem('scrollPosition');
-        }
-
-        // Video play/pause functionality
-        document.querySelectorAll('.video-item').forEach(videoItem => {
-            const video = videoItem.querySelector('video');
             
-            // Hide controls initially
-            video.removeAttribute('controls');
-            
-            // Single click to play/pause
-            videoItem.addEventListener('click', (e) => {
-                // Check if the click was on the video itself or its container
-                if (e.target === video || e.target === videoItem) {
-                    if (video.paused) {
-                        video.play();
-                    } else {
-                        video.pause();
-                    }
-                }
+            // Back button functionality
+            document.querySelectorAll('.back-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    const cardInner = this.closest('.magic-card-inner');
+                    cardInner.style.transform = 'rotateY(0deg)';
+                    
+                    const couponImage = this.parentElement.querySelector('.coupon-image');
+                    couponImage.classList.remove('zoomed');
+                    
+                    setTimeout(() => {
+                        this.parentElement.classList.remove('active');
+                        selectedCard = null;
+                        instructions.style.display = 'none';
+                    }, 800);
+                });
             });
+            
+            // Prevent multiple selections
+            document.addEventListener('click', function(e) {
+                if (selectedCard && !e.target.closest('.magic-card')) {
+                    return;
+                }
+            }, true);
         });
     </script>
 </body>
