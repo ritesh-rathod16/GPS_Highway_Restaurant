@@ -25,7 +25,6 @@
         }
 
         * {
-@@ -26,13 +30,66 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
@@ -95,7 +94,6 @@
         }
 
         .container {
-@@ -50,12 +107,13 @@
             width: 100%;
             z-index: 1000;
             transition: all 0.3s ease;
@@ -111,7 +109,6 @@
         }
 
         .header-container {
-@@ -71,15 +129,29 @@
 
         .logo-img {
             height: 50px;
@@ -144,8 +141,6 @@
         }
 
         nav ul {
-@@ -89,15 +161,18 @@
-
         nav ul li {
             margin-left: 30px;
             position: relative;
@@ -165,7 +160,6 @@
         }
 
         nav ul li a:hover {
-@@ -126,144 +201,525 @@
             color: var(--text-light);
             font-size: 24px;
             cursor: pointer;
@@ -750,7 +744,6 @@
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
-@@ -273,12 +729,15 @@
             </div>
             <nav>
                 <ul id="nav-menu">
@@ -767,7 +760,6 @@
                 </ul>
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
-@@ -287,1036 +746,185 @@
         </div>
     </header>
 
@@ -1957,7 +1949,6 @@
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
-@@ -1332,6 +940,12 @@
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
@@ -1970,7 +1961,6 @@
             });
         });
 
-@@ -1345,6 +959,76 @@
                 header.classList.remove('scrolled');
             }
         });
