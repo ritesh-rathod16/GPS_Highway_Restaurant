@@ -472,10 +472,6 @@
             background-color: var(--matte-black);
             color: var(--parchment);
         }
-
-        .video-gallery .section-title h2 {
-            color: var(--matte-gold);
-        }
         
         .video-container {
             display: grid;
@@ -705,19 +701,6 @@
             color: var(--parchment);
             font-size: 1.1rem;
             opacity: 0.9;
-        }
-
-        /* Combined Features and Events Section */
-        .features-events-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        @media (max-width: 992px) {
-            .features-events-section {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* Footer with enhanced contact info */
@@ -1236,83 +1219,40 @@
         </div>
     </section>
 
-    <!-- Combined Features and Events Section -->
+    <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <div class="features-events-section">
-                <div>
-                    <div class="section-title">
-                        <h2>WHY CHOOSE US</h2>
+            <div class="section-title">
+                <h2>WHY CHOOSE US</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-parking"></i>
                     </div>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-parking"></i>
-                            </div>
-                            <h3>Wallet Parking</h3>
-                            <p>Convenient and secure parking available for all our guests</p>
-                        </div>
-                        <a href="coupon.html" class="feature-card" style="text-decoration: none;">
-                            <div class="feature-icon">
-                                <i class="fas fa-percentage"></i>
-                            </div>
-                            <h3>5% Coupon</h3>
-                            <p>Get a 5% discount coupon on your first visit to redeem next time</p>
-                        </a>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <h3>Authentic Cuisine</h3>
-                            <p>Traditional recipes prepared with the freshest ingredients</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <h3>Event Booking</h3>
-                            <p>Host your private parties and special events with us</p>
-                        </div>
-                    </div>
+                    <h3>Wallet Parking</h3>
+                    <p>Convenient and secure parking available for all our guests</p>
                 </div>
-                
-                <div>
-                    <div class="section-title">
-                        <h2>EVENTS & PRIVATE DINING</h2>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
                     </div>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-birthday-cake"></i>
-                            </div>
-                            <h3>Birthday Parties</h3>
-                            <p>Celebrate your special day with us in a private dining area</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-glass-cheers"></i>
-                            </div>
-                            <h3>Anniversaries</h3>
-                            <p>Romantic settings for your anniversary celebrations</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h3>Corporate Events</h3>
-                            <p>Host your business meetings and corporate gatherings</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <h3>Catering Services</h3>
-                            <p>Let us bring our authentic flavors to your location</p>
-                        </div>
+                    <h3>5% Coupon</h3>
+                    <p>Get a 5% discount coupon on your first visit to redeem next time</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
                     </div>
-                    <div class="menu-btn-container">
-                        <a href="#contact" class="btn">Contact Us for Events</a>
+                    <h3>Authentic Cuisine</h3>
+                    <p>Traditional recipes prepared with the freshest ingredients</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
                     </div>
+                    <h3>Event Booking</h3>
+                    <p>Host your private parties and special events with us</p>
                 </div>
             </div>
         </div>
@@ -1322,7 +1262,7 @@
     <section class="video-gallery" id="gallery">
         <div class="container">
             <div class="section-title">
-                <h2>OUR RESTAURANT</h2>
+                <h2 style="color: var(--text-light);">OUR RESTAURANT</h2>
             </div>
             <div class="video-container">
                 <div class="video-item">
@@ -1409,6 +1349,48 @@
                     </div>
                     <button type="submit" class="submit-btn">Book Table</button>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="features" id="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>EVENTS & PRIVATE DINING</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Birthday Parties</h3>
+                    <p>Celebrate your special day with us in a private dining area</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Anniversaries</h3>
+                    <p>Romantic settings for your anniversary celebrations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Corporate Events</h3>
+                    <p>Host your business meetings and corporate gatherings</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Catering Services</h3>
+                    <p>Let us bring our authentic flavors to your location</p>
+                </div>
+            </div>
+            <div class="menu-btn-container">
+                <a href="#contact" class="btn">Contact Us for Events</a>
             </div>
         </div>
     </section>
@@ -1721,7 +1703,7 @@
                 
                 // Send rating to server (simulated)
                 setTimeout(() => {
-                    console.log(`Rating submitted: ${rating} stars`);
+                    console.log(Rating submitted: ${rating} stars);
                     // In a real implementation, you would send this to your server
                 }, 500);
             });
