@@ -21,6 +21,7 @@
             --foggy-gray: #333333;
             --rust: #8b3100;
             --moonlight: #e0e0e0;
+            --starry-blue: #001a33;
         }
         
         * {
@@ -112,16 +113,18 @@
         }
 
         .magic-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
             width: 100%;
             margin-bottom: 60px;
+            flex-wrap: wrap;
         }
 
         .magic-card {
             position: relative;
-            height: 350px;
+            width: 300px;
+            height: 450px;
             perspective: 1000px;
             cursor: pointer;
             border-radius: 5px;
@@ -178,7 +181,7 @@
         }
 
         .magic-card-front h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             text-align: center;
             padding: 20px;
             position: relative;
@@ -316,24 +319,20 @@
         }
 
         /* Card Themes */
-        .whispering-woods {
-            background: linear-gradient(135deg, var(--eldritch-green), var(--deep-shadow));
-            background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+        .the-star {
+            background: linear-gradient(135deg, var(--starry-blue), var(--deep-shadow));
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
         }
 
-        .forbidden-tome {
-            background: linear-gradient(135deg, var(--forbidden-purple), var(--deep-shadow));
-            background-image: url('https://www.transparenttextures.com/patterns/black-paper.png');
+        .the-moon {
+            background: linear-gradient(135deg, var(--moonlight), var(--foggy-gray));
+            background-image: url('https://www.transparenttextures.com/patterns/mooning.png');
+            color: #333;
         }
 
-        .blood-moon {
-            background: linear-gradient(135deg, var(--blood-red), var(--deep-shadow));
-            background-image: url('https://www.transparenttextures.com/patterns/black-scratches.png');
-        }
-
-        .cursed-relic {
-            background: linear-gradient(135deg, var(--cursed-gold), var(--rust));
-            background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+        .the-moon h2 {
+            color: #333;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
 
         /* Floating particles */
@@ -378,7 +377,9 @@
         
         @media (max-width: 768px) {
             .magic-cards {
-                grid-template-columns: repeat(2, 1fr);
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
             }
             
             .coupon-header h1 {
@@ -387,8 +388,9 @@
         }
         
         @media (max-width: 576px) {
-            .magic-cards {
-                grid-template-columns: 1fr;
+            .magic-card {
+                width: 280px;
+                height: 420px;
             }
             
             .coupon-header h1 {
@@ -397,10 +399,6 @@
             
             .coupon-header p {
                 font-size: 1rem;
-            }
-            
-            .magic-card {
-                height: 300px;
             }
         }
     </style>
@@ -413,53 +411,27 @@
         </div>
 
         <div class="magic-cards" id="magic-cards">
-            <!-- Card 1 -->
-            <div class="magic-card whispering-woods" data-coupon="Coupon1.png">
+            <!-- The Star Card -->
+            <div class="magic-card the-star" data-coupon="Coupon1.png">
                 <div class="magic-card-inner">
                     <div class="magic-card-front">
-                        <h2>The Whispering<br>Woods Offer</h2>
+                        <h2>THE STAR</h2>
                     </div>
                     <div class="magic-card-back">
-                        <img src="Coupon1.png" alt="Coupon 1" class="coupon-image">
+                        <img src="Coupon2.png" alt="The Star Coupon" class="coupon-image">
                         <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
                     </div>
                 </div>
             </div>
             
-            <!-- Card 2 -->
-            <div class="magic-card forbidden-tome" data-coupon="Coupon2.png">
+            <!-- The Moon Card -->
+            <div class="magic-card the-moon" data-coupon="moon-coupon.png">
                 <div class="magic-card-inner">
                     <div class="magic-card-front">
-                        <h2>The Forbidden<br>Tome's Secret</h2>
+                        <h2>THE MOON</h2>
                     </div>
                     <div class="magic-card-back">
-                        <img src="Coupon2.png" alt="Coupon 2" class="coupon-image">
-                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 3 -->
-            <div class="magic-card blood-moon" data-coupon="Coupon3.png">
-                <div class="magic-card-inner">
-                    <div class="magic-card-front">
-                        <h2>Blood Moon's<br>Dark Bargain</h2>
-                    </div>
-                    <div class="magic-card-back">
-                        <img src="Coupon3.png" alt="Coupon 3" class="coupon-image">
-                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 4 -->
-            <div class="magic-card cursed-relic" data-coupon="Coupon4.png">
-                <div class="magic-card-inner">
-                    <div class="magic-card-front">
-                        <h2>The Cursed<br>Relic's Gift</h2>
-                    </div>
-                    <div class="magic-card-back">
-                        <img src="Coupon4.png" alt="Coupon 4" class="coupon-image">
+                        <img src="Coupon3.png" alt="The Moon Coupon" class="coupon-image">
                         <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
                     </div>
                 </div>
