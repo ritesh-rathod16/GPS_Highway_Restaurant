@@ -384,7 +384,7 @@
             opacity: 0.5;
         }
         
-        /* Menu Section with 4:6 ratio cards */
+        /* Menu Section with increased size for better mobile visibility */
         .menu {
             background-color: var(--primary-color);
             color: var(--parchment);
@@ -403,7 +403,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: all 0.5s ease;
-            aspect-ratio: 4/6;
+            aspect-ratio: 4/5; /* Changed from 4/6 to make items taller */
             display: flex;
             flex-direction: column;
             position: relative;
@@ -454,12 +454,13 @@
         }
         
         .price {
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Increased from 1.5rem */
             font-weight: 600;
             color: var(--matte-gold);
             font-family: 'Cinzel', serif;
             margin-top: auto;
             letter-spacing: 1px;
+            padding-top: 10px; /* Added padding */
         }
         
         .menu-btn-container {
@@ -1082,6 +1083,26 @@
                 grid-template-columns: 1fr;
             }
             
+            .menu-item {
+                aspect-ratio: 3/4; /* More square on mobile */
+            }
+            
+            .menu-item-content {
+                padding: 20px;
+            }
+            
+            .menu-item-content h3 {
+                font-size: 1.6rem;
+            }
+            
+            .menu-item-content p {
+                font-size: 1rem;
+            }
+            
+            .price {
+                font-size: 1.6rem; /* Slightly smaller on mobile */
+            }
+            
             .reservation-form {
                 padding: 30px 20px;
             }
@@ -1189,7 +1210,7 @@
         </div>
     </section>
 
-    <!-- Menu Section with 4:6 ratio cards -->
+    <!-- Menu Section with increased size for better mobile visibility -->
     <section class="menu" id="menu">
         <div class="container">
             <div class="section-title">
@@ -1416,7 +1437,7 @@
                 <h2>OUR LOCATION</h2>
             </div>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52356.72936253133!2d78.9818823486328!3d21.066862200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747341109593!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52356.72936253133!2d78.9818823486328!3d21.066862200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747341109593!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -1491,8 +1512,7 @@
                 <i class="fas fa-star rating-star" data-rating="5"></i>
             </div>
             
-            <p>Don't forget to claim your special coupon before you leave!</p>
-            <a href="coupon.html" class="btn">Get Your Coupon</a>
+            <p>Thank you for visiting GPS Highway Restaurant!</p>
         </div>
     </div>
 
@@ -1670,23 +1690,26 @@
             });
         });
 
-        // Exit Intent Modal
+        // Exit Intent Modal - Only show when reaching contact section
         const exitModal = document.getElementById('exit-modal');
         const exitModalClose = document.getElementById('exit-modal-close');
-        let mouseY = 0;
+        const contactSection = document.getElementById('contact');
+        let contactSectionReached = false;
         
-        // Track mouse movement
-        document.addEventListener('mousemove', (e) => {
-            mouseY = e.clientY;
-        });
-        
-        // Show modal when user tries to leave
-        document.addEventListener('mouseout', (e) => {
-            if (e.clientY < 50 && mouseY > 50) {
+        // Track scroll position to detect when contact section is reached
+        window.addEventListener('scroll', () => {
+            const contactSectionTop = contactSection.offsetTop;
+            const scrollPosition = window.scrollY + window.innerHeight;
+            
+            if (scrollPosition > contactSectionTop && !contactSectionReached) {
+                contactSectionReached = true;
+                
                 // Only show if they haven't submitted a reservation
                 if (!sessionStorage.getItem('reservationSubmitted')) {
-                    exitModal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
+                    setTimeout(() => {
+                        exitModal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }, 2000); // Show after 2 seconds of reaching contact section
                 }
             }
         });
@@ -1719,6 +1742,12 @@
                 setTimeout(() => {
                     console.log(`Rating submitted: ${rating} stars`);
                     // In a real implementation, you would send this to your server
+                    
+                    // Close modal after rating
+                    setTimeout(() => {
+                        exitModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }, 1500);
                 }, 500);
             });
             
