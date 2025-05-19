@@ -212,7 +212,7 @@
         }
         
         /* Hero Section - Enhanced with new design */
-        #hero {
+        #home {
             height: 100vh;
             display: flex;
             align-items: center;
@@ -655,27 +655,31 @@
             border: 0;
         }
         
-        /* Features Section */
+        /* Features Section - Made smaller */
         .features {
             background-color: var(--primary-color);
             color: var(--parchment);
+            padding: 60px 0;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .feature-card {
             background-color: var(--matte-black);
             border-radius: 3px;
-            padding: 40px 30px;
+            padding: 30px 20px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: all 0.5s ease;
             border: 1px solid rgba(193, 154, 107, 0.2);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .feature-card:hover {
@@ -685,22 +689,31 @@
         }
 
         .feature-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--matte-gold);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .feature-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--matte-gold);
             font-family: 'Cinzel', serif;
         }
 
         .feature-card p {
             color: var(--parchment);
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        /* Events Section - Made smaller */
+        .events {
+            background-color: var(--primary-color);
+            color: var(--parchment);
+            padding: 60px 0;
         }
 
         /* Footer with enhanced contact info */
@@ -1131,11 +1144,11 @@
             </div>
             <nav>
                 <ul id="nav-menu">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="menu.html">Menu</a></li>
-                    <li><a href="index.html#reservation">Reservations</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#reservation">Reservations</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -1145,7 +1158,7 @@
     </header>
 
     <!-- Hero Section - Enhanced -->
-    <section id="hero">
+    <section id="home">
         <div class="hero-content">
             <h1 class="hero-title">AUTHENTIC INDIAN CUISINE</h1>
             <p class="hero-subtitle">Experience the rich flavors of India with our carefully crafted menu featuring traditional recipes and the freshest ingredients.</p>
@@ -1219,7 +1232,7 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features Section - Made smaller -->
     <section class="features" id="features">
         <div class="container">
             <div class="section-title">
@@ -1238,7 +1251,8 @@
                         <i class="fas fa-percentage"></i>
                     </div>
                     <h3>5% Coupon</h3>
-                    <p>Get a 5% discount coupon on your first visit to redeem next time</p>
+                    <p>Get a 5% discount coupon on your every visit to redeem next time</p>
+                    <a href="coupon.html" class="btn" style="padding: 10px 20px; font-size: 0.9rem; margin-top: auto;">Get Coupon</a>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -1262,7 +1276,7 @@
     <section class="video-gallery" id="gallery">
         <div class="container">
             <div class="section-title">
-                <h2 style="color: var(--text-light);">OUR RESTAURANT</h2>
+                <h2>OUR RESTAURANT</h2>
             </div>
             <div class="video-container">
                 <div class="video-item">
@@ -1353,8 +1367,8 @@
         </div>
     </section>
 
-    <!-- Events Section -->
-    <section class="features" id="events">
+    <!-- Events Section - Made smaller -->
+    <section class="events" id="events">
         <div class="container">
             <div class="section-title">
                 <h2>EVENTS & PRIVATE DINING</h2>
@@ -1441,10 +1455,10 @@
                 <div class="footer-column">
                     <h3>QUICK LINKS</h3>
                     <ul>
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="menu.html">Menu</a></li>
-                        <li><a href="index.html#reservation">Reservations</a></li>
+                        <li><a href="#reservation">Reservations</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1732,4 +1746,3 @@
     </script>
 </body>
 </html>
-
