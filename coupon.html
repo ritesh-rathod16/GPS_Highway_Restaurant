@@ -3,225 +3,697 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Golden Enigma - Unlock Your Fortune</title>
+    <title>Secret Offer | The Shadowed Inn</title>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel+Decorative:wght@400;700&family=Eagle+Lake&display=swap" rel="stylesheet">
     <style>
-        /* ==== DARK & GOLD THEME ==== */
         :root {
-            --dark: #0a0a0a;
-            --gold: #d4af37;
-            --gold-light: rgba(212, 175, 55, 0.7);
-            --matte-black: #1a1a1a;
+            --deep-shadow: #0a0a0a;
+            --blood-red: #5c0000;
+            --tarnished-silver: #c0c0c0;
+            --ancient-parchment: #e8d8b0;
+            --eldritch-green: #003300;
+            --forbidden-purple: #330033;
+            --cursed-gold: #aa8800;
+            --foggy-gray: #333333;
+            --rust: #8b3100;
+            --moonlight: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Playfair Display', serif;
-            background-color: var(--dark);
-            color: #fff;
+            font-family: 'MedievalSharp', cursive;
+            color: var(--tarnished-silver);
+            background-color: var(--deep-shadow);
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
-                url('https://www.transparenttextures.com/patterns/black-paper.png');
-        }
-
-        /* ==== COUPON CARD STYLING ==== */
-        .coupon-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            perspective: 1000px;
-        }
-
-        .coupon-card {
-            width: 350px;
-            height: 500px;
-            background: var(--matte-black);
-            border: 1px solid var(--gold);
-            border-radius: 10px;
-            box-shadow: 
-                0 0 20px rgba(212, 175, 55, 0.3),
-                0 0 40px rgba(0, 0, 0, 0.5);
+            line-height: 1.7;
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
             position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.8s;
-            cursor: pointer;
-            overflow: hidden;
         }
-
-        .coupon-card:hover {
-            transform: rotateY(10deg) rotateX(5deg);
-            box-shadow: 
-                0 0 30px var(--gold-light),
-                0 0 60px rgba(0, 0, 0, 0.7);
-        }
-
-        /* ==== FRONT SIDE DESIGN ==== */
-        .front {
-            padding: 30px;
-            text-align: center;
-            position: relative;
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.9) 100%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--cursed-gold);
+            text-shadow: 0 0 5px rgba(170, 136, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .emblem {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto;
-            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
-            border: 2px solid var(--gold);
-            border-radius: 50%;
-            display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
-            box-shadow: 0 0 20px var(--gold-light);
         }
 
-        .emblem::before {
-            content: "?";
-            font-size: 60px;
-            color: var(--gold);
-            font-weight: bold;
-            opacity: 0.8;
+        .coupon-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
         }
 
-        .title {
-            font-size: 28px;
-            letter-spacing: 2px;
-            margin: 20px 0;
-            color: var(--gold);
-            text-shadow: 0 0 10px var(--gold-light);
+        .coupon-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(170, 136, 0, 0.7);
+            position: relative;
+            display: inline-block;
         }
 
-        .subtitle {
+        .coupon-header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cursed-gold), transparent);
+        }
+
+        .coupon-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: var(--tarnished-silver);
             font-style: italic;
-            opacity: 0.8;
-            margin-bottom: 30px;
+            position: relative;
         }
 
-        .instructions {
-            font-size: 14px;
-            opacity: 0.7;
-            margin-top: auto;
+        .coupon-header p::before,
+        .coupon-header p::after {
+            content: '"';
+            color: var(--rust);
+            font-size: 1.5em;
         }
 
-        /* ==== BACK SIDE DESIGN (HIDDEN UNTIL CLICK) ==== */
-        .back {
+        .magic-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 100%;
+            margin-bottom: 60px;
+        }
+
+        .magic-card {
+            position: relative;
+            height: 350px;
+            perspective: 1000px;
+            cursor: pointer;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .magic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(170, 136, 0, 0.3);
+        }
+
+        .magic-card::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--matte-black);
-            padding: 30px;
-            box-sizing: border-box;
-            transform: rotateY(180deg);
-            backface-visibility: hidden;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+            z-index: 1;
         }
 
-        .back.active {
+        .magic-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .magic-card:hover .magic-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .magic-card-front, 
+        .magic-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--rust);
+        }
+
+        .magic-card-front {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(70,0,0,0.7));
+            z-index: 2;
+        }
+
+        .magic-card-front h2 {
+            font-size: 2rem;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .magic-card-back {
+            background: linear-gradient(135deg, var(--deep-shadow), var(--foggy-gray));
+            transform: rotateY(180deg);
+            padding: 20px;
+            display: none;
+            position: relative;
+        }
+
+        .magic-card-back::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/black-paper.png');
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .magic-card-back.active {
             display: flex;
         }
 
-        .discount-code {
-            font-size: 32px;
-            color: var(--gold);
-            margin: 20px 0;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px var(--gold-light);
+        .coupon-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 5px;
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 2;
+            border: 1px solid var(--rust);
         }
 
-        .qr-code {
-            width: 120px;
-            height: 120px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 10px;
-            border: 1px solid var(--gold);
+        .coupon-image.zoomed {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px rgba(170, 136, 0, 0.5);
         }
 
-        .terms {
-            font-size: 10px;
-            opacity: 0.5;
-            margin-top: 20px;
-        }
-
-        /* ==== WAX SEAL EFFECT ==== */
-        .wax-seal {
+        .back-btn {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background: #8B0000;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            color: var(--cursed-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--blood-red);
+            transform: scale(1.2);
+        }
+
+        .instructions {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2rem;
+            color: var(--tarnished-silver);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            padding: 20px;
+            border-top: 1px dashed var(--rust);
+            border-bottom: 1px dashed var(--rust);
+            display: none;
+        }
+
+        .instructions::before {
+            content: "✧";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--blood-red);
+            font-size: 2rem;
+            background: var(--deep-shadow);
+            padding: 0 20px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 40px;
+            background-color: transparent;
+            color: var(--cursed-gold);
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid var(--rust);
+            font-size: 1.1rem;
+            text-align: center;
+            letter-spacing: 1px;
+            font-family: 'MedievalSharp', cursive;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-btn:hover {
+            background-color: rgba(170, 136, 0, 0.1);
+            color: var(--blood-red);
+            border-color: var(--blood-red);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(170, 0, 0, 0.3);
+        }
+
+        .home-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(170, 136, 0, 0.1), transparent);
+            transition: all 0.5s;
+        }
+
+        .home-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Card Themes */
+        .whispering-woods {
+            background: linear-gradient(135deg, var(--eldritch-green), var(--deep-shadow));
+            background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+        }
+
+        .forbidden-tome {
+            background: linear-gradient(135deg, var(--forbidden-purple), var(--deep-shadow));
+            background-image: url('https://www.transparenttextures.com/patterns/black-paper.png');
+        }
+
+        .blood-moon {
+            background: linear-gradient(135deg, var(--blood-red), var(--deep-shadow));
+            background-image: url('https://www.transparenttextures.com/patterns/black-scratches.png');
+        }
+
+        .cursed-relic {
+            background: linear-gradient(135deg, var(--cursed-gold), var(--rust));
+            background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            background-color: rgba(170, 136, 0, 0.5);
             border-radius: 50%;
-            opacity: 0.8;
-            border: 1px dashed var(--gold);
+            pointer-events: none;
+            z-index: -1;
         }
 
-        /* ==== ANIMATIONS ==== */
-        @keyframes glow {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
+        /* Glowing eyes effect */
+        .eyes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
         }
 
-        .glow {
-            animation: glow 3s infinite;
+        .eye {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--blood-red);
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px var(--blood-red);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .coupon-header h1 {
+                font-size: 3rem;
+            }
+            
+            .coupon-header p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .magic-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .coupon-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .magic-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .coupon-header h1 {
+                font-size: 2rem;
+            }
+            
+            .coupon-header p {
+                font-size: 1rem;
+            }
+            
+            .magic-card {
+                height: 300px;
+            }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="coupon-container">
-        <div class="coupon-card" onclick="this.classList.toggle('flipped')">
-            <!-- FRONT SIDE -->
-            <div class="front">
-                <div>
-                    <div class="emblem"></div>
-                    <h1 class="title">THE GOLDEN ENIGMA</h1>
-                    <p class="subtitle">For the Worthy Few</p>
-                    <p class="glow">"Unlock Your Fortune"</p>
-                </div>
-                <p class="instructions">Click to reveal your hidden discount</p>
-                <div class="wax-seal"></div>
-            </div>
+    <div class="container">
+        <div class="coupon-header">
+            <h1>Choose Your Fate...</h1>
+            <p>One selection only... choose wisely... or don't... it matters not to us...</p>
+        </div>
 
-            <!-- BACK SIDE (REVEALED ON CLICK) -->
-            <div class="back" id="back">
-                <p>"This card holds a secret only the bearer can unveil."</p>
-                <div class="discount-code">ENIGMA20</div>
-                <p>20% OFF YOUR NEXT PURCHASE</p>
-                <div class="qr-code">
-                    <!-- Placeholder for QR code -->
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://example.com/golden-enigma" alt="QR Code">
+        <div class="magic-cards" id="magic-cards">
+            <!-- Card 1 -->
+            <div class="magic-card whispering-woods" data-coupon="Coupon1.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>The Whispering<br>Woods Offer</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon1.png" alt="Coupon 1" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
                 </div>
-                <p class="terms">Offer valid under the gilded moon. Terms apply.</p>
             </div>
+            
+            <!-- Card 2 -->
+            <div class="magic-card forbidden-tome" data-coupon="Coupon2.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>The Forbidden<br>Tome's Secret</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon2.png" alt="Coupon 2" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="magic-card blood-moon" data-coupon="Coupon3.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>Blood Moon's<br>Dark Bargain</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon3.png" alt="Coupon 3" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="magic-card cursed-relic" data-coupon="Coupon4.png">
+                <div class="magic-card-inner">
+                    <div class="magic-card-front">
+                        <h2>The Cursed<br>Relic's Gift</h2>
+                    </div>
+                    <div class="magic-card-back">
+                        <img src="Coupon4.png" alt="Coupon 4" class="coupon-image">
+                        <button class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions" id="instructions">
+            <p>Take this knowledge with you... but beware... nothing comes without a price... show this to the keeper when the moon is high...</p>
+            <a href="index.html" class="home-btn">Escape While You Can</a>
         </div>
     </div>
 
-    <script>
-        // Flip card on click
-        document.querySelector('.coupon-card').addEventListener('click', function() {
-            this.classList.toggle('flipped');
-            document.getElementById('back').classList.toggle('active');
-        });
+    <div class="eyes" id="eyes"></div>
 
-        // Add a subtle glow effect to the emblem
-        setInterval(() => {
-            const emblem = document.querySelector('.emblem');
-            emblem.style.boxShadow = `0 0 ${10 + Math.random() * 10}px var(--gold-light)`;
-        }, 1000);
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const magicCards = document.querySelectorAll('.magic-card');
+            const instructions = document.getElementById('instructions');
+            const eyesContainer = document.getElementById('eyes');
+            let selectedCard = null;
+            
+            // Create floating particles
+            function createParticles() {
+                const particleCount = 30;
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    const size = Math.random() * 5 + 1;
+                    const posX = Math.random() * window.innerWidth;
+                    const posY = Math.random() * window.innerHeight;
+                    const delay = Math.random() * 5;
+                    const duration = Math.random() * 10 + 10;
+                    
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${posX}px`;
+                    particle.style.top = `${posY}px`;
+                    particle.style.animationDelay = `${delay}s`;
+                    particle.style.animationDuration = `${duration}s`;
+                    
+                    document.body.appendChild(particle);
+                    
+                    // Animate particles
+                    setInterval(() => {
+                        particle.style.left = `${Math.random() * window.innerWidth}px`;
+                        particle.style.top = `${Math.random() * window.innerHeight}px`;
+                    }, duration * 1000);
+                }
+            }
+            
+            // Create glowing eyes that follow cursor
+            function createEyes() {
+                const eyeCount = 8;
+                for (let i = 0; i < eyeCount; i++) {
+                    const eye = document.createElement('div');
+                    eye.classList.add('eye');
+                    eye.id = `eye-${i}`;
+                    eyesContainer.appendChild(eye);
+                    
+                    // Position eyes around the edges of the screen
+                    if (i < 2) { // Top
+                        eye.style.top = '20px';
+                        eye.style.left = `${20 + (i * (window.innerWidth - 40))}px`;
+                    } else if (i < 4) { // Right
+                        eye.style.right = '20px';
+                        eye.style.top = `${20 + ((i-2) * (window.innerHeight - 40))}px`;
+                    } else if (i < 6) { // Bottom
+                        eye.style.bottom = '20px';
+                        eye.style.left = `${20 + ((i-4) * (window.innerWidth - 40))}px`;
+                    } else { // Left
+                        eye.style.left = '20px';
+                        eye.style.top = `${20 + ((i-6) * (window.innerHeight - 40))}px`;
+                    }
+                }
+            }
+            
+            // Make eyes follow cursor
+            function followCursor(e) {
+                const eyes = document.querySelectorAll('.eye');
+                eyes.forEach(eye => {
+                    const eyeRect = eye.getBoundingClientRect();
+                    const eyeX = eyeRect.left + eyeRect.width / 2;
+                    const eyeY = eyeRect.top + eyeRect.height / 2;
+                    const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+                    const distance = Math.min(
+                        Math.sqrt(Math.pow(e.clientX - eyeX, 2) + Math.pow(e.clientY - eyeY, 2)) / 50, 
+                        3
+                    );
+                    
+                    eye.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
+                });
+            }
+            
+            // Randomly blink eyes
+            function blinkEyes() {
+                const eyes = document.querySelectorAll('.eye');
+                const randomEye = eyes[Math.floor(Math.random() * eyes.length)];
+                
+                // Blink
+                randomEye.style.opacity = '1';
+                setTimeout(() => {
+                    randomEye.style.opacity = '0';
+                }, 200);
+                
+                // Schedule next blink
+                setTimeout(blinkEyes, Math.random() * 3000 + 1000);
+            }
+            
+            // Initialize effects
+            createParticles();
+            createEyes();
+            document.addEventListener('mousemove', followCursor);
+            setTimeout(blinkEyes, 1000);
+            
+            // Hide instructions initially
+            instructions.style.display = 'none';
+            
+            // Card selection logic
+            magicCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    if (selectedCard) return;
+                    
+                    selectedCard = this;
+                    const back = this.querySelector('.magic-card-back');
+                    back.classList.add('active');
+                    
+                    // Play creepy sound
+                    const sounds = ['creak', 'whisper', 'howl'];
+                    const sound = new Audio(`https://assets.mixkit.co/sfx/preview/${sounds[Math.floor(Math.random() * sounds.length)]}.mp3`);
+                    sound.volume = 0.3;
+                    sound.play().catch(e => console.log('Audio play failed:', e));
+                    
+                    setTimeout(() => {
+                        const couponImage = back.querySelector('.coupon-image');
+                        couponImage.classList.add('zoomed');
+                        
+                        setTimeout(() => {
+                            instructions.style.display = 'block';
+                            window.scrollTo({
+                                top: document.body.scrollHeight,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Make all eyes glow red briefly
+                            const eyes = document.querySelectorAll('.eye');
+                            eyes.forEach(eye => {
+                                eye.style.opacity = '1';
+                                eye.style.backgroundColor = 'var(--blood-red)';
+                                setTimeout(() => {
+                                    eye.style.opacity = '0';
+                                    setTimeout(() => {
+                                        eye.style.backgroundColor = 'var(--blood-red)';
+                                    }, 1000);
+                                }, 1000);
+                            });
+                        }, 1000);
+                    }, 500);
+                });
+            });
+            
+            // Back button functionality
+            document.querySelectorAll('.back-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    const cardInner = this.closest('.magic-card-inner');
+                    cardInner.style.transform = 'rotateY(0deg)';
+                    
+                    const couponImage = this.parentElement.querySelector('.coupon-image');
+                    couponImage.classList.remove('zoomed');
+                    
+                    setTimeout(() => {
+                        this.parentElement.classList.remove('active');
+                        selectedCard = null;
+                        instructions.style.display = 'none';
+                    }, 800);
+                });
+            });
+            
+            // Prevent multiple selections
+            document.addEventListener('click', function(e) {
+                if (selectedCard && !e.target.closest('.magic-card')) {
+                    return;
+                }
+            }, true);
+            
+            // Random whispers effect
+            function whisper() {
+                const whispers = [
+                    "Choose... choose...",
+                    "We're watching...",
+                    "The price must be paid...",
+                    "Nothing is free...",
+                    "Take it... if you dare...",
+                    "The shadows hunger...",
+                    "Your selection... intrigues us...",
+                    "The deal is struck...",
+                    "Beware what you wish for...",
+                    "The night is long..."
+                ];
+                
+                const whisperText = whispers[Math.floor(Math.random() * whispers.length)];
+                const whisperEl = document.createElement('div');
+                whisperEl.textContent = whisperText;
+                whisperEl.style.position = 'fixed';
+                whisperEl.style.bottom = `${Math.random() * 50 + 10}px`;
+                whisperEl.style.right = `${Math.random() * 50 + 10}px`;
+                whisperEl.style.color = 'var(--blood-red)';
+                whisperEl.style.fontSize = `${Math.random() * 10 + 10}px`;
+                whisperEl.style.opacity = '0';
+                whisperEl.style.transition = 'opacity 2s';
+                whisperEl.style.zIndex = '1000';
+                whisperEl.style.pointerEvents = 'none';
+                whisperEl.style.fontFamily = "'Eagle Lake', cursive";
+                whisperEl.style.textShadow = '0 0 5px rgba(0,0,0,0.8)';
+                
+                document.body.appendChild(whisperEl);
+                
+                setTimeout(() => {
+                    whisperEl.style.opacity = '0.7';
+                    setTimeout(() => {
+                        whisperEl.style.opacity = '0';
+                        setTimeout(() => {
+                            document.body.removeChild(whisperEl);
+                        }, 2000);
+                    }, 3000);
+                }, 100);
+                
+                setTimeout(whisper, Math.random() * 15000 + 5000);
+            }
+            
+            setTimeout(whisper, 5000);
+        });
     </script>
 </body>
 </html>
