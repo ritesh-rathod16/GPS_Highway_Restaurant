@@ -641,6 +641,8 @@ nav ul li a:hover::after {
 .testimonials {
   background-color: var(--primary-color);
   padding: 80px 0;
+  overflow: hidden;
+  position: relative;
 }
 
 .testimonials-container {
@@ -673,10 +675,25 @@ nav ul li a:hover::after {
   transform: translateX(-50%);
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.testimonials-carousel {
+  display: flex;
   gap: 30px;
+  padding: 20px 0;
+  animation: scroll 60s linear infinite;
+  width: calc(300px * 12); /* Width of all testimonial cards */
+}
+
+.testimonials-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-300px * 6)); /* Move half the width to create infinite loop */
+  }
 }
 
 .testimonial-card {
@@ -687,6 +704,8 @@ nav ul li a:hover::after {
   transition: all 0.5s ease;
   border: 1px solid rgba(193, 154, 107, 0.2);
   position: relative;
+  min-width: 300px;
+  flex-shrink: 0;
 }
 
 .testimonial-card:hover {
@@ -749,6 +768,16 @@ nav ul li a:hover::after {
 
 .testimonial-rating i {
   margin-right: 3px;
+}
+
+.testimonials-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--primary-color) 0%, rgba(26, 26, 26, 0) 5%, rgba(26, 26, 26, 0) 95%, var(--primary-color) 100%);
 }
 
 /* Map Section */
@@ -1525,58 +1554,315 @@ Your browser does not support the video tag.
 
 <!-- Testimonials Section -->
 <section class="testimonials">
-<div class="testimonials-container">
-<div class="testimonials-title">
-<h2>WHAT OUR CUSTOMERS SAY</h2>
-</div>
-<div class="testimonials-grid">
-<div class="testimonial-card">
-<div class="testimonial-text">
-The food at GPS Highway Restaurant is absolutely amazing! The flavors are authentic and the service is exceptional. I highly recommend their Butter Chicken and Garlic Naan.
-</div>
-<div class="testimonial-author">
-<img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="testimonial-author-img">
-<div class="testimonial-author-info">
-<h4>Rahul Sharma</h4>
-<p>Regular Customer</p>
-<div class="testimonial-rating">
-<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-</div>
-<div class="testimonial-card">
-<div class="testimonial-text">
-We stopped here during our road trip and were blown away by the quality of food. The ambiance is perfect and the staff is very welcoming. Will definitely visit again!
-</div>
-<div class="testimonial-author">
-<img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="testimonial-author-img">
-<div class="testimonial-author-info">
-<h4>Priya Patel</h4>
-<p>First-time Visitor</p>
-<div class="testimonial-rating">
-<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-</div>
-</div>
-</div>
-</div>
-<div class="testimonial-card">
-<div class="testimonial-text">
-Best Indian restaurant in the area! The flavors are authentic and the portions are generous. The staff is very attentive and the restaurant is always clean.
-</div>
-<div class="testimonial-author">
-<img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="testimonial-author-img">
-<div class="testimonial-author-info">
-<h4>Vikram Singh</h4>
-<p>Local Resident</p>
-<div class="testimonial-rating">
-<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="testimonials-container">
+    <div class="testimonials-title">
+      <h2>WHAT OUR CUSTOMERS SAY</h2>
+    </div>
+    <div class="testimonials-mask"></div>
+    <div class="testimonials-carousel">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The food at GPS Highway Restaurant is absolutely amazing! The flavors are authentic and the service is exceptional. I highly recommend their Butter Chicken and Garlic Naan.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Rahul Sharma</h4>
+            <p>Regular Customer</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          We stopped here during our road trip and were blown away by the quality of food. The ambiance is perfect and the staff is very welcoming. Will definitely visit again!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Priya Patel</h4>
+            <p>First-time Visitor</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          Best Indian restaurant in the area! The flavors are authentic and the portions are generous. The staff is very attentive and the restaurant is always clean.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Vikram Singh</h4>
+            <p>Local Resident</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 4 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The Paneer Tikka here is to die for! Perfectly cooked with just the right amount of spices. I've been coming here for years and the quality never disappoints.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Ananya Desai</h4>
+            <p>Food Blogger</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 5 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          Excellent service and even better food! The Dal Makhani is creamy and flavorful, just like my grandmother used to make. Highly recommend for authentic Indian flavors.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Arjun Mehta</h4>
+            <p>Food Critic</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 6 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          We had a family gathering here and the staff went above and beyond to accommodate our large group. The food came out quickly and was delicious. Great experience!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Neha Kapoor</h4>
+            <p>Family Visitor</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 7 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The Gulab Jamun here is the best I've ever had! Perfectly sweet and soft. The restaurant has a great atmosphere and the prices are very reasonable for the quality.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Rohan Verma</h4>
+            <p>Dessert Lover</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 8 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          I'm a vegetarian and the options here are fantastic. The Palak Paneer and Vegetable Biryani are my favorites. The spices are perfectly balanced - not too mild, not too hot.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/29.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Divya Iyer</h4>
+            <p>Vegetarian Foodie</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 9 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The parking is convenient and the restaurant is very clean. The staff is attentive without being intrusive. The Chicken Tikka Masala is outstanding - perfectly spiced and tender.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Sanjay Gupta</h4>
+            <p>Business Traveler</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 10 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          We celebrated our anniversary here and the staff made it extra special with rose petals on the table and a complimentary dessert. The Lamb Rogan Josh was exquisite!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Meera & Raj</h4>
+            <p>Anniversary Celebration</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 11 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The lunch buffet is an incredible value with so many options. Everything is fresh and replenished frequently. The Naan bread is made to order and comes out piping hot.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Amit Joshi</h4>
+            <p>Buffet Enthusiast</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 12 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          I was skeptical about highway restaurants but GPS Highway changed my mind. The hygiene standards are excellent and the food tastes like home cooking. The Mutton Curry is a must-try!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Kavita Nair</h4>
+            <p>Skeptic Turned Fan</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Duplicate testimonials to create infinite loop effect -->
+      <!-- These are the same as the first 6 testimonials -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The food at GPS Highway Restaurant is absolutely amazing! The flavors are authentic and the service is exceptional. I highly recommend their Butter Chicken and Garlic Naan.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Rahul Sharma</h4>
+            <p>Regular Customer</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          We stopped here during our road trip and were blown away by the quality of food. The ambiance is perfect and the staff is very welcoming. Will definitely visit again!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Priya Patel</h4>
+            <p>First-time Visitor</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          Best Indian restaurant in the area! The flavors are authentic and the portions are generous. The staff is very attentive and the restaurant is always clean.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Vikram Singh</h4>
+            <p>Local Resident</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The Paneer Tikka here is to die for! Perfectly cooked with just the right amount of spices. I've been coming here for years and the quality never disappoints.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Ananya Desai</h4>
+            <p>Food Blogger</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          Excellent service and even better food! The Dal Makhani is creamy and flavorful, just like my grandmother used to make. Highly recommend for authentic Indian flavors.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Arjun Mehta</h4>
+            <p>Food Critic</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          We had a family gathering here and the staff went above and beyond to accommodate our large group. The food came out quickly and was delicious. Great experience!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Neha Kapoor</h4>
+            <p>Family Visitor</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Events Section - Made smaller -->
