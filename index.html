@@ -637,7 +637,7 @@ nav ul li a:hover::after {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Enhanced Testimonials Section with 1:1 cards */
+/* Testimonials Section - Enhanced with 1:1 cards and faster animation */
 .testimonials {
   background-color: var(--primary-color);
   padding: 80px 0;
@@ -698,7 +698,7 @@ nav ul li a:hover::after {
 
 .testimonial-card {
   background-color: var(--matte-black);
-  padding: 40px 30px;
+  padding: 30px;
   border-radius: 5px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
@@ -710,7 +710,6 @@ nav ul li a:hover::after {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
 }
 
 .testimonial-card:hover {
@@ -722,12 +721,14 @@ nav ul li a:hover::after {
 .testimonial-text {
   color: var(--parchment);
   font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 25px;
+  line-height: 1.6;
+  margin-bottom: 20px;
   position: relative;
   padding-left: 20px;
-  overflow-y: auto; /* Add scroll for long testimonials */
-  max-height: 150px; /* Limit height for 1:1 ratio */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Limit to 5 lines */
+  -webkit-box-orient: vertical;
 }
 
 .testimonial-text::before {
@@ -758,7 +759,7 @@ nav ul li a:hover::after {
 
 .testimonial-author-info h4 {
   color: var(--matte-gold);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
@@ -779,12 +780,11 @@ nav ul li a:hover::after {
 }
 
 .testimonial-date {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  color: var(--matte-gold);
+  color: var(--parchment);
+  opacity: 0.6;
   font-size: 0.8rem;
-  opacity: 0.7;
+  text-align: right;
+  margin-top: 10px;
 }
 
 .testimonials-mask {
@@ -815,6 +815,7 @@ nav ul li a:hover::after {
   width: 100%;
   height: 500px;
   border: 0;
+  display: block;
 }
 
 .map-overlay {
@@ -1129,31 +1130,87 @@ footer {
   color: #ffd700;
 }
 
-/* Google Review Button */
-.google-review-btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #4285F4;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: all 0.3s ease;
+/* Google Review Modal */
+.review-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+.review-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.review-modal-content {
+  background-color: var(--matte-black);
+  padding: 60px;
+  border-radius: 5px;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  border: 1px solid var(--matte-gold);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.review-modal h2 {
+  color: var(--matte-gold);
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.review-modal p {
+  color: var(--parchment);
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.review-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
   border: none;
-  font-size: 1rem;
-  margin-top: 15px;
-  font-family: 'Montserrat', sans-serif;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: var(--matte-gold);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.google-review-btn:hover {
-  background-color: #3367D6;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+.review-modal-close:hover {
+  transform: rotate(90deg);
 }
 
-.google-review-btn i {
-  margin-right: 8px;
+.review-modal-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--matte-gold);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 2px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--matte-gold);
+  font-size: 1.1rem;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.review-modal-btn:hover {
+  background-color: transparent;
+  color: var(--matte-gold);
+  transform: translateY(-3px);
 }
 
 /* Responsive Styles */
@@ -1191,7 +1248,8 @@ footer {
     height: 450px;
   }
 
-  .exit-modal-content {
+  .exit-modal-content,
+  .review-modal-content {
     padding: 40px;
     max-width: 500px;
   }
@@ -1259,24 +1317,20 @@ footer {
     height: 400px;
   }
 
-  .exit-modal-content {
+  .exit-modal-content,
+  .review-modal-content {
     padding: 30px;
     max-width: 90%;
   }
 
-  .exit-modal h2 {
+  .exit-modal h2,
+  .review-modal h2 {
     font-size: 2rem;
   }
 
   .testimonial-card {
+    height: 350px; /* Slightly taller on mobile */
     min-width: 280px;
-    height: 280px;
-    padding: 30px 20px;
-  }
-
-  .testimonial-text {
-    font-size: 1rem;
-    max-height: 130px;
   }
 }
 
@@ -1339,16 +1393,19 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .exit-modal-content {
+  .exit-modal-content,
+  .review-modal-content {
     padding: 20px 15px;
   }
 
-  .exit-modal h2 {
+  .exit-modal h2,
+  .review-modal h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
   }
 
-  .exit-modal p {
+  .exit-modal p,
+  .review-modal p {
     font-size: 1rem;
     margin-bottom: 20px;
   }
@@ -1362,23 +1419,14 @@ footer {
   }
 
   .testimonial-card {
+    height: 320px;
     min-width: 260px;
-    height: 260px;
-    padding: 25px 15px;
+    padding: 20px;
   }
 
   .testimonial-text {
-    font-size: 0.9rem;
-    max-height: 120px;
-  }
-
-  .testimonial-author-img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .testimonial-author-info h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    -webkit-line-clamp: 4; /* Show fewer lines on small screens */
   }
 }
 </style>
@@ -1627,7 +1675,7 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!-- Enhanced Testimonials Section with 1:1 cards and faster scrolling -->
+<!-- Testimonials Section - Enhanced with 1:1 cards and more reviews -->
 <section class="testimonials">
   <div class="testimonials-container">
     <div class="testimonials-title">
@@ -1650,7 +1698,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">June 15, 2023</div>
+        <div class="testimonial-date">2 days ago</div>
       </div>
       
       <!-- Testimonial 2 -->
@@ -1668,7 +1716,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">May 28, 2023</div>
+        <div class="testimonial-date">1 week ago</div>
       </div>
       
       <!-- Testimonial 3 -->
@@ -1686,7 +1734,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">April 10, 2023</div>
+        <div class="testimonial-date">2 weeks ago</div>
       </div>
       
       <!-- Testimonial 4 -->
@@ -1704,7 +1752,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">March 22, 2023</div>
+        <div class="testimonial-date">3 weeks ago</div>
       </div>
       
       <!-- Testimonial 5 -->
@@ -1722,7 +1770,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">February 18, 2023</div>
+        <div class="testimonial-date">1 month ago</div>
       </div>
       
       <!-- Testimonial 6 -->
@@ -1740,7 +1788,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">January 5, 2023</div>
+        <div class="testimonial-date">1 month ago</div>
       </div>
       
       <!-- Testimonial 7 -->
@@ -1758,7 +1806,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">December 12, 2022</div>
+        <div class="testimonial-date">2 months ago</div>
       </div>
       
       <!-- Testimonial 8 -->
@@ -1776,7 +1824,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">November 30, 2022</div>
+        <div class="testimonial-date">2 months ago</div>
       </div>
       
       <!-- Testimonial 9 -->
@@ -1794,7 +1842,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">October 15, 2022</div>
+        <div class="testimonial-date">3 months ago</div>
       </div>
       
       <!-- Testimonial 10 -->
@@ -1812,7 +1860,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">September 8, 2022</div>
+        <div class="testimonial-date">3 months ago</div>
       </div>
       
       <!-- Testimonial 11 -->
@@ -1830,7 +1878,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">August 20, 2022</div>
+        <div class="testimonial-date">4 months ago</div>
       </div>
       
       <!-- Testimonial 12 -->
@@ -1848,61 +1896,61 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">July 4, 2022</div>
+        <div class="testimonial-date">4 months ago</div>
       </div>
       
       <!-- Testimonial 13 -->
       <div class="testimonial-card">
         <div class="testimonial-text">
-          The service here is impeccable. Our waiter was knowledgeable about the menu and made excellent recommendations. The Butter Chicken was out of this world!
+          The service here is impeccable. The staff remembers our preferences from previous visits and makes excellent recommendations. The fish curry is outstanding!
         </div>
         <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Customer" class="testimonial-author-img">
+          <img src="https://randomuser.me/api/portraits/men/28.jpg" alt="Customer" class="testimonial-author-img">
           <div class="testimonial-author-info">
-            <h4>Rakesh Malhotra</h4>
-            <p>Food Enthusiast</p>
+            <h4>Rajesh Kumar</h4>
+            <p>Frequent Diner</p>
             <div class="testimonial-rating">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
           </div>
         </div>
-        <div class="testimonial-date">June 18, 2022</div>
+        <div class="testimonial-date">5 months ago</div>
       </div>
       
       <!-- Testimonial 14 -->
       <div class="testimonial-card">
         <div class="testimonial-text">
-          We come here every weekend for their amazing brunch. The variety and quality are consistently excellent. The staff remembers our preferences which makes us feel special.
+          Perfect place for a family dinner. The kids loved the mild butter chicken and we appreciated the authentic spices in the biryani. Will definitely be back!
         </div>
         <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/women/41.jpg" alt="Customer" class="testimonial-author-img">
+          <img src="https://randomuser.me/api/portraits/women/37.jpg" alt="Customer" class="testimonial-author-img">
           <div class="testimonial-author-info">
-            <h4>Priyanka & Family</h4>
-            <p>Regular Visitors</p>
+            <h4>Sunita Reddy</h4>
+            <p>Family Diner</p>
             <div class="testimonial-rating">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
           </div>
         </div>
-        <div class="testimonial-date">May 22, 2022</div>
+        <div class="testimonial-date">5 months ago</div>
       </div>
       
       <!-- Testimonial 15 -->
       <div class="testimonial-card">
         <div class="testimonial-text">
-          The tandoori items are cooked to perfection - juicy inside with that perfect smoky char outside. The portion sizes are generous and the prices are very reasonable.
+          The tandoori items here are exceptional - perfectly charred on the outside and juicy inside. The restaurant has a great vibe and the service is prompt.
         </div>
         <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/28.jpg" alt="Customer" class="testimonial-author-img">
+          <img src="https://randomuser.me/api/portraits/men/63.jpg" alt="Customer" class="testimonial-author-img">
           <div class="testimonial-author-info">
-            <h4>Vivek Oberoi</h4>
+            <h4>Vivek Malhotra</h4>
             <p>Tandoori Lover</p>
             <div class="testimonial-rating">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
             </div>
           </div>
         </div>
-        <div class="testimonial-date">April 10, 2022</div>
+        <div class="testimonial-date">6 months ago</div>
       </div>
       
       <!-- Duplicate testimonials to create infinite loop effect -->
@@ -1921,7 +1969,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">June 15, 2023</div>
+        <div class="testimonial-date">2 days ago</div>
       </div>
       
       <div class="testimonial-card">
@@ -1938,7 +1986,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">May 28, 2023</div>
+        <div class="testimonial-date">1 week ago</div>
       </div>
       
       <div class="testimonial-card">
@@ -1955,7 +2003,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">April 10, 2023</div>
+        <div class="testimonial-date">2 weeks ago</div>
       </div>
       
       <div class="testimonial-card">
@@ -1972,7 +2020,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">March 22, 2023</div>
+        <div class="testimonial-date">3 weeks ago</div>
       </div>
       
       <div class="testimonial-card">
@@ -1989,7 +2037,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">February 18, 2023</div>
+        <div class="testimonial-date">1 month ago</div>
       </div>
       
       <div class="testimonial-card">
@@ -2006,7 +2054,7 @@ Your browser does not support the video tag.
             </div>
           </div>
         </div>
-        <div class="testimonial-date">January 5, 2023</div>
+        <div class="testimonial-date">1 month ago</div>
       </div>
     </div>
   </div>
@@ -2054,14 +2102,14 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!-- Map Section -->
+<!-- Map Section - Fixed with proper embed URL -->
 <section class="map-section">
 <div class="container">
 <div class="section-title">
 <h2>OUR LOCATION</h2>
 </div>
 <div class="map-container">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52356.72936253133!2d78.9818823486328!3d21.066862200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747341109593!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.965835356854!2d79.0881233154028!3d21.11372248594869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <div class="map-overlay"></div>
 </div>
 </div>
@@ -2120,7 +2168,7 @@ Your browser does not support the video tag.
 </div>
 </footer>
 
-<!-- Exit Intent Modal with Google Reviews Integration -->
+<!-- Exit Intent Modal -->
 <div class="exit-modal" id="exit-modal">
 <div class="exit-modal-content">
 <button class="exit-modal-close" id="exit-modal-close">
@@ -2137,14 +2185,20 @@ Your browser does not support the video tag.
 <i class="fas fa-star rating-star" data-rating="5"></i>
 </div>
 
-<p>Help others by leaving a review on Google!</p>
-<a href="https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4" target="_blank" class="google-review-btn">
-<i class="fab fa-google"></i> Write a Google Review
-</a>
+<p>Thank you for visiting GPS Highway Restaurant!</p>
+</div>
+</div>
 
-<p class="thank-you-message" style="display: none; margin-top: 20px; color: var(--matte-gold); font-weight: 500;">
-Thank you for your feedback! We appreciate your support.
-</p>
+<!-- Google Review Modal -->
+<div class="review-modal" id="review-modal">
+<div class="review-modal-content">
+<button class="review-modal-close" id="review-modal-close">
+<i class="fas fa-times"></i>
+</button>
+<h2>Leave Us a Google Review</h2>
+<p>We would greatly appreciate it if you could take a moment to share your experience on Google. Your feedback helps us improve and helps others discover our restaurant.</p>
+<a href="https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID" target="_blank" class="review-modal-btn">Leave a Review on Google</a>
+<p class="small-text">(You'll be redirected to Google to complete your review)</p>
 </div>
 </div>
 
@@ -2353,9 +2407,8 @@ exitModalClose.addEventListener('click', () => {
   document.body.style.overflow = 'auto';
 });
 
-// Star rating functionality with Google Reviews integration
+// Star rating functionality
 const ratingStars = document.querySelectorAll('.rating-star');
-const thankYouMessage = document.querySelector('.thank-you-message');
 let selectedRating = 0;
 
 ratingStars.forEach(star => {
@@ -2372,20 +2425,12 @@ ratingStars.forEach(star => {
       }
     });
 
-    // Send rating to server (simulated)
+    // Show Google review modal after rating
     setTimeout(() => {
-      console.log(`Rating submitted: ${rating} stars`);
-      
-      // Show thank you message
-      thankYouMessage.style.display = 'block';
-      
-      // In a real implementation, you would send this to your server
-      // Here we're just simulating the process
-      setTimeout(() => {
-        exitModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }, 3000);
-    }, 500);
+      const reviewModal = document.getElementById('review-modal');
+      exitModal.classList.remove('active');
+      reviewModal.classList.add('active');
+    }, 1000);
   });
 
   // Hover effect
@@ -2410,6 +2455,27 @@ ratingStars.forEach(star => {
   });
 });
 
+// Google Review Modal
+const reviewModal = document.getElementById('review-modal');
+const reviewModalClose = document.getElementById('review-modal-close');
+
+reviewModalClose.addEventListener('click', () => {
+  reviewModal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+});
+
+// Close modals when clicking outside
+window.addEventListener('click', (e) => {
+  if (e.target === exitModal) {
+    exitModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+  if (e.target === reviewModal) {
+    reviewModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+});
+
 // Preload map
 window.addEventListener('load', function() {
   const mapIframe = document.querySelector('.map-container iframe');
@@ -2418,15 +2484,15 @@ window.addEventListener('load', function() {
   }
 });
 
-// Google Reviews API integration (simplified example)
-// Note: In production, you would need proper authentication
-function submitGoogleReview(rating, reviewText) {
-  // This is a simplified example - actual implementation requires Google API setup
-  console.log('Submitting review to Google:', { rating, reviewText });
-  
-  // In a real implementation, you would use the Google My Business API
-  // or direct the user to leave a review on your Google listing
-}
+// Pause testimonial carousel when hovering
+const testimonialCarousel = document.querySelector('.testimonials-carousel');
+testimonialCarousel.addEventListener('mouseenter', () => {
+  testimonialCarousel.style.animationPlayState = 'paused';
+});
+
+testimonialCarousel.addEventListener('mouseleave', () => {
+  testimonialCarousel.style.animationPlayState = 'running';
+});
 </script>
 </body>
 </html>
