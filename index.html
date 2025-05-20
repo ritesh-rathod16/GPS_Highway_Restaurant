@@ -637,7 +637,7 @@ nav ul li a:hover::after {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Testimonials Section - Enhanced with square cards and faster animation */
+/* Testimonials Section - Square cards */
 .testimonials {
   background-color: var(--primary-color);
   padding: 80px 0;
@@ -679,8 +679,8 @@ nav ul li a:hover::after {
   display: flex;
   gap: 30px;
   padding: 20px 0;
-  animation: scroll 40s linear infinite; /* Faster animation (40s instead of 60s) */
-  width: calc(300px * 18); /* Wider to accommodate more testimonials */
+  animation: scroll 40s linear infinite;
+  width: calc(300px * 18);
 }
 
 .testimonials-carousel:hover {
@@ -692,7 +692,7 @@ nav ul li a:hover::after {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-300px * 9)); /* Move half the width to create infinite loop */
+    transform: translateX(calc(-300px * 9));
   }
 }
 
@@ -705,7 +705,7 @@ nav ul li a:hover::after {
   border: 1px solid rgba(193, 154, 107, 0.2);
   position: relative;
   min-width: 300px;
-  height: 300px; /* Fixed height for square aspect ratio */
+  height: 300px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -727,7 +727,7 @@ nav ul li a:hover::after {
   padding-left: 20px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* Limit to 5 lines */
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
 
@@ -1329,7 +1329,7 @@ footer {
   }
 
   .testimonial-card {
-    height: 350px; /* Slightly taller on mobile */
+    height: 350px;
     min-width: 280px;
   }
 }
@@ -1352,7 +1352,7 @@ footer {
   }
 
   .menu-item {
-    aspect-ratio: 3/4; /* More square on mobile */
+    aspect-ratio: 3/4;
   }
 
   .menu-item-content {
@@ -1368,7 +1368,7 @@ footer {
   }
 
   .price {
-    font-size: 1.6rem; /* Slightly smaller on mobile */
+    font-size: 1.6rem;
   }
 
   .reservation-form {
@@ -1426,7 +1426,7 @@ footer {
 
   .testimonial-text {
     font-size: 1rem;
-    -webkit-line-clamp: 4; /* Show fewer lines on small screens */
+    -webkit-line-clamp: 4;
   }
 }
 </style>
@@ -1675,7 +1675,7 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!-- Testimonials Section - Enhanced with square cards and more reviews -->
+<!-- Testimonials Section - Square cards -->
 <section class="testimonials">
   <div class="testimonials-container">
     <div class="testimonials-title">
@@ -1954,7 +1954,6 @@ Your browser does not support the video tag.
       </div>
       
       <!-- Duplicate testimonials to create infinite loop effect -->
-      <!-- These are the same as the first 6 testimonials -->
       <div class="testimonial-card">
         <div class="testimonial-text">
           The food at GPS Highway Restaurant is absolutely amazing! The flavors are authentic and the service is exceptional. I highly recommend their Butter Chicken and Garlic Naan.
