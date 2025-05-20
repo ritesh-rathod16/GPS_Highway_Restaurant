@@ -637,7 +637,7 @@ nav ul li a:hover::after {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Testimonials Section - Square cards */
+/* Enhanced Testimonials Section */
 .testimonials {
   background-color: var(--primary-color);
   padding: 80px 0;
@@ -675,25 +675,12 @@ nav ul li a:hover::after {
   transform: translateX(-50%);
 }
 
-.testimonials-carousel {
+.testimonials-track {
   display: flex;
   gap: 30px;
   padding: 20px 0;
-  animation: scroll 40s linear infinite;
-  width: calc(300px * 18);
-}
-
-.testimonials-carousel:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-300px * 9));
-  }
+  width: max-content;
+  will-change: transform;
 }
 
 .testimonial-card {
@@ -797,9 +784,10 @@ nav ul li a:hover::after {
   background: linear-gradient(90deg, var(--primary-color) 0%, rgba(26, 26, 26, 0) 5%, rgba(26, 26, 26, 0) 95%, var(--primary-color) 100%);
 }
 
-/* Map Section */
+/* Enhanced Map Section */
 .map-section {
   background-color: var(--matte-black);
+  padding: 80px 0;
 }
 
 .map-container {
@@ -809,11 +797,12 @@ nav ul li a:hover::after {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(193, 154, 107, 0.2);
   position: relative;
+  height: 500px;
 }
 
 .map-container iframe {
   width: 100%;
-  height: 500px;
+  height: 100%;
   border: 0;
   display: block;
 }
@@ -1244,7 +1233,7 @@ footer {
     display: none;
   }
 
-  .map-container iframe {
+  .map-container {
     height: 450px;
   }
 
@@ -1313,7 +1302,7 @@ footer {
     padding: 40px;
   }
 
-  .map-container iframe {
+  .map-container {
     height: 400px;
   }
 
@@ -1385,7 +1374,7 @@ footer {
     font-size: 1.6rem;
   }
 
-  .map-container iframe {
+  .map-container {
     height: 350px;
   }
 
@@ -1675,14 +1664,14 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!-- Testimonials Section - Square cards -->
+<!-- Enhanced Testimonials Section -->
 <section class="testimonials">
   <div class="testimonials-container">
     <div class="testimonials-title">
       <h2>WHAT OUR CUSTOMERS SAY</h2>
     </div>
     <div class="testimonials-mask"></div>
-    <div class="testimonials-carousel">
+    <div class="testimonials-track">
       <!-- Testimonial 1 -->
       <div class="testimonial-card">
         <div class="testimonial-text">
@@ -1952,109 +1941,6 @@ Your browser does not support the video tag.
         </div>
         <div class="testimonial-date">6 months ago</div>
       </div>
-      
-      <!-- Duplicate testimonials to create infinite loop effect -->
-      <div class="testimonial-card">
-        <div class="testimonial-text">
-          The food at GPS Highway Restaurant is absolutely amazing! The flavors are authentic and the service is exceptional. I highly recommend their Butter Chicken and Garlic Naan.
-        </div>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="testimonial-author-img">
-          <div class="testimonial-author-info">
-            <h4>Rahul Sharma</h4>
-            <p>Regular Customer</p>
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-date">2 days ago</div>
-      </div>
-      
-      <div class="testimonial-card">
-        <div class="testimonial-text">
-          We stopped here during our road trip and were blown away by the quality of food. The ambiance is perfect and the staff is very welcoming. Will definitely visit again!
-        </div>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="testimonial-author-img">
-          <div class="testimonial-author-info">
-            <h4>Priya Patel</h4>
-            <p>First-time Visitor</p>
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-date">1 week ago</div>
-      </div>
-      
-      <div class="testimonial-card">
-        <div class="testimonial-text">
-          Best Indian restaurant in the area! The flavors are authentic and the portions are generous. The staff is very attentive and the restaurant is always clean.
-        </div>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="testimonial-author-img">
-          <div class="testimonial-author-info">
-            <h4>Vikram Singh</h4>
-            <p>Local Resident</p>
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-date">2 weeks ago</div>
-      </div>
-      
-      <div class="testimonial-card">
-        <div class="testimonial-text">
-          The Paneer Tikka here is to die for! Perfectly cooked with just the right amount of spices. I've been coming here for years and the quality never disappoints.
-        </div>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="testimonial-author-img">
-          <div class="testimonial-author-info">
-            <h4>Ananya Desai</h4>
-            <p>Food Blogger</p>
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-date">3 weeks ago</div>
-      </div>
-      
-      <div class="testimonial-card">
-        <div class="testimonial-text">
-          Excellent service and even better food! The Dal Makhani is creamy and flavorful, just like my grandmother used to make. Highly recommend for authentic Indian flavors.
-        </div>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer" class="testimonial-author-img">
-          <div class="testimonial-author-info">
-            <h4>Arjun Mehta</h4>
-            <p>Food Critic</p>
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-date">1 month ago</div>
-      </div>
-      
-      <div class="testimonial-card">
-        <div class="testimonial-text">
-          We had a family gathering here and the staff went above and beyond to accommodate our large group. The food came out quickly and was delicious. Great experience!
-        </div>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Customer" class="testimonial-author-img">
-          <div class="testimonial-author-info">
-            <h4>Neha Kapoor</h4>
-            <p>Family Visitor</p>
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-date">1 month ago</div>
-      </div>
     </div>
   </div>
 </section>
@@ -2101,14 +1987,14 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!-- Map Section - Fixed with proper embed URL -->
+<!-- Enhanced Map Section -->
 <section class="map-section">
 <div class="container">
 <div class="section-title">
 <h2>OUR LOCATION</h2>
 </div>
 <div class="map-container">
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d52356.70292743852!2d79.0169!3d21.0669373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747759026061!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.2954754564867!2d79.0555250745723!3d21.066867186469995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747765696272!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <div class="map-overlay"></div>
 </div>
 </div>
@@ -2376,6 +2262,55 @@ document.querySelectorAll('.video-item').forEach(videoItem => {
   });
 });
 
+// Enhanced Testimonials Carousel with Infinite Loop
+const testimonialsTrack = document.querySelector('.testimonials-track');
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const cardWidth = testimonialCards[0].offsetWidth + 30; // width + gap
+const totalCards = testimonialCards.length;
+
+// Clone the first few cards and append to end for seamless looping
+for (let i = 0; i < 5; i++) {
+  const clone = testimonialCards[i].cloneNode(true);
+  testimonialsTrack.appendChild(clone);
+}
+
+let position = 0;
+const speed = 0.5; // pixels per frame
+
+function animateTestimonials() {
+  position -= speed;
+  
+  // When we've scrolled all original cards, reset position to start
+  if (position < -cardWidth * totalCards) {
+    position = 0;
+    testimonialsTrack.style.transition = 'none';
+    testimonialsTrack.style.transform = `translateX(${position}px)`;
+    // Force reflow
+    void testimonialsTrack.offsetWidth;
+  }
+  
+  testimonialsTrack.style.transition = 'transform 0.1s linear';
+  testimonialsTrack.style.transform = `translateX(${position}px)`;
+  
+  requestAnimationFrame(animateTestimonials);
+}
+
+// Start animation after page loads
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    animateTestimonials();
+  }, 2000);
+});
+
+// Pause animation on hover
+testimonialsTrack.addEventListener('mouseenter', () => {
+  speed = 0;
+});
+
+testimonialsTrack.addEventListener('mouseleave', () => {
+  speed = 0.5;
+});
+
 // Exit Intent Modal - Only show when reaching contact section
 const exitModal = document.getElementById('exit-modal');
 const exitModalClose = document.getElementById('exit-modal-close');
@@ -2481,16 +2416,6 @@ window.addEventListener('load', function() {
   if (mapIframe) {
     mapIframe.setAttribute('src', mapIframe.getAttribute('data-src'));
   }
-});
-
-// Pause testimonial carousel when hovering
-const testimonialCarousel = document.querySelector('.testimonials-carousel');
-testimonialCarousel.addEventListener('mouseenter', () => {
-  testimonialCarousel.style.animationPlayState = 'paused';
-});
-
-testimonialCarousel.addEventListener('mouseleave', () => {
-  testimonialCarousel.style.animationPlayState = 'running';
 });
 </script>
 </body>
