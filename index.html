@@ -46,11 +46,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--matte-gold);
 }
 
+/* Section spacing adjustments */
 section {
   padding: 80px 0;
   position: relative;
 }
 
+/* Loader Animation */
 .loader {
   position: fixed;
   top: 0;
@@ -109,6 +111,7 @@ section {
   padding: 0 30px;
 }
 
+/* Header Styles */
 header {
   background-color: rgba(26, 26, 26, 0.9);
   color: var(--text-light);
@@ -208,6 +211,7 @@ nav ul li a:hover::after {
   color: var(--matte-gold);
 }
 
+/* Hero Section - Enhanced with new design */
 #home {
   height: 100vh;
   display: flex;
@@ -297,6 +301,12 @@ nav ul li a:hover::after {
   color: var(--primary-color);
 }
 
+/* About Section */
+.about {
+  background-color: var(--matte-black);
+  color: var(--parchment);
+}
+
 .section-title {
   text-align: center;
   margin-bottom: 60px;
@@ -374,6 +384,7 @@ nav ul li a:hover::after {
   opacity: 0.5;
 }
 
+/* Menu Section with increased size for better mobile visibility */
 .menu {
   background-color: var(--primary-color);
   color: var(--parchment);
@@ -392,7 +403,7 @@ nav ul li a:hover::after {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/5; /* Changed from 4/6 to make items taller */
   display: flex;
   flex-direction: column;
   position: relative;
@@ -443,13 +454,13 @@ nav ul li a:hover::after {
 }
 
 .price {
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* Increased from 1.5rem */
   font-weight: 600;
   color: var(--matte-gold);
   font-family: 'Cinzel', serif;
   margin-top: auto;
   letter-spacing: 1px;
-  padding-top: 10px;
+  padding-top: 10px; /* Added padding */
 }
 
 .menu-btn-container {
@@ -457,6 +468,7 @@ nav ul li a:hover::after {
   margin-top: 60px;
 }
 
+/* Video Gallery - Card Style with 1:1 ratio */
 .video-gallery {
   background-color: var(--matte-black);
   color: var(--parchment);
@@ -507,6 +519,7 @@ nav ul li a:hover::after {
   font-family: 'Cinzel', serif;
 }
 
+/* Reservation Section - Enhanced */
 .reservation {
   background-color: var(--matte-black);
   color: var(--parchment);
@@ -624,6 +637,7 @@ nav ul li a:hover::after {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Enhanced Testimonials Section - Updated to 1:1 aspect ratio */
 .testimonials {
   background-color: var(--primary-color);
   padding: 80px 0;
@@ -678,8 +692,8 @@ nav ul li a:hover::after {
   border: 1px solid rgba(193, 154, 107, 0.2);
   position: relative;
   min-width: 300px;
-  height: 300px;
-  width: 300px;
+  height: 300px; /* Changed to 1:1 aspect ratio */
+  width: 300px; /* Added fixed width */
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -772,6 +786,7 @@ nav ul li a:hover::after {
   background: linear-gradient(90deg, var(--primary-color) 0%, rgba(26, 26, 26, 0) 5%, rgba(26, 26, 26, 0) 95%, var(--primary-color) 100%);
 }
 
+/* Enhanced Map Section */
 .map-section {
   background-color: var(--matte-black);
   padding: 80px 0;
@@ -791,21 +806,20 @@ nav ul li a:hover::after {
   width: 100%;
   height: 100%;
   background: var(--matte-black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .map-placeholder img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .load-map-btn {
   position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 12px 25px;
   background-color: var(--matte-gold);
   color: var(--primary-color);
@@ -825,7 +839,7 @@ nav ul li a:hover::after {
 
 .load-map-btn:hover {
   background-color: var(--gold-dark);
-  transform: translateY(-3px);
+  transform: translateX(-50%) translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -851,33 +865,7 @@ nav ul li a:hover::after {
   height: 100%;
   border: 0;
 }
-
-.map-loading {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-}
-
-.map-loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(212, 175, 55, 0.3);
-  border-radius: 50%;
-  border-top-color: var(--matte-gold);
-  animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
+/* Features Section - Made smaller */
 .features {
   background-color: var(--primary-color);
   color: var(--parchment);
@@ -931,12 +919,14 @@ nav ul li a:hover::after {
   flex-grow: 1;
 }
 
+/* Events Section - Made smaller */
 .events {
   background-color: var(--primary-color);
   color: var(--parchment);
   padding: 60px 0;
 }
 
+/* Footer with enhanced contact info */
 footer {
   background-color: var(--matte-black);
   color: var(--text-light);
@@ -1090,6 +1080,7 @@ footer {
   opacity: 0.7;
 }
 
+/* Exit Intent Modal */
 .exit-modal {
   position: fixed;
   top: 0;
@@ -1171,6 +1162,7 @@ footer {
   color: #ffd700;
 }
 
+/* Google Review Modal */
 .review-modal {
   position: fixed;
   top: 0;
@@ -1253,6 +1245,7 @@ footer {
   transform: translateY(-3px);
 }
 
+/* Responsive Styles */
 @media (max-width: 1200px) {
   .hero-title {
     font-size: 4.5rem;
@@ -1475,6 +1468,7 @@ footer {
 <body>
 <!-- Loader Animation -->
 <div class="loader" id="loader">
+<!-- Replace with your local logo file -->
 <img src="gps_logo.png" alt="GPS Highway Restaurant Logo" class="loader-logo">
 <div class="loader-text">Welcomes You</div>
 </div>
@@ -1483,6 +1477,7 @@ footer {
 <header id="header">
 <div class="container header-container">
 <div class="logo-container">
+<!-- Replace with your local logo file -->
 <img src="gps_logo.png" alt="GPS Highway Restaurant Logo" class="logo-img">
 <a href="index.html" class="logo">GPS Highway Restaurant</a>
 </div>
@@ -1501,7 +1496,7 @@ footer {
 </div>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero Section - Enhanced -->
 <section id="home">
 <div class="hero-content">
 <h1 class="hero-title">AUTHENTIC INDIAN CUISINE</h1>
@@ -1533,13 +1528,14 @@ footer {
 </div>
 </section>
 
-<!-- Menu Section -->
+<!-- Menu Section with increased size for better mobile visibility -->
 <section class="menu" id="menu">
 <div class="container">
 <div class="section-title">
 <h2>OUR MENU</h2>
 </div>
 <div class="menu-grid">
+<!-- Appetizers -->
 <div class="menu-item">
 <img src="https://i.pinimg.com/736x/77/1e/b4/771eb4b06b966c164be868685bfd5c85.jpg" alt="Paneer Tikka" loading="lazy">
 <div class="menu-item-content">
@@ -1548,6 +1544,7 @@ footer {
 </div>
 </div>
 
+<!-- Main Courses -->
 <div class="menu-item">
 <img src="https://i.pinimg.com/736x/a8/9a/9f/a89a9f222ff5f325895f8053e8bbc5b0.jpg" alt="Butter Chicken" loading="lazy">
 <div class="menu-item-content">
@@ -1556,6 +1553,7 @@ footer {
 </div>
 </div>
 
+<!-- Desserts -->
 <div class="menu-item">
 <img src="https://i.pinimg.com/736x/9c/64/1f/9c641f34a51c3d39c254f34acfb25011.jpg" alt="Gulab Jamun" loading="lazy">
 <div class="menu-item-content">
@@ -1570,7 +1568,7 @@ footer {
 </div>
 </section>
 
-<!-- Features Section -->
+<!-- Features Section - Made smaller -->
 <section class="features" id="features">
 <div class="container">
 <div class="section-title">
@@ -1610,7 +1608,7 @@ footer {
 </div>
 </section>
 
-<!-- Video Gallery Section -->
+<!-- Video Gallery Section - Card Style with 1:1 ratio -->
 <section class="video-gallery" id="gallery">
 <div class="container">
 <div class="section-title">
@@ -1648,7 +1646,7 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!-- Reservation Section -->
+<!-- Reservation Section - Enhanced -->
 <section class="reservation" id="reservation">
 <div class="container">
 <div class="section-title">
@@ -1708,7 +1706,7 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!-- Testimonials Section -->
+<!-- Enhanced Testimonials Section -->
 <section class="testimonials">
   <div class="testimonials-container">
     <div class="testimonials-title">
@@ -1716,7 +1714,7 @@ Your browser does not support the video tag.
     </div>
     <div class="testimonials-mask"></div>
     <div class="testimonials-track">
-      <!-- Testimonial Cards (same as before) -->
+      <!-- Testimonial 1 -->
       <div class="testimonial-card">
         <div class="testimonial-text">
           The food at GPS Highway Restaurant is absolutely amazing! The flavors are authentic and the service is exceptional. I highly recommend their Butter Chicken and Garlic Naan.
@@ -1733,12 +1731,263 @@ Your browser does not support the video tag.
         </div>
         <div class="testimonial-date">2 days ago</div>
       </div>
-      <!-- More testimonial cards... -->
+      
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          We stopped here during our road trip and were blown away by the quality of food. The ambiance is perfect and the staff is very welcoming. Will definitely visit again!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Priya Patel</h4>
+            <p>First-time Visitor</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">1 week ago</div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          Best Indian restaurant in the area! The flavors are authentic and the portions are generous. The staff is very attentive and the restaurant is always clean.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Vikram Singh</h4>
+            <p>Local Resident</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">2 weeks ago</div>
+      </div>
+      
+      <!-- Testimonial 4 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The Paneer Tikka here is to die for! Perfectly cooked with just the right amount of spices. I've been coming here for years and the quality never disappoints.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Ananya Desai</h4>
+            <p>Food Blogger</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">3 weeks ago</div>
+      </div>
+      
+      <!-- Testimonial 5 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          Excellent service and even better food! The Dal Makhani is creamy and flavorful, just like my grandmother used to make. Highly recommend for authentic Indian flavors.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Arjun Mehta</h4>
+            <p>Food Critic</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">1 month ago</div>
+      </div>
+      
+      <!-- Testimonial 6 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          We had a family gathering here and the staff went above and beyond to accommodate our large group. The food came out quickly and was delicious. Great experience!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Neha Kapoor</h4>
+            <p>Family Visitor</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">1 month ago</div>
+      </div>
+      
+      <!-- Testimonial 7 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The Gulab Jamun here is the best I've ever had! Perfectly sweet and soft. The restaurant has a great atmosphere and the prices are very reasonable for the quality.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Rohan Verma</h4>
+            <p>Dessert Lover</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">2 months ago</div>
+      </div>
+      
+      <!-- Testimonial 8 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          I'm a vegetarian and the options here are fantastic. The Palak Paneer and Vegetable Biryani are my favorites. The spices are perfectly balanced - not too mild, not too hot.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/29.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Divya Iyer</h4>
+            <p>Vegetarian Foodie</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">2 months ago</div>
+      </div>
+      
+      <!-- Testimonial 9 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The parking is convenient and the restaurant is very clean. The staff is attentive without being intrusive. The Chicken Tikka Masala is outstanding - perfectly spiced and tender.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Sanjay Gupta</h4>
+            <p>Business Traveler</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">3 months ago</div>
+      </div>
+      
+      <!-- Testimonial 10 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          We celebrated our anniversary here and the staff made it extra special with rose petals on the table and a complimentary dessert. The Lamb Rogan Josh was exquisite!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Meera & Raj</h4>
+            <p>Anniversary Celebration</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">3 months ago</div>
+      </div>
+      
+      <!-- Testimonial 11 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The lunch buffet is an incredible value with so many options. Everything is fresh and replenished frequently. The Naan bread is made to order and comes out piping hot.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Amit Joshi</h4>
+            <p>Buffet Enthusiast</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">4 months ago</div>
+      </div>
+      
+      <!-- Testimonial 12 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          I was skeptical about highway restaurants but GPS Highway changed my mind. The hygiene standards are excellent and the food tastes like home cooking. The Mutton Curry is a must-try!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Kavita Nair</h4>
+            <p>Skeptic Turned Fan</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">4 months ago</div>
+      </div>
+      
+      <!-- Testimonial 13 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The service here is impeccable. The staff remembers our preferences from previous visits and makes excellent recommendations. The fish curry is outstanding!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/28.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Rajesh Kumar</h4>
+            <p>Frequent Diner</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">5 months ago</div>
+      </div>
+      
+      <!-- Testimonial 14 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          Perfect place for a family dinner. The kids loved the mild butter chicken and we appreciated the authentic spices in the biryani. Will definitely be back!
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/37.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Sunita Reddy</h4>
+            <p>Family Diner</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">5 months ago</div>
+      </div>
+      
+      <!-- Testimonial 15 -->
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          The tandoori items here are exceptional - perfectly charred on the outside and juicy inside. The restaurant has a great vibe and the service is prompt.
+        </div>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/63.jpg" alt="Customer" class="testimonial-author-img">
+          <div class="testimonial-author-info">
+            <h4>Vivek Malhotra</h4>
+            <p>Tandoori Lover</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-date">6 months ago</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Events Section -->
+<!-- Events Section - Made smaller -->
 <section class="events" id="events">
 <div class="container">
 <div class="section-title">
@@ -1780,21 +2029,23 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!-- Map Section -->
+<!--  map section  -->
 <section class="map-section" id="location">
   <div class="container">
     <div class="section-title">
       <h2>OUR LOCATION</h2>
     </div>
     <div class="map-container">
+      <!-- Lightweight placeholder image (satellite view) -->
       <div class="map-placeholder" id="map-placeholder">
         <img src="https://maps.googleapis.com/maps/api/staticmap?center=21.0668721,79.0580688&zoom=18&size=800x500&maptype=satellite&markers=color:red%7C21.0668721,79.0580688&key=YOUR_API_KEY" 
              alt="GPS Highway Restaurant Satellite View" 
              loading="lazy">
         <button class="load-map-btn" id="load-map-btn">
-          <i class="fas fa-map-marked-alt"></i> Load Interactive Map
+          <i class="fas fa-satellite-dish"></i> Load Interactive Satellite View
         </button>
       </div>
+      <!-- Container for interactive map -->
       <div class="map-iframe-container" id="map-iframe-container"></div>
     </div>
   </div>
@@ -1893,9 +2144,31 @@ window.addEventListener('load', function() {
   setTimeout(function() {
     const loader = document.getElementById('loader');
     loader.classList.add('loader-hidden');
+
+    // Enable scrolling after loader disappears
     document.body.style.overflow = 'auto';
-  }, 1500);
+  }, 1500); // 1.5 second delay
 });
+
+// Check if coming back from menu.html to skip animation
+if (sessionStorage.getItem('visitedMenu')) {
+  document.getElementById('loader').style.display = 'none';
+  document.body.style.overflow = 'auto';
+  sessionStorage.removeItem('visitedMenu');
+
+  // Scroll to the section if hash exists
+  if (window.location.hash) {
+    const targetElement = document.querySelector(window.location.hash);
+    if (targetElement) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  }
+}
 
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -1912,6 +2185,8 @@ document.querySelectorAll('#nav-menu a').forEach(link => {
   link.addEventListener('click', () => {
     navMenu.classList.remove('active');
     mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+
+    // Set flag when navigating to menu.html
     if (link.getAttribute('href') === 'menu.html') {
       sessionStorage.setItem('visitedMenu', 'true');
       sessionStorage.setItem('scrollPosition', window.scrollY);
@@ -1921,6 +2196,7 @@ document.querySelectorAll('#nav-menu a').forEach(link => {
 
 // Header scroll effect
 const header = document.getElementById('header');
+
 window.addEventListener('scroll', () => {
   if (window.scrollY > 100) {
     header.classList.add('scrolled');
@@ -1934,13 +2210,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     if (this.getAttribute('href') !== '#') {
       e.preventDefault();
+
       const targetId = this.getAttribute('href');
       const targetElement = document.querySelector(targetId);
+
       if (targetElement) {
         window.scrollTo({
           top: targetElement.offsetTop - 100,
           behavior: 'smooth'
         });
+
+        // Update URL without reload
         history.pushState(null, null, targetId);
       }
     }
@@ -1949,8 +2229,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Form submission with Web3Forms
 const bookingForm = document.getElementById('booking-form');
+
 bookingForm.addEventListener('submit', async (e) => {
   e.preventDefault();
+
   const formData = new FormData(bookingForm);
   const submitBtn = bookingForm.querySelector('button[type="submit"]');
   const originalBtnText = submitBtn.textContent;
@@ -1958,16 +2240,20 @@ bookingForm.addEventListener('submit', async (e) => {
   try {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Processing...';
+
     const response = await fetch(bookingForm.action, {
       method: 'POST',
       body: formData
     });
+
     const result = await response.json();
 
     if (result.success) {
       alert('Thank you for your reservation! We will contact you shortly to confirm your booking.');
       bookingForm.reset();
       sessionStorage.setItem('reservationSubmitted', 'true');
+
+      // Show coupon option after successful booking
       if (confirm('Would you like to claim your special coupon now?')) {
         window.location.href = 'coupon.html';
       }
@@ -1984,8 +2270,9 @@ bookingForm.addEventListener('submit', async (e) => {
   }
 });
 
-// Lazy load videos
+// Lazy load videos when they come into view
 const lazyVideos = document.querySelectorAll('video[preload="none"]');
+
 const lazyVideoObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1995,7 +2282,10 @@ const lazyVideoObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { rootMargin: '200px' });
-lazyVideos.forEach(video => lazyVideoObserver.observe(video));
+
+lazyVideos.forEach(video => {
+  lazyVideoObserver.observe(video);
+});
 
 // Restore scroll position if coming back from menu
 if (sessionStorage.getItem('scrollPosition')) {
@@ -2006,8 +2296,13 @@ if (sessionStorage.getItem('scrollPosition')) {
 // Video play/pause functionality
 document.querySelectorAll('.video-item').forEach(videoItem => {
   const video = videoItem.querySelector('video');
+
+  // Hide controls initially
   video.removeAttribute('controls');
+
+  // Single click to play/pause
   videoItem.addEventListener('click', (e) => {
+    // Check if the click was on the video itself or its container
     if (e.target === video || e.target === videoItem) {
       if (video.paused) {
         video.play();
@@ -2021,60 +2316,77 @@ document.querySelectorAll('.video-item').forEach(videoItem => {
 // Enhanced Testimonials Carousel with Infinite Loop
 const testimonialsTrack = document.querySelector('.testimonials-track');
 const testimonialCards = document.querySelectorAll('.testimonial-card');
-const cardWidth = testimonialCards[0].offsetWidth + 30;
+const cardWidth = testimonialCards[0].offsetWidth + 30; // width + gap
 const totalCards = testimonialCards.length;
 
+// Clone the first few cards and append to end for seamless looping
 for (let i = 0; i < 5; i++) {
   const clone = testimonialCards[i].cloneNode(true);
   testimonialsTrack.appendChild(clone);
 }
 
 let position = 0;
-let speed = 0.5;
+let speed = 0.5; // pixels per frame
 
 function animateTestimonials() {
   position -= speed;
+  
+  // When we've scrolled all original cards, reset position to start
   if (position < -cardWidth * totalCards) {
     position = 0;
     testimonialsTrack.style.transition = 'none';
     testimonialsTrack.style.transform = `translateX(${position}px)`;
+    // Force reflow
     void testimonialsTrack.offsetWidth;
   }
+  
   testimonialsTrack.style.transition = 'transform 0.1s linear';
   testimonialsTrack.style.transform = `translateX(${position}px)`;
+  
   requestAnimationFrame(animateTestimonials);
 }
 
+// Start animation after page loads
 window.addEventListener('load', () => {
   setTimeout(() => {
     animateTestimonials();
   }, 2000);
 });
 
-testimonialsTrack.addEventListener('mouseenter', () => speed = 0);
-testimonialsTrack.addEventListener('mouseleave', () => speed = 0.5);
+// Pause animation on hover
+testimonialsTrack.addEventListener('mouseenter', () => {
+  speed = 0;
+});
 
-// Exit Intent Modal
+testimonialsTrack.addEventListener('mouseleave', () => {
+  speed = 0.5;
+});
+
+// Exit Intent Modal - Only show when reaching contact section
 const exitModal = document.getElementById('exit-modal');
 const exitModalClose = document.getElementById('exit-modal-close');
 const contactSection = document.getElementById('contact');
 let contactSectionReached = false;
 
+// Track scroll position to detect when contact section is reached
 window.addEventListener('scroll', () => {
   const contactSectionTop = contactSection.offsetTop;
   const scrollPosition = window.scrollY + window.innerHeight;
 
   if (scrollPosition > contactSectionTop && !contactSectionReached) {
     contactSectionReached = true;
+
+    // Only show if they haven't submitted a reservation
     if (!sessionStorage.getItem('reservationSubmitted')) {
       setTimeout(() => {
         exitModal.classList.add('active');
         document.body.style.overflow = 'hidden';
-      }, 2000);
+      }, 2000); // Show after 2 seconds of reaching contact section
     }
   }
 });
 
+// Close modal
 exitModalClose.addEventListener('click', () => {
   exitModal.classList.remove('active');
   document.body.style.overflow = 'auto';
@@ -2088,10 +2400,17 @@ ratingStars.forEach(star => {
   star.addEventListener('click', () => {
     const rating = parseInt(star.dataset.rating);
     selectedRating = rating;
+
+    // Update stars
     ratingStars.forEach((s, index) => {
-      if (index < rating) s.classList.add('active');
-      else s.classList.remove('active');
+      if (index < rating) {
+        s.classList.add('active');
+      } else {
+        s.classList.remove('active');
+      }
     });
+
+    // Show Google review modal after rating
     setTimeout(() => {
       const reviewModal = document.getElementById('review-modal');
       exitModal.classList.remove('active');
@@ -2099,8 +2418,10 @@ ratingStars.forEach(star => {
     }, 1000);
   });
 
+  // Hover effect
   star.addEventListener('mouseover', () => {
     const rating = parseInt(star.dataset.rating);
+
     ratingStars.forEach((s, index) => {
       if (index < rating) {
         s.style.transform = 'scale(1.2)';
@@ -2122,6 +2443,7 @@ ratingStars.forEach(star => {
 // Google Review Modal
 const reviewModal = document.getElementById('review-modal');
 const reviewModalClose = document.getElementById('review-modal-close');
+
 reviewModalClose.addEventListener('click', () => {
   reviewModal.classList.remove('active');
   document.body.style.overflow = 'auto';
@@ -2129,63 +2451,60 @@ reviewModalClose.addEventListener('click', () => {
 
 // Close modals when clicking outside
 window.addEventListener('click', (e) => {
-  if (e.target === exitModal) exitModal.classList.remove('active');
-  if (e.target === reviewModal) reviewModal.classList.remove('active');
-  document.body.style.overflow = 'auto';
+  if (e.target === exitModal) {
+    exitModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+  if (e.target === reviewModal) {
+    reviewModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
 });
 
-// Enhanced Map Loading Functionality
+// Map Loading Functionality
+// Optimized Satellite Map Loader
 document.addEventListener('DOMContentLoaded', function() {
+  const mapContainer = document.querySelector('.map-container');
   const loadBtn = document.getElementById('load-map-btn');
   const iframeContainer = document.getElementById('map-iframe-container');
-  const mapPlaceholder = document.getElementById('map-placeholder');
-  
-  // Replace with your actual Google Maps API key
-  const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
-  const satelliteViewUrl = `https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=21.0668721,79.0580688&zoom=18&maptype=satellite`;
-  
+    
+  // Function to load interactive map
   function loadInteractiveMap() {
-    // Show loading indicator
-    const loadingDiv = document.createElement('div');
-    loadingDiv.className = 'map-loading';
-    loadingDiv.innerHTML = '<div class="map-loading-spinner"></div>';
-    mapPlaceholder.appendChild(loadingDiv);
-    
-    // Create iframe
-    const iframe = document.createElement('iframe');
-    iframe.src = satelliteViewUrl;
-    iframe.setAttribute('loading', 'lazy');
-    iframe.setAttribute('allowfullscreen', '');
-    iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
-    
-    iframe.onload = function() {
-      // Remove loading indicator
-      loadingDiv.remove();
-      loadBtn.textContent = 'Map Loaded';
-      loadBtn.style.backgroundColor = '#4CAF50';
-      loadBtn.disabled = true;
-    };
-    
-    iframeContainer.appendChild(iframe);
+    if (!iframeContainer.querySelector('iframe')) {
+      const iframe = document.createElement('iframe');
+      iframe.src = satelliteViewUrl;
+      iframe.setAttribute('loading', 'lazy');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+      iframeContainer.appendChild(iframe);
+    }
     iframeContainer.classList.add('active');
+    loadBtn.textContent = 'Satellite View Loaded';
+    loadBtn.style.backgroundColor = '#4CAF50';
+    loadBtn.disabled = true;
   }
   
-  // Click handler for manual load
+  // Click handler
   loadBtn.addEventListener('click', loadInteractiveMap);
   
-  // Intersection Observer for auto-load when scrolled to
+  // Intersection Observer for auto-load
   const observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
+      // Only auto-load when at least 50% visible
       const ratio = entries[0].intersectionRatio;
       if (ratio >= 0.5) {
         loadInteractiveMap();
-        observer.unobserve(mapPlaceholder);
+        observer.unobserve(mapContainer);
       }
     }
   }, { threshold: [0, 0.1, 0.5, 1] });
   
-  observer.observe(mapPlaceholder);
+  observer.observe(mapContainer);
 });
+
+mapObserver.observe(document.querySelector('.map-section'));
 </script>
 </body>
 </html>
+
+fix everthing espically mmaps and regenerste whole4 code
