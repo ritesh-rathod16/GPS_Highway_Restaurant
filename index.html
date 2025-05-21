@@ -2056,7 +2056,7 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!-- map section with this -->
+<!--  map section  -->
 <section class="map-section" id="location">
   <div class="container">
     <div class="section-title">
@@ -2064,11 +2064,11 @@ Your browser does not support the video tag.
     </div>
     <div class="map-container">
       <div class="map-placeholder" id="map-placeholder">
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center=21.0668721,79.0580688&zoom=15&size=800x500&maptype=roadmap&markers=color:red%7C21.0668721,79.0580688&key=YOUR_API_KEY" 
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=21.0668721,79.0580688&zoom=17&size=800x500&maptype=hybrid&markers=color:red%7C21.0668721,79.0580688&key=YOUR_API_KEY" 
              alt="GPS Highway Restaurant Location" 
              loading="lazy">
         <button class="load-map-btn" id="load-map-btn">
-          <i class="fas fa-map-marked-alt"></i> Load Interactive Map
+          <i class="fas fa-map-marked-alt"></i> Load Satellite View
         </button>
       </div>
       <div class="map-iframe-container" id="map-iframe-container">
@@ -2495,15 +2495,47 @@ const mapPlaceholder = document.getElementById('map-placeholder');
 const mapIframeContainer = document.getElementById('map-iframe-container');
 
 function loadMap() {
-  // Create iframe with proper attributes
+  // Create iframe with satellite view parameters
   const iframe = document.createElement('iframe');
-  iframe.setAttribute('src', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.543211230423!2d79.0558793154026!3d21.06687218594079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin');
+  iframe.setAttribute('src', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.543211230423!2d79.0558793154026!3d21.06687218594079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin&t=k');
   iframe.setAttribute('width', '100%');
   iframe.setAttribute('height', '100%');
   iframe.setAttribute('style', 'border:0;');
   iframe.setAttribute('allowfullscreen', '');
   iframe.setAttribute('loading', 'lazy');
   iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+  
+  // Add iframe to container
+  mapIframeContainer.appendChild(iframe);
+  mapIframeContainer.classList.add('active');
+  mapPlaceholder.style.display = 'none';
+  
+  // Update button text if needed
+  loadMapBtn.textContent = 'Satellite View Loaded';
+  loadMapBtn.style.backgroundColor = '#4CAF50'; // Green color to indicate loaded
+  
+  // Remove event listener after first load
+  loadMapBtn.removeEventListener('click', loadMap);
+}
+
+// Load map on button click
+loadMapBtn.addEventListener('click', loadMap);
+
+// Also load map when user scrolls near it
+const mapObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Load map when 50% of the section is visible
+      const rect = entry.boundingClientRect;
+      if (rect.top <= window.innerHeight * 0.5) {
+        loadMap();
+        mapObserver.unobserve(entry.target);
+      }
+    }
+  });
+}, { threshold: 0.5 });
+
+mapObserver.observe(document.querySelector('.map-section'));
   
   // Add iframe to container
   mapIframeContainer.appendChild(iframe);
