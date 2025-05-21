@@ -793,80 +793,58 @@ nav ul li a:hover::after {
 }
 
 .map-container {
-  margin-top: 40px;
+  position: relative;
+  height: 500px;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(193, 154, 107, 0.2);
-  position: relative;
-  height: 500px;
 }
 
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-  position: relative;
-  z-index: 0;
-}
-
-.map-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-  z-index: 1;
-  transition: all 0.3s ease;
-  pointer-events: none; /* Allows clicks to pass through */
-}
-
-.map-container:hover .map-overlay {
-  background-color: transparent;
-}
-/* Add to your existing CSS */
 .map-placeholder {
   position: relative;
   width: 100%;
-  height: 500px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--matte-black);
+  height: 100%;
+  background: var(--matte-black);
 }
 
 .map-placeholder img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(30%);
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .load-map-btn {
   position: absolute;
-  padding: 15px 30px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 25px;
   background-color: var(--matte-gold);
   color: var(--primary-color);
   border: none;
-  border-radius: 2px;
-  font-size: 1.1rem;
+  border-radius: 30px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Montserrat', sans-serif;
   z-index: 2;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .load-map-btn:hover {
   background-color: var(--gold-dark);
-  transform: translateY(-3px);
+  transform: translateX(-50%) translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.load-map-btn i {
+  font-size: 1.1rem;
 }
 
 .map-iframe-container {
@@ -882,16 +860,11 @@ nav ul li a:hover::after {
   display: block;
 }
 
-/* Update existing map-container styles */
-.map-container {
-  position: relative;
-  height: 500px;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(193, 154, 107, 0.2);
+.map-iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
-
 /* Features Section - Made smaller */
 .features {
   background-color: var(--primary-color);
@@ -2063,18 +2036,17 @@ Your browser does not support the video tag.
       <h2>OUR LOCATION</h2>
     </div>
     <div class="map-container">
+      <!-- Lightweight placeholder image (satellite view) -->
       <div class="map-placeholder" id="map-placeholder">
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center=21.0668721,79.0580688&zoom=17&size=800x500&maptype=hybrid&markers=color:red%7C21.0668721,79.0580688&key=YOUR_API_KEY" 
-             alt="GPS Highway Restaurant Location" 
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=21.0668721,79.0580688&zoom=18&size=800x500&maptype=satellite&markers=color:red%7C21.0668721,79.0580688&key=YOUR_API_KEY" 
+             alt="GPS Highway Restaurant Satellite View" 
              loading="lazy">
         <button class="load-map-btn" id="load-map-btn">
-          <i class="fas fa-map-marked-alt"></i> Load Satellite View
+          <i class="fas fa-satellite-dish"></i> Load Interactive Satellite View
         </button>
       </div>
-      <div class="map-iframe-container" id="map-iframe-container">
-        <!-- Map iframe will be loaded here dynamically -->
-      </div>
-      <div class="map-overlay"></div>
+      <!-- Container for interactive map -->
+      <div class="map-iframe-container" id="map-iframe-container"></div>
     </div>
   </div>
 </section>
@@ -2490,78 +2462,48 @@ window.addEventListener('click', (e) => {
 });
 
 // Map Loading Functionality
-const loadMapBtn = document.getElementById('load-map-btn');
-const mapPlaceholder = document.getElementById('map-placeholder');
-const mapIframeContainer = document.getElementById('map-iframe-container');
-
-function loadMap() {
-  // Create iframe with satellite view parameters
-  const iframe = document.createElement('iframe');
-  iframe.setAttribute('src', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.543211230423!2d79.0558793154026!3d21.06687218594079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin&t=k');
-  iframe.setAttribute('width', '100%');
-  iframe.setAttribute('height', '100%');
-  iframe.setAttribute('style', 'border:0;');
-  iframe.setAttribute('allowfullscreen', '');
-  iframe.setAttribute('loading', 'lazy');
-  iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+// Optimized Satellite Map Loader
+document.addEventListener('DOMContentLoaded', function() {
+  const mapContainer = document.querySelector('.map-container');
+  const loadBtn = document.getElementById('load-map-btn');
+  const iframeContainer = document.getElementById('map-iframe-container');
   
-  // Add iframe to container
-  mapIframeContainer.appendChild(iframe);
-  mapIframeContainer.classList.add('active');
-  mapPlaceholder.style.display = 'none';
+  // Clean, optimized satellite view URL
+  const satelliteViewUrl = `https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=21.0668721,79.0580688&zoom=18&maptype=satellite`;
   
-  // Update button text if needed
-  loadMapBtn.textContent = 'Satellite View Loaded';
-  loadMapBtn.style.backgroundColor = '#4CAF50'; // Green color to indicate loaded
+  // Function to load interactive map
+  function loadInteractiveMap() {
+    if (!iframeContainer.querySelector('iframe')) {
+      const iframe = document.createElement('iframe');
+      iframe.src = satelliteViewUrl;
+      iframe.setAttribute('loading', 'lazy');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+      iframeContainer.appendChild(iframe);
+    }
+    iframeContainer.classList.add('active');
+    loadBtn.textContent = 'Satellite View Loaded';
+    loadBtn.style.backgroundColor = '#4CAF50';
+    loadBtn.disabled = true;
+  }
   
-  // Remove event listener after first load
-  loadMapBtn.removeEventListener('click', loadMap);
-}
-
-// Load map on button click
-loadMapBtn.addEventListener('click', loadMap);
-
-// Also load map when user scrolls near it
-const mapObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Load map when 50% of the section is visible
-      const rect = entry.boundingClientRect;
-      if (rect.top <= window.innerHeight * 0.5) {
-        loadMap();
-        mapObserver.unobserve(entry.target);
+  // Click handler
+  loadBtn.addEventListener('click', loadInteractiveMap);
+  
+  // Intersection Observer for auto-load
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      // Only auto-load when at least 50% visible
+      const ratio = entries[0].intersectionRatio;
+      if (ratio >= 0.5) {
+        loadInteractiveMap();
+        observer.unobserve(mapContainer);
       }
     }
-  });
-}, { threshold: 0.5 });
-
-mapObserver.observe(document.querySelector('.map-section'));
+  }, { threshold: [0, 0.1, 0.5, 1] });
   
-  // Add iframe to container
-  mapIframeContainer.appendChild(iframe);
-  mapIframeContainer.classList.add('active');
-  mapPlaceholder.style.display = 'none';
-  
-  // Remove event listener after first load
-  loadMapBtn.removeEventListener('click', loadMap);
-}
-
-// Load map on button click
-loadMapBtn.addEventListener('click', loadMap);
-
-// Also load map when user scrolls near it
-const mapObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Load map when 50% of the section is visible
-      const rect = entry.boundingClientRect;
-      if (rect.top <= window.innerHeight * 0.5) {
-        loadMap();
-        mapObserver.unobserve(entry.target);
-      }
-    }
-  });
-}, { threshold: 0.5 });
+  observer.observe(mapContainer);
+});
 
 mapObserver.observe(document.querySelector('.map-section'));
 </script>
