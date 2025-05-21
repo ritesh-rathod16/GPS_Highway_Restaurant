@@ -637,7 +637,7 @@ nav ul li a:hover::after {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Enhanced Testimonials Section */
+/* Enhanced Testimonials Section - Updated to 1:1 aspect ratio */
 .testimonials {
   background-color: var(--primary-color);
   padding: 80px 0;
@@ -692,7 +692,8 @@ nav ul li a:hover::after {
   border: 1px solid rgba(193, 154, 107, 0.2);
   position: relative;
   min-width: 300px;
-  height: 300px;
+  height: 300px; /* Changed to 1:1 aspect ratio */
+  width: 300px; /* Added fixed width */
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -716,6 +717,7 @@ nav ul li a:hover::after {
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+  flex-grow: 1;
 }
 
 .testimonial-text::before {
@@ -824,6 +826,7 @@ nav ul li a:hover::after {
 .map-container:hover .map-overlay {
   background-color: transparent;
 }
+
 /* Features Section - Made smaller */
 .features {
   background-color: var(--primary-color);
@@ -1320,8 +1323,9 @@ footer {
   }
 
   .testimonial-card {
-    height: 350px;
-    min-width: 280px;
+    height: 300px;
+    width: 300px;
+    min-width: 300px;
   }
 }
 
@@ -1410,8 +1414,9 @@ footer {
   }
 
   .testimonial-card {
-    height: 320px;
-    min-width: 260px;
+    height: 300px;
+    width: 300px;
+    min-width: 300px;
     padding: 20px;
   }
 
@@ -1991,7 +1996,10 @@ Your browser does not support the video tag.
   <div class="container">
     <div class="map-container">
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26178.363227591723!2d79.01995897293092!3d21.066870459557062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747774408827!5m2!1sen!2sin" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26174.95834788171!2d79.0757376!3d21.086208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747792452396!5m2!1sen!2sin" 
+        width="800" 
+        height="600" 
+        style="border:0;" 
         allowfullscreen="" 
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
@@ -2276,7 +2284,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 let position = 0;
-const speed = 0.5; // pixels per frame
+let speed = 0.5; // pixels per frame
 
 function animateTestimonials() {
   position -= speed;
