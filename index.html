@@ -2489,13 +2489,49 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// Preload map
-window.addEventListener('load', function() {
-  const mapIframe = document.querySelector('.map-container iframe');
-  if (mapIframe) {
-    mapIframe.setAttribute('src', mapIframe.getAttribute('data-src'));
-  }
-});
+// Map Loading Functionality
+const loadMapBtn = document.getElementById('load-map-btn');
+const mapPlaceholder = document.getElementById('map-placeholder');
+const mapIframeContainer = document.getElementById('map-iframe-container');
+
+function loadMap() {
+  // Create iframe with proper attributes
+  const iframe = document.createElement('iframe');
+  iframe.setAttribute('src', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.543211230423!2d79.0558793154026!3d21.06687218594079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin');
+  iframe.setAttribute('width', '100%');
+  iframe.setAttribute('height', '100%');
+  iframe.setAttribute('style', 'border:0;');
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.setAttribute('loading', 'lazy');
+  iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+  
+  // Add iframe to container
+  mapIframeContainer.appendChild(iframe);
+  mapIframeContainer.classList.add('active');
+  mapPlaceholder.style.display = 'none';
+  
+  // Remove event listener after first load
+  loadMapBtn.removeEventListener('click', loadMap);
+}
+
+// Load map on button click
+loadMapBtn.addEventListener('click', loadMap);
+
+// Also load map when user scrolls near it
+const mapObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Load map when 50% of the section is visible
+      const rect = entry.boundingClientRect;
+      if (rect.top <= window.innerHeight * 0.5) {
+        loadMap();
+        mapObserver.unobserve(entry.target);
+      }
+    }
+  });
+}, { threshold: 0.5 });
+
+mapObserver.observe(document.querySelector('.map-section'));
 </script>
 </body>
 </html>
