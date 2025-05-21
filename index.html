@@ -835,6 +835,7 @@ nav ul li a:hover::after {
   display: flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
 }
 
 .load-map-btn:hover {
@@ -847,24 +848,6 @@ nav ul li a:hover::after {
   font-size: 1.1rem;
 }
 
-.map-iframe-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-}
-
-.map-iframe-container.active {
-  display: block;
-}
-
-.map-iframe-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
 /* Features Section - Made smaller */
 .features {
   background-color: var(--primary-color);
@@ -2029,24 +2012,24 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!--  map section  -->
+<!-- Map Section -->
 <section class="map-section" id="location">
   <div class="container">
     <div class="section-title">
       <h2>OUR LOCATION</h2>
     </div>
     <div class="map-container">
-      <!-- Lightweight placeholder image (satellite view) -->
-      <div class="map-placeholder" id="map-placeholder">
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center=21.0668721,79.0580688&zoom=18&size=800x500&maptype=satellite&markers=color:red%7C21.0668721,79.0580688&key=YOUR_API_KEY" 
-             alt="GPS Highway Restaurant Satellite View" 
+      <!-- Static map image as placeholder -->
+      <div class="map-placeholder">
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=21.0668721,79.0580688&zoom=15&size=800x400&maptype=roadmap&markers=color:red%7C21.0668721,79.0580688" 
+             alt="GPS Highway Restaurant Location" 
              loading="lazy">
-        <button class="load-map-btn" id="load-map-btn">
-          <i class="fas fa-satellite-dish"></i> Load Interactive Satellite View
-        </button>
+        <a href="https://www.google.com/maps/place/GPS+Highway+Restaurant/@21.0669373,79.0169,12023m/data=!3m1!1e3!4m21!1m12!4m11!1m2!1m1!2s21.0927616,+79.0724608+3+3!1m6!1m2!1s0x3bd4bfece213e8df:0xbafc5c14f7962ecd!2sGPS+Highway+Restaurant,+Mancherial+-+Chandrapur+-+Nagpur+Road,+Nagpur,+Maharashtra!2m2!1d79.0580688!2d21.0668721!3e0!3m7!1s0x3bd4bfece213e8df:0xbafc5c14f7962ecd!8m2!3d21.0668622!4d79.0581!9m1!1b1!16s%2Fg%2F11m_zh16gb?entry=ttu&g_ep=EgoyMDI1MDUxNS4wIKXMDSoASAFQAw%3D%3D" 
+           target="_blank" 
+           class="load-map-btn">
+          <i class="fas fa-map-marked-alt"></i> View on Google Maps
+        </a>
       </div>
-      <!-- Container for interactive map -->
-      <div class="map-iframe-container" id="map-iframe-container"></div>
     </div>
   </div>
 </section>
@@ -2460,51 +2443,6 @@ window.addEventListener('click', (e) => {
     document.body.style.overflow = 'auto';
   }
 });
-
-// Map Loading Functionality
-// Optimized Satellite Map Loader
-document.addEventListener('DOMContentLoaded', function() {
-  const mapContainer = document.querySelector('.map-container');
-  const loadBtn = document.getElementById('load-map-btn');
-  const iframeContainer = document.getElementById('map-iframe-container');
-    
-  // Function to load interactive map
-  function loadInteractiveMap() {
-    if (!iframeContainer.querySelector('iframe')) {
-      const iframe = document.createElement('iframe');
-      iframe.src = satelliteViewUrl;
-      iframe.setAttribute('loading', 'lazy');
-      iframe.setAttribute('allowfullscreen', '');
-      iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
-      iframeContainer.appendChild(iframe);
-    }
-    iframeContainer.classList.add('active');
-    loadBtn.textContent = 'Satellite View Loaded';
-    loadBtn.style.backgroundColor = '#4CAF50';
-    loadBtn.disabled = true;
-  }
-  
-  // Click handler
-  loadBtn.addEventListener('click', loadInteractiveMap);
-  
-  // Intersection Observer for auto-load
-  const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      // Only auto-load when at least 50% visible
-      const ratio = entries[0].intersectionRatio;
-      if (ratio >= 0.5) {
-        loadInteractiveMap();
-        observer.unobserve(mapContainer);
-      }
-    }
-  }, { threshold: [0, 0.1, 0.5, 1] });
-  
-  observer.observe(mapContainer);
-});
-
-mapObserver.observe(document.querySelector('.map-section'));
 </script>
 </body>
 </html>
-
-fix everthing espically mmaps and regenerste whole4 code
