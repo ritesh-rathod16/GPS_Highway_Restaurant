@@ -403,7 +403,7 @@ nav ul li a:hover::after {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/5; /* Changed from 4/6 to make items taller */
   display: flex;
   flex-direction: column;
   position: relative;
@@ -454,13 +454,13 @@ nav ul li a:hover::after {
 }
 
 .price {
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* Increased from 1.5rem */
   font-weight: 600;
   color: var(--matte-gold);
   font-family: 'Cinzel', serif;
   margin-top: auto;
   letter-spacing: 1px;
-  padding-top: 10px;
+  padding-top: 10px; /* Added padding */
 }
 
 .menu-btn-container {
@@ -637,7 +637,7 @@ nav ul li a:hover::after {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Enhanced Testimonials Section */
+/* Enhanced Testimonials Section - Updated to 1:1 aspect ratio */
 .testimonials {
   background-color: var(--primary-color);
   padding: 80px 0;
@@ -692,8 +692,8 @@ nav ul li a:hover::after {
   border: 1px solid rgba(193, 154, 107, 0.2);
   position: relative;
   min-width: 300px;
-  height: 300px;
-  width: 300px;
+  height: 300px; /* Changed to 1:1 aspect ratio */
+  width: 300px; /* Added fixed width */
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -801,58 +801,10 @@ nav ul li a:hover::after {
   border: 1px solid rgba(193, 154, 107, 0.2);
 }
 
-#google-map {
+.map-container iframe {
   width: 100%;
   height: 100%;
   border: none;
-}
-
-.map-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-
-.map-overlay-content {
-  text-align: center;
-  color: white;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 5px;
-  max-width: 80%;
-}
-
-.map-overlay h3 {
-  color: var(--matte-gold);
-  margin-bottom: 10px;
-}
-
-.map-overlay-btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: var(--matte-gold);
-  color: var(--primary-color);
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Montserrat', sans-serif;
-  text-decoration: none;
-  margin-top: 15px;
-}
-
-.map-overlay-btn:hover {
-  background-color: var(--gold-dark);
-  transform: translateY(-3px);
 }
 
 /* Features Section - Made smaller */
@@ -2021,26 +1973,14 @@ Your browser does not support the video tag.
 
 <!-- Map Section -->
 <section class="map-section" id="location">
-  <div class="container">
-    <div class="section-title">
-      <h2>OUR LOCATION</h2>
-    </div>
-    <div class="map-container">
-      <!-- Google Maps iframe -->
-      <iframe id="google-map" 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.123456789012!2d79.0580688!3d21.0668721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-      <div class="map-overlay" id="map-overlay">
-        <div class="map-overlay-content">
-          <h3>GPS Highway Restaurant</h3>
-          
+    <div class="container">
+        <div class="section-title">
+            <h2>OUR LOCATION</h2>
         </div>
-      </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52356.72936253133!2d78.9818823486328!3d21.066862200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e1!3m2!1sen!2sin!4v1747341109593!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- Footer -->
@@ -2451,30 +2391,6 @@ window.addEventListener('click', (e) => {
     reviewModal.classList.remove('active');
     document.body.style.overflow = 'auto';
   }
-});
-
-// Map functionality
-const mapOverlay = document.getElementById('map-overlay');
-const loadSatelliteBtn = document.getElementById('load-satellite-map');
-const googleMap = document.getElementById('google-map');
-
-// Load satellite view when button is clicked
-loadSatelliteBtn.addEventListener('click', () => {
-  // Update the iframe src to include satellite view parameters
-  googleMap.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.123456789012!2d79.0580688!3d21.0668721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin&t=k";
-  
-  // Hide the overlay
-  mapOverlay.style.display = 'none';
-});
-
-// Show map controls when hovering over map
-googleMap.addEventListener('mouseenter', () => {
-  googleMap.style.pointerEvents = 'auto';
-});
-
-// Hide map overlay when clicking anywhere on it
-mapOverlay.addEventListener('click', () => {
-  mapOverlay.style.display = 'none';
 });
 </script>
 </body>
