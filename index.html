@@ -403,7 +403,7 @@ nav ul li a:hover::after {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
-  aspect-ratio: 4/5; /* Changed from 4/6 to make items taller */
+  aspect-ratio: 4/5;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -454,13 +454,13 @@ nav ul li a:hover::after {
 }
 
 .price {
-  font-size: 1.8rem; /* Increased from 1.5rem */
+  font-size: 1.8rem;
   font-weight: 600;
   color: var(--matte-gold);
   font-family: 'Cinzel', serif;
   margin-top: auto;
   letter-spacing: 1px;
-  padding-top: 10px; /* Added padding */
+  padding-top: 10px;
 }
 
 .menu-btn-container {
@@ -637,7 +637,7 @@ nav ul li a:hover::after {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Enhanced Testimonials Section - Updated to 1:1 aspect ratio */
+/* Enhanced Testimonials Section */
 .testimonials {
   background-color: var(--primary-color);
   padding: 80px 0;
@@ -692,8 +692,8 @@ nav ul li a:hover::after {
   border: 1px solid rgba(193, 154, 107, 0.2);
   position: relative;
   min-width: 300px;
-  height: 300px; /* Changed to 1:1 aspect ratio */
-  width: 300px; /* Added fixed width */
+  height: 300px;
+  width: 300px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -801,7 +801,7 @@ nav ul li a:hover::after {
   border: 1px solid rgba(193, 154, 107, 0.2);
 }
 
-#restaurant-map {
+#google-map {
   width: 100%;
   height: 100%;
   border: none;
@@ -818,15 +818,15 @@ nav ul li a:hover::after {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  pointer-events: none;
 }
 
 .map-overlay-content {
-  background: rgba(40, 40, 43, 0.9);
-  padding: 20px 30px;
-  border-radius: 5px;
   text-align: center;
-  border: 1px solid var(--matte-gold);
+  color: white;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  max-width: 80%;
 }
 
 .map-overlay h3 {
@@ -834,22 +834,20 @@ nav ul li a:hover::after {
   margin-bottom: 10px;
 }
 
-.map-overlay p {
-  color: var(--parchment);
-  margin-bottom: 15px;
-}
-
 .map-overlay-btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: var(--matte-gold);
   color: var(--primary-color);
-  text-decoration: none;
-  border-radius: 2px;
-  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Montserrat', sans-serif;
-  pointer-events: auto;
+  text-decoration: none;
+  margin-top: 15px;
 }
 
 .map-overlay-btn:hover {
@@ -2021,29 +2019,25 @@ Your browser does not support the video tag.
 </div>
 </section>
 
-<!-- Map Section - Enhanced with interactive Google Maps -->
+<!-- Map Section -->
 <section class="map-section" id="location">
   <div class="container">
     <div class="section-title">
       <h2>OUR LOCATION</h2>
     </div>
     <div class="map-container">
-      <!-- Interactive Google Maps iframe -->
-      <iframe id="restaurant-map" 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.027855430741!2d79.0558949!3d21.0668721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e0!3m2!1sen!2sin!4v1716350000000!5m2!1sen!2sin" 
+      <!-- Google Maps iframe -->
+      <iframe id="google-map" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.123456789012!2d79.0580688!3d21.0668721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
               allowfullscreen="" 
               loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade">
       </iframe>
-      <div class="map-overlay">
+      <div class="map-overlay" id="map-overlay">
         <div class="map-overlay-content">
-          <h3>Visit Us</h3>
-          <p>GPS Highway Restaurant, Chichbhawan, Nagpur, Maharashtra 440005</p>
-          <a href="https://www.google.com/maps/place/GPS+Highway+Restaurant/@21.0669373,79.0169,12023m/data=!3m1!1e3!4m21!1m12!4m11!1m2!1m1!2s21.0927616,+79.0724608+3+3!1m6!1m2!1s0x3bd4bfece213e8df:0xbafc5c14f7962ecd!2sGPS+Highway+Restaurant,+Mancherial+-+Chandrapur+-+Nagpur+Road,+Nagpur,+Maharashtra!2m2!1d79.0580688!2d21.0668721!3e0!3m7!1s0x3bd4bfece213e8df:0xbafc5c14f7962ecd!8m2!3d21.0668622!4d79.0581!9m1!1b1!16s%2Fg%2F11m_zh16gb?entry=ttu&g_ep=EgoyMDI1MDUxNS4wIKXMDSoASAFQAw%3D%3D" 
-             target="_blank" 
-             class="map-overlay-btn">
-            Get Directions
-          </a>
+          <h3>GPS Highway Restaurant</h3>
+          <p>Click to view our location in satellite view</p>
+          <button class="map-overlay-btn" id="load-satellite-map">Load Satellite View</button>
         </div>
       </div>
     </div>
@@ -2146,36 +2140,8 @@ window.addEventListener('load', function() {
 
     // Enable scrolling after loader disappears
     document.body.style.overflow = 'auto';
-    
-    // Initialize map with satellite view
-    initMap();
   }, 1500); // 1.5 second delay
 });
-
-// Initialize Google Maps with satellite view
-function initMap() {
-  // The map is already embedded via iframe, but we can enhance it
-  const mapContainer = document.querySelector('.map-container');
-  const mapOverlay = document.querySelector('.map-overlay');
-  
-  // Add click event to hide overlay when map is clicked
-  mapContainer.addEventListener('click', function() {
-    mapOverlay.style.opacity = '0';
-    mapOverlay.style.pointerEvents = 'none';
-    
-    // Re-show overlay after 5 seconds
-    setTimeout(() => {
-      mapOverlay.style.opacity = '1';
-      mapOverlay.style.pointerEvents = 'auto';
-    }, 5000);
-  });
-  
-  // Re-enable overlay when mouse leaves map
-  mapContainer.addEventListener('mouseleave', function() {
-    mapOverlay.style.opacity = '1';
-    mapOverlay.style.pointerEvents = 'auto';
-  });
-}
 
 // Check if coming back from menu.html to skip animation
 if (sessionStorage.getItem('visitedMenu')) {
@@ -2486,6 +2452,30 @@ window.addEventListener('click', (e) => {
     reviewModal.classList.remove('active');
     document.body.style.overflow = 'auto';
   }
+});
+
+// Map functionality
+const mapOverlay = document.getElementById('map-overlay');
+const loadSatelliteBtn = document.getElementById('load-satellite-map');
+const googleMap = document.getElementById('google-map');
+
+// Load satellite view when button is clicked
+loadSatelliteBtn.addEventListener('click', () => {
+  // Update the iframe src to include satellite view parameters
+  googleMap.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.123456789012!2d79.0580688!3d21.0668721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfece213e8df%3A0xbafc5c14f7962ecd!2sGPS%20Highway%20Restaurant!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin&t=k";
+  
+  // Hide the overlay
+  mapOverlay.style.display = 'none';
+});
+
+// Show map controls when hovering over map
+googleMap.addEventListener('mouseenter', () => {
+  googleMap.style.pointerEvents = 'auto';
+});
+
+// Hide map overlay when clicking anywhere on it
+mapOverlay.addEventListener('click', () => {
+  mapOverlay.style.display = 'none';
 });
 </script>
 </body>
